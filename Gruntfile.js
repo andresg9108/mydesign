@@ -5,7 +5,11 @@ module.exports = function(grunt) {
     ];
     
     // Sass
-    var aRouteSass = ['./src/sass/*'];
+    var aRouteSass = [
+        './src/sass/*',
+        './src/sass/imports/*',
+        './src/sass/components/*'
+    ];
     
     // Js
     var aRouteJs = ['./src/js/*'];
