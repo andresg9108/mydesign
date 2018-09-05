@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
     // Route
     var aRoute = [
-    './web/containers/*',
-        './web/sidebar/*'
+        './web/containers/*',
+        './web/sidebar/*',
+        './web/pagination/*',
+        './web/example/*',
     ];
     
     // Sass
