@@ -4,15 +4,10 @@
 	padding: 5px 0px
 	margin: 5px 0px
 
-	>label, >.text, >.textarea, >span
+	>label, >span
 		font-size: $gSizeFont2
-	>.text, >.textarea
+	>.my-text, >.my-textarea
 		width: calc(100% - 25px)
-		padding: 10px
-		border-color: $gColorBlack
-	>.textarea
-		resize: none
-		height: 60px
 	>span
 		font-weight: bold
 		color: $gColor2
@@ -22,7 +17,7 @@
 
 	>label
 		margin-right: 10px
-	>.text, >.textarea
+	>.my-text, >.my-textarea
 		max-width: 300px
 	>span
 		margin-left: 5px
@@ -32,6 +27,5 @@
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-field-row, .my-field-column
-		>.text, >.textarea
+		>.my-text, >.my-textarea
 			width: calc(100% - 30px)
-			padding: 10px 15px
