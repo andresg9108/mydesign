@@ -6,6 +6,7 @@ module.exports = function(grunt) {
         './web/pagination/*',
         './web/breadcrumb/*',
         './web/example/*',
+        './web/modalwindow/*'
     ];
     
     // Sass
