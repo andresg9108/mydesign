@@ -4,6 +4,7 @@ module.exports = function(grunt) {
         './web/containers/*',
         './web/sidebar/*',
         './web/pagination/*',
+        './web/breadcrumb/*',
         './web/example/*',
     ];
     
