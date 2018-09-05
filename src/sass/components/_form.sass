@@ -1,0 +1,37 @@
+.my-field-row, .my-field-column
+	@include displayFlex
+
+	padding: 5px 0px
+	margin: 5px 0px
+
+	>label, >.text, >.textarea, >span
+		font-size: $gSizeFont2
+	>.text, >.textarea
+		width: calc(100% - 25px)
+		padding: 10px
+		border-color: $gColorBlack
+	>.textarea
+		resize: none
+		height: 60px
+	>span
+		font-weight: bold
+		color: $gColor2
+
+.my-field-row
+	@include setUpFlex(row, wrap, flex-start, center, center)
+
+	>label
+		margin-right: 10px
+	>.text, >.textarea
+		max-width: 300px
+	>span
+		margin-left: 5px
+
+.my-field-column
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-field-row, .my-field-column
+		>.text, >.textarea
+			width: calc(100% - 30px)
+			padding: 10px 15px
