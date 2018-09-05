@@ -32,6 +32,35 @@
 			height: 50vh
 			overflow-y: scroll
 
+.my-modalwindow-2
+	@include setUpFlex(row, wrap, center, center, center)
+
+	display: none
+	position: fixed
+	left: 0px
+	top: 0px
+	width: 100%
+	height: 100vh
+	z-index: $gZIndex10
+	background-color: $gColor1
+
+	&.is-active
+		@include displayFlex
+	>div
+		width: calc(100% - 30px)
+		background-color: $gColorWhite
+		height: auto
+		max-height: 80vh
+		overflow-y: scroll
+		padding: 15px
+
+		#icon
+			float: right
+			cursor: pointer
+			user-select: none
+			margin-bottom: 15px
+			margin-left: 15px
+
 @media screen and (min-width: $gMediumSizeA)
 	.my-modalwindow
 		>div
@@ -39,3 +68,6 @@
 
 			#body
 				height: 60vh
+	.my-modalwindow-2
+		>div
+			max-width: 1000px

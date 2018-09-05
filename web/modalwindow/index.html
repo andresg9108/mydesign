@@ -11,11 +11,13 @@
     <script src="../../src/js/main.js"></script>
   </head>
   <body>
+
     <div class="my-simple-container">
       <input type="button" value="Window #1" onclick="openModalWindow('window1')" />
+      <input type="button" value="Window #2" onclick="openModalWindow('window2')" />
     </div>
 
-
+    <!--Modal window #1-->
     <div id="window1" class="my-modalwindow">
       <div>
         <div id="title">
@@ -44,6 +46,14 @@
         <div id="footer">
           My Footer
         </div>
+      </div>
+    </div>
+
+    <!--Modal window #2-->
+    <div id="window2" class="my-modalwindow-2">
+      <div>
+        <span id="icon" onclick="closeModalWindow('window2')" class="fa fa-times fa-2x"></span>
+        <h1>My modal window</h1>
       </div>
     </div>
   </body>
