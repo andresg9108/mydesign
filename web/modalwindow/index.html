@@ -11,10 +11,15 @@
     <script src="../../src/js/main.js"></script>
   </head>
   <body>
-    <div class="my-modalwindow">
+    <div class="my-simple-container">
+      <input type="button" value="Window #1" onclick="openModalWindow('window1')" />
+    </div>
+
+
+    <div id="window1" class="my-modalwindow">
       <div>
         <div id="title">
-          <span id="icon" class="fa fa-times fa-2x"></span>
+          <span id="icon" onclick="closeModalWindow('window1')" class="fa fa-times fa-2x"></span>
           <span id="text" >My Title</span>
         </div>
         <div id="body">
