@@ -10,7 +10,8 @@ module.exports = function(grunt) {
         './web/form/*',
         './web/text/*',
         './web/selectionmenu/*',
-        './web/button/*'
+        './web/button/*',
+        './web/checkbox/*'
     ];
     
     // Sass
