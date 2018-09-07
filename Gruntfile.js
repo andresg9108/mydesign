@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         './web/modalwindow/*',
         './web/form/*',
         './web/text/*',
-        './web/selectionmenu/*'
+        './web/selectionmenu/*',
+        './web/button/*'
     ];
     
     // Sass
