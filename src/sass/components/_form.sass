@@ -1,31 +1,45 @@
 .my-field-row, .my-field-column
 	@include displayFlex
 
-	padding: 5px 0px
 	margin: 5px 0px
 
 	>label, >span
 		font-size: $gSizeFont2
-	>.my-text, >.my-textarea
-		width: calc(100% - 25px)
 	>span
 		font-weight: bold
 		color: $gColor2
+
+.my-field-column
+	@include setUpFlex(column, wrap, flex-start, center, center)
+
+	>.my-text
+		width: calc(100% - 22px)
+	>.my-textarea
+		width: calc(100% - 20px)
+	>.my-selectionmenu
+		width: 100%
 
 .my-field-row
 	@include setUpFlex(row, wrap, flex-start, center, center)
 
 	>label
 		margin-right: 10px
-	>.my-text, >.my-textarea
-		max-width: 300px
 	>span
 		margin-left: 5px
+	>.my-text, >.my-textarea, >.my-selectionmenu
+		width: 100%
+		max-width: 300px
 
 .my-field-column
 	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
 
 @media screen and (min-width: $gMediumSizeA)
-	.my-field-row, .my-field-column
-		>.my-text, >.my-textarea
+	.my-field-column
+		@include setUpFlex(column, wrap, flex-start, center, center)
+
+		>.my-text
 			width: calc(100% - 30px)
+		>.my-textarea
+			width: calc(100% - 30px)
+		>.my-selectionmenu
+			width: 100%
