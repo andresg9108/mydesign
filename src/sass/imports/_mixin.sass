@@ -3,6 +3,11 @@
 	display: -webkit-flex
 	display: -ms-flexbox
 
+@mixin displayFlexImportant
+	display: flex !important
+	display: -webkit-flex !important
+	display: -ms-flexbox !important
+
 @mixin setUpFlex($direction, $wrap, $justifyContent, $alignItems, $alignContent)
 	flex-direction: $direction
 	flex-wrap: $wrap

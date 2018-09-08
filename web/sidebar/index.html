@@ -11,12 +11,15 @@
     <script src="../../src/js/main.js"></script>
   </head>
   <body>
+    <div class="my-simple-container">
+      <span onclick="sideMenuController()" class="fa fa-bars fa-2x"></span>
+    </div>
 
 <div class="my-sidebar">
-  <div id="background"></div>
+  <div id="background" onclick="sideMenuController()"></div>
   <div id="menu">
-    <div id="menucontent">
-      <div id="menuheader">
+    <div id="menucontent" class="is-active">
+      <div id="menuheader" class="is-active">
       </div>
       <div>
         <div class="menuitems">
