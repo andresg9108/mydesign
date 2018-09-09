@@ -12,7 +12,8 @@ module.exports = function(grunt) {
         './web/selectionmenu/*',
         './web/button/*',
         './web/checkbox/*',
-        './web/radiobutton/*'
+        './web/radiobutton/*',
+        './web/basicpage/*'
     ];
     
     // Sass
