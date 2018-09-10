@@ -1,0 +1,23 @@
+@mixin displayFlex
+	display: flex
+	display: -webkit-flex
+	display: -ms-flexbox
+
+@mixin displayFlexImportant
+	display: flex !important
+	display: -webkit-flex !important
+	display: -ms-flexbox !important
+
+@mixin setUpFlex($direction, $wrap, $justifyContent, $alignItems, $alignContent)
+	flex-direction: $direction
+	flex-wrap: $wrap
+	justify-content: $justifyContent
+	align-items: $alignItems
+	align-content: $alignContent
+
+@mixin transformRotate($g)
+	-webkit-transform: rotate($g)
+	-ms-transform: rotate($g)
+	-moz-transform: rotate($g)
+	-o-transform: rotate($g)
+	transform: rotate($g)

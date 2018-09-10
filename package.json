@@ -1,0 +1,28 @@
+{
+  "name": "mydesign",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresg9108/mydesign.git"
+  },
+  "author": "Andres Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresg9108/mydesign/issues"
+  },
+  "homepage": "https://github.com/andresg9108/mydesign#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib": "^0.11.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "handlebars": "^4.0.11",
+    "matchdep": "^2.0.0"
+  }
+}

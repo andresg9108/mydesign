@@ -1,0 +1,46 @@
+.my-radiobutton
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 12px
+  cursor: pointer
+  font-size: $gSizeFont2
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.my-radiobutton input
+  position: absolute
+  opacity: 0
+
+.my-radiobutton-checkmark
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+  border-radius: 50%
+
+.my-radiobutton:hover input ~ .my-radiobutton-checkmark
+  background-color: #ccc
+
+.my-radiobutton input:checked ~ .my-radiobutton-checkmark
+  background-color: #2196F3
+
+.my-radiobutton-checkmark:after
+  content: ""
+  position: absolute
+  display: none
+
+.my-radiobutton input:checked ~ .my-radiobutton-checkmark:after
+  display: block
+
+.my-radiobutton .my-radiobutton-checkmark:after
+  top: 9px
+  left: 9px
+  width: 8px
+  height: 8px
+  border-radius: 50%
+  background: white

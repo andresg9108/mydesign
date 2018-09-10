@@ -1,0 +1,38 @@
+.my-header, .my-nav, .my-aside, .my-article, .my-footer
+	font-size: $gSizeFont
+	padding: 20px 10px
+.my-container
+	@include displayFlex
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+	width: 100%
+	
+	>.my-aside, >.my-article
+		width: calc(100% - 20px)
+.my-article
+	.my-section
+		margin: 10px 0px
+
+.my-header
+	color: $gColorWhite
+	background-color: $gColorGray1
+.my-nav
+	color: $gColorBlack
+	background-color: $gColorGray3
+.my-aside
+	color: $gColorBlack
+	background-color: $gColorGray4
+.my-footer
+	color: $gColorWhite
+	background-color: $gColorGray1
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-header, .my-nav, .my-aside, .my-article, .my-footer
+		padding: 20px 50px
+	.my-container
+		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+		>.my-aside
+			width: 200px
+		>.my-article
+			width: calc(100% - 400px)

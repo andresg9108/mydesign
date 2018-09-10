@@ -1,0 +1,71 @@
+.my-modalwindow
+	@include setUpFlex(row, wrap, center, center, center)
+
+	display: none
+	position: fixed
+	left: 0px
+	top: 0px
+	width: 100%
+	height: 100vh
+	z-index: $gZIndex10
+	background-color: $gColor1
+
+	&.is-active
+		@include displayFlex
+	>div
+		width: 100%
+		height: auto
+		max-width: 800px
+		max-height: 95vh
+		overflow-y: scroll
+		background-color: $gColorWhite
+
+		#title, #body, #footer
+			padding: 20px
+		#title, #footer
+			background-color: $gColorGray1
+		#title
+			#text
+				font-weight: bold
+				font-size: $gSizeFont4
+			#icon
+				float: right
+				cursor: pointer
+				user-select: none
+		#body
+			font-size: $gSizeFont
+		#footer
+			font-size: $gSizeFont
+
+.my-modalwindow-2
+	@include setUpFlex(row, wrap, center, center, center)
+
+	display: none
+	position: fixed
+	left: 0px
+	top: 0px
+	width: 100%
+	height: 100vh
+	font-size: $gSizeFont
+	overflow-y: scroll
+	z-index: $gZIndex10
+	background-color: $gColor1
+
+	&.is-active
+		@include displayFlex
+	>div
+		width: calc(100% - 30px)
+		padding: 15px
+		max-width: 800px
+		max-height: 90vh
+		overflow-y: scroll
+		background-color: $gColorWhite
+
+		#icon
+			float: right
+			cursor: pointer
+			user-select: none
+			margin-bottom: 15px
+			margin-left: 15px
+
+@media screen and (min-width: $gMediumSizeA)
