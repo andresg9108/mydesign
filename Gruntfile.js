@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     // Route
     var aRoute = [
+        './web/*',
         './web/containers/*',
         './web/sidebar/*',
         './web/pagination/*',
