@@ -6,8 +6,10 @@
     
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway' />
     <link rel="stylesheet" type="text/css" href="../../../src/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../src/lib/jquery/jquery-ui/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../src/css/main.css" />
     <script src="../../../src/lib/jquery/jquery.min.js"></script>
+    <script src="../../../src/lib/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script src="../../../src/js/main.js"></script>
   </head>
   <body>
@@ -26,7 +28,7 @@
             <div id="izq">
               <div id="search">
                 <form method="post">
-                    <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+                    <input type="search" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
                     <span class="fa fa-caret-square-o-down fa-lg"></span>
                     <button class="fa fa-search fa-lg"></button>
                 </form>
@@ -49,7 +51,7 @@
         <span onclick="closeFloatHeaderSearch()" class="fa fa-times fa-2x"></span>
         <div id="search">
             <form method="post">
-                <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+                <input type="search" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
                 <button class="fa fa-search fa-lg"></button>
             </form>
         </div>
