@@ -19,6 +19,18 @@ function closeModalWindow(sSelector){
 
 /*
 */
+function openFloatHeaderSearch(){
+    $('.my-floatheader-search').addClass('is-active');
+}
+
+/*
+*/
+function closeFloatHeaderSearch(){
+    $('.my-floatheader-search').removeClass('is-active');
+}
+
+/*
+*/
 function sideMenuController(){
 	let oBackground = $(".my-sidebar #background");
 	let oMenu = $(".my-sidebar #menu");

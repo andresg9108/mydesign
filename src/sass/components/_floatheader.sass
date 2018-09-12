@@ -15,6 +15,11 @@
 	>#logo
 		width: auto
 		height: 50px
+		cursor: pointer
+		user-select: none
+	>span
+		cursor: pointer
+		user-select: none
 	>#menu
 		width: 100%
 		margin: 0px 10px
@@ -28,6 +33,8 @@
 
 			>button, >span
 				margin: 0px 10px
+				cursor: pointer
+				user-select: none
 		>#menubig
 			display: none
 
@@ -41,6 +48,8 @@
 
 				>button, >span
 					margin-right: 10px
+					cursor: pointer
+					user-select: none
 			>#izq
 				width: 100%
 				margin: 0px 5px
@@ -92,6 +101,9 @@
 	color: $gColorWhite
 	z-index: $gZIndex9
 	padding: 6px 10px
+
+	&.is-active
+		@include displayFlex
 
 	>#search
 		@include displayFlex

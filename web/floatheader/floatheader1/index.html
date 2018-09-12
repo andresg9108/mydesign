@@ -16,7 +16,7 @@
         <img id="logo" src="../../../src/img/logo.svg" />
         <div id="menu">
           <div id="menusmall">
-            <span class="fa fa-search fa-lg"></span>
+            <span onclick="openFloatHeaderSearch()" class="fa fa-search fa-lg"></span>
             <button class="my-button-icon">
                 <span class="fa fa-camera fa-1x"></span>
                 Publicar
@@ -46,7 +46,7 @@
         <span class="fa fa-bars fa-2x"></span>
       </header>
       <div class="my-floatheader-search">
-        <span class="fa fa-times fa-2x"></span>
+        <span onclick="closeFloatHeaderSearch()" class="fa fa-times fa-2x"></span>
         <div id="search">
             <form method="post">
                 <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
