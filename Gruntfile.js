@@ -18,7 +18,8 @@ module.exports = function(grunt) {
         './web/radiobutton/*',
         './web/basicpage/*',
         './web/floatheader/*',
-        './web/floatheader/floatheader1/*'
+        './web/floatheader/floatheader1/*',
+        './web/autocompleteinput/*'
     ];
     
     // Sass
