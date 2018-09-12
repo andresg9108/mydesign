@@ -15,6 +15,16 @@
 	align-items: $alignItems
 	align-content: $alignContent
 
+@mixin inputPlaceholder($color)
+	::-webkit-input-placeholder
+		color: $color
+	:-moz-placeholder
+		color: $color
+	::-moz-placeholder
+		color: $color
+	:-ms-input-placeholder
+		color: $color
+
 @mixin transformRotate($g)
 	-webkit-transform: rotate($g)
 	-ms-transform: rotate($g)

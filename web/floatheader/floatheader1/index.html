@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
     
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway' />
+    <link rel="stylesheet" type="text/css" href="../../../src/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../src/css/main.css" />
     <script src="../../../src/lib/jquery/jquery.min.js"></script>
     <script src="../../../src/js/main.js"></script>
@@ -12,15 +13,16 @@
   <body>
     <main>
       <header class="my-floatheader">
-        <a href="#"><img id="logo" src="../../../src/img/logo.svg" /></a>
-        <div id="buscar">
-            <form id="miform" name="miform" method="post" onsubmit="return buscarAction()">
-                <input id="txtbuscar" name="txtbuscar" type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
-                <span id="busqadv" onclick="irA('{{urlBase}}buscador/', '')" class="fa fa-caret-square-o-down fa-lg"></span>
-                <button id="btnSubmit" class="fa fa-search fa-lg"></button>
-                <span id="btnBuscarM" onclick="controlBuscarMAction()" class="fa fa-search fa-lg"></span>
-            </form>
+        <img id="logo" src="../../../src/img/logo.svg" />
+        <div id="menu">
+          <div id="menusmall">
+            Small
+          </div>
+          <div id="menubig">
+            Big
+          </div>
         </div>
+        <span class="fa fa-bars fa-2x"></span>
       </header>
     </main>
   </body>
