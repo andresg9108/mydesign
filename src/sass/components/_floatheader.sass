@@ -9,7 +9,7 @@
 	width: calc(100% - 30px)
 	padding: 5px 15px
 	color: $gColorWhite
-	background-color: $gColor12
+	background-color: $gColor11
 	z-index: $gZIndex9
 
 	>#logo
@@ -18,11 +18,58 @@
 	>#menu
 		width: 100%
 		margin: 0px 10px
-		
+
 		>#menusmall
 			@include displayFlex
 		>#menubig
 			display: none
+
+			>#izq, >#der
+				@include displayFlex
+				@include setUpFlex(row, nowrap, flex-start, center, center)
+			>#der
+				width: 100%
+				max-width: 500px
+				margin-left: 5px
+
+				>button, >span
+					margin-right: 10px
+			>#izq
+				width: 100%
+				margin: 0px 5px
+
+				>#search
+					@include displayFlex
+					@include setUpFlex(row, wrap, flex-start, center, center)
+
+					width: 100%
+					padding: 8px 10px
+					border-radius: 5px
+					background-color: $gColorWhite
+
+					form
+						@include displayFlex
+						@include setUpFlex(row, wrap, flex-start, center, center)
+						
+						width: 100%
+
+						input
+							width: calc(100% - 60px)
+							padding: 0px
+							margin: 0px
+							border-width: 0px
+							font-size: $gSizeFont2
+							color: black
+							background-color: transparent
+
+						.fa
+							cursor: pointer
+							border-color: transparent
+							margin: 0px
+							padding: 0px
+							padding-left: 8px
+							color: $gColorBlack
+							background-color: transparent
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
