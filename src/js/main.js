@@ -19,19 +19,20 @@ function myd_closeModalWindow(sSelector){
 
 /*
 */
-function openFloatHeaderSearch(){
+function myd_openFloatHeaderSearch(){
     $('.my-floatheader-search').addClass('is-active');
+    $('.my-floatheader-search #search input').focus();
 }
 
 /*
 */
-function closeFloatHeaderSearch(){
+function myd_closeFloatHeaderSearch(){
     $('.my-floatheader-search').removeClass('is-active');
 }
 
 /*
 */
-function sideMenuController(){
+function myd_sideMenuController(){
 	let oBackground = $(".my-sidebar #background");
 	let oMenu = $(".my-sidebar #menu");
     let iTime = 400;
