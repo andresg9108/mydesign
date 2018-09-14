@@ -28,7 +28,7 @@
             <div id="search">
               <form method="post">
                   <input type="search" id="myinput" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
-                  <span class="fa fa-caret-square-o-down fa-lg"></span>
+                  <span onclick="myd_floatHeaderMenu1()" class="fa fa-caret-square-o-down fa-lg"></span>
                   <button class="fa fa-search fa-lg"></button>
               </form>
             </div>
@@ -47,7 +47,7 @@
       <span class="fa fa-bars fa-2x"></span>
     </header>
     <div class="my-floatheader-search">
-      <span class="fa fa-caret-square-o-down fa-2x"></span>
+      <span onclick="myd_floatHeaderMenu1()" class="fa fa-caret-square-o-down fa-2x"></span>
       <div id="search">
           <form method="post">
               <input type="search" id="myinputm" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
@@ -55,6 +55,16 @@
           </form>
       </div>
       <span onclick="myd_closeFloatHeaderSearch()" class="fa fa-times fa-2x"></span>
+    </div>
+    <div class="my-floatheader-menu-1">
+      <div>
+        <div id="big">
+          Big
+        </div>
+        <div id="small">
+          Small
+        </div>
+      </div>
     </div>
 
     <script>

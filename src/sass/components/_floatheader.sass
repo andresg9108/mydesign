@@ -148,11 +148,44 @@
 		user-select: none
 		margin: 0px 10px
 
+.my-floatheader-menu-1
+	@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+	display: none
+	position: fixed
+	left: 0px
+	top: 60px
+	width: 100%
+	z-index: $gZIndex7
+	font-size: $gSizeFont
+	padding: 10px
+	color: $gColorWhite
+	background-color: $gColorBlack
+
+	&.is-active
+		@include displayFlexImportant
+
+	>div
+		>#small
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+		>#big
+			display: none
+			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
 		>#menu
 			>#menusmall
 				display: none
 			>#menubig
+				@include displayFlex
+
+	.my-floatheader-menu-1
+		>div
+			>#small
+				display: none
+			>#big
 				@include displayFlex
 

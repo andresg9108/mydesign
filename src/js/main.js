@@ -32,7 +32,7 @@ function myd_closeFloatHeaderSearch(){
 
 /*
 */
-function myd_sideMenuController(){
+function myd_sideMenu(){
 	let oBackground = $(".my-sidebar #background");
 	let oMenu = $(".my-sidebar #menu");
     let iTime = 400;
@@ -52,5 +52,18 @@ function myd_sideMenuController(){
     	}, iTime, function() {
     		oBackground.css('display','none');
     	});
+    }
+}
+
+/*
+*/
+function myd_floatHeaderMenu1(){
+    let oMenu = $(".my-floatheader-menu-1");
+    let iTime = 400;
+
+    if(oMenu.css('display') != 'none'){
+        oMenu.removeClass('is-active');
+    }else{
+        oMenu.addClass('is-active');
     }
 }
