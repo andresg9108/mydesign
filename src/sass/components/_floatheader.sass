@@ -149,7 +149,7 @@
 		margin: 0px 10px
 
 .my-floatheader-menu-1
-	@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
 
 	display: none
 	position: fixed
@@ -166,13 +166,50 @@
 		@include displayFlexImportant
 
 	>div
-		>#small
-			@include displayFlex
-			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+		@include displayFlex
+		@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+		width: calc(100% - 20px)
+
 		>#big
 			display: none
 			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
 
+			width: 100%
+
+			>#nav
+				@include displayFlex
+				@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+				padding: 10px
+
+				>.fa
+					margin-bottom: 10px
+					cursor: pointer
+					user-select: none
+			>#body
+				width: calc(100% - 55px)
+				padding: 5px
+		>#small
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+			width: 100%
+
+			>#nav
+				@include displayFlex
+				@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
+
+				width: calc(100% - 20px)
+				padding: 10px
+
+				>.fa
+					margin-left: 20px
+					cursor: pointer
+					user-select: none
+			>#body
+				width: calc(100% - 10px)
+				padding: 5px
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
@@ -181,11 +218,10 @@
 				display: none
 			>#menubig
 				@include displayFlex
-
+	
 	.my-floatheader-menu-1
 		>div
-			>#small
-				display: none
-			>#big
+			#big
 				@include displayFlex
-
+			#small
+				display: none
