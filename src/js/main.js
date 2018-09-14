@@ -3,18 +3,17 @@
 var g_sRouteTemplate = 'src/template/';
 
 $(function(){
-    autocompleteInput();
 });
 
 /*
 */
-function openModalWindow(sSelector){
+function myd_openModalWindow(sSelector){
 	$('#'+sSelector).addClass('is-active');
 }
 
 /*
 */
-function closeModalWindow(sSelector){
+function myd_closeModalWindow(sSelector){
 	$('#'+sSelector).removeClass('is-active');
 }
 
@@ -53,36 +52,4 @@ function sideMenuController(){
     		oBackground.css('display','none');
     	});
     }
-}
-
-/*
-*/
-function autocompleteInput(){
-    var autocompletedData = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( ".my-autocompleteinput" ).autocomplete({
-      source: autocompletedData
-    });
 }
