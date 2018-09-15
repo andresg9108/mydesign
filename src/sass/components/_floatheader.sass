@@ -186,8 +186,11 @@
 			width: calc(100% - 10px)
 			height: auto
 			max-height: 30vh
-			padding: 5px
+			padding: 5px 10px
 			overflow-y: auto
+
+			.my-two-columns
+				width: calc(100% - 10px) !important
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
@@ -196,6 +199,13 @@
 				display: none
 			>#menubig
 				@include displayFlex
+	.my-floatheader-menu-1
+		>div
+			>#body
+				padding: 5px 50px
+
+				.my-two-columns
+					width: calc(100% - 90px) !important
 
 // Media queries height
 @media screen and (min-height: $gSmallSizeHeightA)

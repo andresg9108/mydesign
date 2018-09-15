@@ -1,15 +1,27 @@
-.my-justify
-	text-align: justify
-
 .my-simple-container
 	font-size: $gSizeFont
 	padding: 20px 10px
+.my-two-columns
+	@include displayFlex
+	@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
 
+	width: 100%
+
+	>#left, >#right
+		width: 100%
+		margin-bottom: 10px
+.my-justify
+	text-align: justify
 .my-p
 	margin-bottom: 10px
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-simple-container
 		padding: 20px 50px
-
-@media screen and (min-width: $gBigSizeA)
+	.my-two-columns
+		>#left, >#right
+			width: calc(50% - 10px)
+		>#left
+			margin-right: 10px
+		>#right
+			margin-left: 10px
