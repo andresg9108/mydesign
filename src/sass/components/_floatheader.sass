@@ -184,7 +184,10 @@
 				user-select: none
 		>#body
 			width: calc(100% - 10px)
+			height: auto
+			max-height: 30vh
 			padding: 5px
+			overflow-y: auto
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
@@ -193,3 +196,20 @@
 				display: none
 			>#menubig
 				@include displayFlex
+
+// Media queries height
+@media screen and (min-height: $gSmallSizeHeightA)
+	.my-floatheader-menu-1
+		>div
+			>#body
+				max-height: 40vh
+@media screen and (min-height: $gSmallSizeHeightB)
+	.my-floatheader-menu-1
+		>div
+			>#body
+				max-height: 50vh
+@media screen and (min-height: $gSmallSizeHeightC)
+	.my-floatheader-menu-1
+		>div
+			>#body
+				max-height: 60vh
