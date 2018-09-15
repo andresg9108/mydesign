@@ -160,7 +160,7 @@
 	font-size: $gSizeFont
 	padding: 10px
 	color: $gColorWhite
-	background-color: $gColor13
+	background-color: $gColor11
 
 	&.is-active
 		@include displayFlexImportant
@@ -183,14 +183,12 @@
 				cursor: pointer
 				user-select: none
 		>#body
-			width: calc(100% - 10px)
+			width: calc(100% - 20px)
 			height: auto
 			max-height: 30vh
 			padding: 5px 10px
 			overflow-y: auto
-
-			.my-two-columns
-				width: calc(100% - 10px) !important
+			background-color: $gColor13
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
@@ -202,10 +200,8 @@
 	.my-floatheader-menu-1
 		>div
 			>#body
+				width: calc(100% - 100px)
 				padding: 5px 50px
-
-				.my-two-columns
-					width: calc(100% - 90px) !important
 
 // Media queries height
 @media screen and (min-height: $gSmallSizeHeightA)
