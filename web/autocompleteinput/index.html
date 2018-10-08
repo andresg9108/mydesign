@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
+    
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway' />
+    <link rel="stylesheet" type="text/css" href="../../src/lib/jquery/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../src/css/main.css" />
+    <script src="../../src/lib/jquery/jquery.min.js"></script>
+    <script src="../../src/lib/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../src/js/main.js"></script>
+  </head>
+  <body>
+    <div class="my-simple-container">
+      <input type="search" id="myinput" class="my-autocompleteinput" autofocus />
+    </div>
+    <script>
+      var autocompletedData = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+      ];
+      $( "#myinput" ).autocomplete({
+        source: autocompletedData
+      });
+    </script>
+  </body>
+</html>

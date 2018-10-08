@@ -4,17 +4,22 @@ module.exports = function(grunt) {
         './web/*',
         './web/containers/*',
         './web/sidebar/*',
+        './web/sidebar/sidebar1/*',
         './web/pagination/*',
         './web/breadcrumb/*',
         './web/example/*',
         './web/modalwindow/*',
         './web/form/*',
+        './web/form/form1/*',
         './web/text/*',
         './web/selectionmenu/*',
         './web/button/*',
         './web/checkbox/*',
         './web/radiobutton/*',
-        './web/basicpage/*'
+        './web/basicpage/*',
+        './web/floatheader/*',
+        './web/floatheader/floatheader1/*',
+        './web/autocompleteinput/*'
     ];
     
     // Sass
