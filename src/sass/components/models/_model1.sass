@@ -1,0 +1,156 @@
+$maxWidthMyM1Nav1: 300px
+$maxWidthMyM1Nav1100P: calc(100% - 300px)
+
+#my-m1-nav-1
+	display: none
+	position: fixed
+	width: 0px
+	max-width: $maxWidthMyM1Nav1
+	height: 100vh
+	background-color: $gColorGray4
+
+	>#container
+		display: none
+
+		&.is-active
+			@include displayFlexImportant
+			@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
+
+		>#items-icon
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, center, center)
+			
+			width: 50px
+			height: 100vh
+			background-color: $gColorGray3
+
+			>#top, >#bottom
+				>span
+					margin: 5px
+					user-select: none
+					cursor: pointer
+
+			>#top
+				@include displayFlex
+				@include setUpFlex(column, wrap, flex-start, center, center)
+				
+				height: 80vh
+
+				>#closesidemenu
+					display: block
+			>#bottom
+				@include displayFlex
+				@include setUpFlex(column-reverse, wrap, flex-start, center, center)
+				
+				height: 20vh
+		>#items
+			width: calc(100% - 50px)
+
+			>#logo
+				width: 100%
+
+			>div
+				height: 100vh
+				overflow-y: auto
+
+				>div
+					padding: 10px 15px
+					user-select: none
+					cursor: pointer
+					font-size: $gSizeFont
+
+					>.fa
+						margin-right: 5px
+
+					&.is-open
+						>div
+							display: block
+
+
+					>div
+						display: none
+						margin-top: 10px
+
+						>div
+							padding: 10px 15px
+							user-select: none
+							cursor: pointer
+							font-size: $gSizeFont
+
+							>.fa
+								margin-right: 5px
+
+							&:hover
+								background-color: $gColorGray2
+
+
+				>#items-footer
+					padding: 10px 15px 150px 15px
+
+#my-m1-nav-2
+	@include displayFlex
+	@include setUpFlex(row, wrap, flex-start, center, center)
+
+	width: calc(100% - 30px)
+	padding: 10px 15px
+	background-color: $gColorGray4
+
+	#left, #right
+		@include displayFlex
+
+		>span
+			@include displayFlex
+			@include setUpFlex(row, wrap, center, center, center)
+
+			width: 35px
+			user-select: none
+			cursor: pointer
+
+	#left
+		@include setUpFlex(row, wrap, flex-start, center, center)
+		
+		width: calc(80% - 5px)
+		margin-right: 5px
+
+		>span
+			margin-right: 10px
+
+		>#opensidemenu
+			@include displayFlex
+	#right
+		@include setUpFlex(row-reverse, wrap, flex-start, center, center)
+
+		width: calc(20% - 5px)
+		margin-left: 5px
+
+		>span
+			margin-left: 10px
+
+#my-m1-container-main
+	width: 100%
+	margin-left: 0px
+
+@media screen and (min-width: $gMediumSizeA)
+	#my-m1-nav-1
+		display: block
+		width: 100%
+
+		>#container
+			@include displayFlexImportant
+			@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
+
+			>#items-icon
+
+				>#top
+					>#closesidemenu
+						display: none
+	#my-m1-nav-2
+		#left
+			>#opensidemenu
+				display: none
+
+	#my-m1-container-main
+		width: $maxWidthMyM1Nav1100P
+		margin-left: $maxWidthMyM1Nav1
+
+	

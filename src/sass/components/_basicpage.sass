@@ -1,25 +1,32 @@
-.my-header, .my-nav, .my-aside, .my-article, .my-footer
-	font-size: $gSizeFont
+.my-bp-header, .my-bp-nav, .my-bp-aside, .my-bp-section, .my-bp-footer
 	padding: 20px 10px
-.my-container
+	font-size: $gSizeFont
+
+.my-bp-section > .my-article
+	margin-bottom: 30px
+	
+	>header
+		margin-bottom: 10px
+	>footer
+		margin-top: 10px
+
+.my-bp-container
 	@include displayFlex
 	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
 
 	width: 100%
-	
-	>.my-aside, >.my-article
+	>.my-bp-aside
 		width: calc(100% - 20px)
-.my-article
-	.my-section
-		margin: 10px 0px
+	>.my-bp-container-body
+		width: 100%
 
 @media screen and (min-width: $gMediumSizeA)
-	.my-header, .my-nav, .my-aside, .my-article, .my-footer
+	.my-bp-header, .my-bp-nav, .my-bp-aside, .my-bp-section, .my-bp-footer
 		padding: 20px 50px
-	.my-container
-		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+	.my-bp-container
+		@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
 
-		>.my-aside
+		>.my-bp-aside
 			width: 200px
-		>.my-article
-			width: calc(100% - 400px)
+		>.my-bp-container-body
+			width: calc(100% - 300px)

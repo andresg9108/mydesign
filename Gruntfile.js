@@ -2,31 +2,39 @@ module.exports = function(grunt) {
     // Route
     var aRoute = [
         './web/*',
-        './web/containers/*',
-        './web/sidebar/*',
-        './web/sidebar/sidebar1/*',
-        './web/pagination/*',
+        './web/autocompleteinput/*',
+        './web/basicpage/*',
         './web/breadcrumb/*',
-        './web/example/*',
-        './web/modalwindow/*',
-        './web/form/*',
-        './web/form/form1/*',
-        './web/text/*',
-        './web/selectionmenu/*',
         './web/button/*',
         './web/checkbox/*',
-        './web/radiobutton/*',
-        './web/basicpage/*',
+        './web/containers/*',
+        './web/example/*',
         './web/floatheader/*',
         './web/floatheader/floatheader1/*',
-        './web/autocompleteinput/*'
+        './web/form/*',
+        './web/form/form1/*',
+        './web/loginmodels/*',
+        './web/loginmodels/loginmodel1/*',
+        './web/modalwindow/*',
+        './web/models/*',
+        './web/models/model1/*',
+        './web/pagination/*',
+        './web/radiobutton/*',
+        './web/selectionmenu/*',
+        './web/sidebar/*',
+        './web/sidebar/sidebar1/*',
+        './web/text/*'
     ];
     
     // Sass
     var aRouteSass = [
         './src/sass/*',
         './src/sass/imports/*',
-        './src/sass/components/*'
+        './src/sass/components/*',
+        './src/sass/components/floatheader/*',
+        './src/sass/components/form/*',
+        './src/sass/components/loginmodels/*',
+        './src/sass/components/models/*'
     ];
     
     // Js
