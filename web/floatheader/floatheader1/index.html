@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
     
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway' />
-    <link rel="stylesheet" type="text/css" href="../../../src/lib/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../src/lib/jquery/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../src/css/main.css" />
-    <script src="../../../src/lib/jquery/jquery.min.js"></script>
-    <script src="../../../src/lib/jquery/jquery-ui/jquery-ui.min.js"></script>
+
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../../node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
     <script src="../../../src/js/main.js"></script>
   </head>
   <body>
@@ -28,7 +29,7 @@
             <div id="search">
               <form method="post">
                   <input type="search" id="myinput" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
-                  <span onclick="myd_floatHeaderMenu1()" class="fa fa-caret-square-o-down fa-lg"></span>
+                  <span onclick="myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-lg"></span>
                   <button class="fa fa-search fa-lg"></button>
               </form>
             </div>
@@ -38,7 +39,7 @@
                 <span class="fa fa-camera fa-1x"></span>
                 Publicar
             </button>
-            <span class="fa fa-android fa-2x"></span>
+            <span class="fab fa-android fa-2x"></span>
             <span class="fa fa-book fa-2x"></span>
             <span class="fa fa-file fa-2x"></span>
           </div>
@@ -47,7 +48,7 @@
       <span class="fa fa-bars fa-2x"></span>
     </header>
     <div class="my-floatheader-search">
-      <span onclick="myd_floatHeaderMenu1()" class="fa fa-caret-square-o-down fa-2x"></span>
+      <span onclick="myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-2x"></span>
       <div id="search">
           <form method="post">
               <input type="search" id="myinputm" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />

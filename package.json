@@ -1,6 +1,6 @@
 {
   "name": "mydesign",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "scripts": {
     "start": "grunt"
@@ -24,5 +24,11 @@
     "grunt-contrib-watch": "^1.0.0",
     "handlebars": "^4.0.11",
     "matchdep": "^2.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "flexboxgrid": "^6.3.1",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1"
   }
 }
