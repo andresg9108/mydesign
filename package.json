@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "start": "grunt"
@@ -16,13 +16,13 @@
   },
   "homepage": "https://github.com/andresg9108/mydesign#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.4",
     "grunt-contrib": "^0.11.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-handlebars": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.1.2",
     "matchdep": "^2.0.0"
   },
   "dependencies": {

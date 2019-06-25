@@ -40,11 +40,23 @@ module.exports = function(grunt) {
     // Js
     var aRouteJs = ['./src/js/*'];
 
+    // CSS
+    var aRouteCSS = ['./src/css/*'];
+
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        copy: {
+            css_dist: {
+                expand: true,
+                cwd: 'src/css/',
+                src: ["main.css"],
+                dest: 'dist/'
+            }
+        },
 
         sass: {
             dist: {
@@ -75,6 +87,10 @@ module.exports = function(grunt) {
             },
             load_js: {
                 files: aRouteJs
+            },
+            load_css_dist: {
+                files: aRouteCSS,
+                tasks: ['copy:css_dist']
             }
         }
         
