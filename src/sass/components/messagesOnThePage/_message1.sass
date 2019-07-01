@@ -1,0 +1,21 @@
+.my-message1-successful, .my-message1-warning, .my-message1-error
+	@include displayFlex
+	@include setUpFlex(row, wrap, flex-start, center, center)
+
+	width: auto
+	height: auto
+	padding: 10px 15px 10px 15px
+	font-weight: bold
+
+	>span
+		margin-left: 5px
+
+.my-message1-successful
+	color: $gColorWhite
+	background-color: $gColor7
+.my-message1-warning
+	color: $gColorBlack
+	background-color: $gColor14
+.my-message1-error
+	color: $gColorWhite
+	background-color: $gColor5
