@@ -1,14 +1,19 @@
 .my-message1-successful, .my-message1-warning, .my-message1-error
 	@include displayFlex
-	@include setUpFlex(row, wrap, flex-start, center, center)
+	@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
 
 	width: auto
 	height: auto
 	padding: 10px 15px 10px 15px
+	border-radius: 5px
+	border-width: 1px
+	border-style: solid
+	border-color: $gColorBlack
 	font-weight: bold
 
-	>span
-		margin-left: 5px
+	>.message
+		width: calc(100% - 60px)
+		margin-left: 10px
 
 .my-message1-successful
 	color: $gColorWhite

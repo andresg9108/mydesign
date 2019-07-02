@@ -13,10 +13,11 @@ module.exports = function(grunt) {
         './web/floatheader/floatheader1/*',
         './web/form/*',
         './web/form/form1/*',
+        './web/loading/*',
         './web/loginmodels/*',
         './web/loginmodels/loginmodel1/*',
-        './web/messagesOnThePage/*',
-        './web/messagesOnThePage/message1/*',
+        './web/messages/*',
+        './web/messages/message1/*',
         './web/modalwindow/*',
         './web/models/*',
         './web/models/model1/*',
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
         './src/sass/components/floatheader/*',
         './src/sass/components/form/*',
         './src/sass/components/loginmodels/*',
-        './src/sass/components/messagesOnThePage/*',
+        './src/sass/components/messages/*',
         './src/sass/components/models/*'
     ];
     
