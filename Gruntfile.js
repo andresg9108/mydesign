@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         './web/floatheader/floatheader1/*',
         './web/form/*',
         './web/form/form1/*',
+        './web/loading/*',
         './web/loginmodels/*',
         './web/loginmodels/loginmodel1/*',
         './web/messages/*',
