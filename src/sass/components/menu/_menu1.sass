@@ -1,2 +1,67 @@
 .my-menu1
+	@include displayFlex
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
 	
+	>#items
+		@include displayFlex
+		@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+		width: calc(100% - 10px)
+		padding: 5px
+
+		>div
+			@include displayFlex
+			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+			width: calc(100% - 36px)
+			padding: 10px 15px
+			margin: 3px
+			cursor: pointer
+			border-style: solid
+			border-width: 1px
+			border-color: $gColorBlack
+			font-weight: bold
+
+			>span
+				margin-left: 5px
+
+		>div:hover
+			background-color: $gColorGray3
+	
+	>#detail
+		display: none
+		@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+		width: calc(100% - 10px)
+		padding: 5px
+
+		>div
+			width: calc(100% - 36px)
+			padding: 10px 15px
+			border-style: solid
+			border-width: 1px
+			border-color: $gColorBlack
+		>#title
+			margin-top: 3px
+			margin-left: 3px
+			margin-right: 3px
+			font-weight: bold
+			background-color: $gColorGray4
+		>#text
+			margin-left: 3px
+			margin-right: 3px
+			margin-bottom: 3px
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-menu1
+		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+		
+		>#items
+			width: calc(100% - 310px)
+
+			>div
+				width: calc(100% - 36px)
+		
+		>#detail
+			@include displayFlex
+			width: calc(300px - 14px)
