@@ -14,19 +14,19 @@
   <body>
     <div class="my-menu1">
       <div id="items">
-        <div>
+        <div data-detail="This is the button of view">
           <span class="fas fa-eye fa-1x"></span>
           <span>View user</span>
         </div>
-        <div>
+        <div data-detail="This is the button of create">
           <span class="fas fa-user-plus fa-1x"></span>
           <span>Create user</span>
         </div>
-        <div>
+        <div data-detail="This is the button of update">
           <span class="fas fa-pen-nib fa-1x"></span>
           <span>Update user</span>
         </div>
-        <div>
+        <div data-detail="This is the button of delete">
           <span class="fas fa-trash-alt fa-1x"></span>
           <span>Delete user</span>
         </div>
@@ -36,5 +36,18 @@
         <div id="text"></div>
       </div>
     </div>
+
+<script>
+  $(function(){
+    $(".my-menu1 #items div").on("mouseover", function(){
+      let sDetail = $(this).attr("data-detail");
+      $(".my-menu1 #detail #text").html(sDetail);
+    });
+    $(".my-menu1 #items div").on("mouseout", function(){
+      $(".my-menu1 #detail #text").html("");
+    });
+  });
+</script>
+
   </body>
 </html>
