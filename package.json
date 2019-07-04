@@ -1,20 +1,17 @@
 {
   "name": "mydesign-ag",
-  "version": "0.4.0",
-  "description": "",
+  "version": "0.4.1",
+  "description": "Project focused on the design of components for HTML.",
   "scripts": {
     "start": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andresg9108/mydesign.git"
+    "url": "https://github.com/andresg9108/mydesign"
   },
   "author": "Andres Gonzalez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andresg9108/mydesign/issues"
-  },
-  "homepage": "https://github.com/andresg9108/mydesign#readme",
+  "license": "MIT",
+  "homepage": "https://github.com/andresg9108/mydesign",
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-contrib": "^0.11.0",
