@@ -43,7 +43,8 @@ module.exports = function(grunt) {
         './src/sass/components/loginmodels/*',
         './src/sass/components/menu/*',
         './src/sass/components/messages/*',
-        './src/sass/components/models/*'
+        './src/sass/components/models/*',
+        './src/sass/components/table/*'
     ];
     
     // Js
