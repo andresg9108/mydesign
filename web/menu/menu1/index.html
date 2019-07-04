@@ -31,23 +31,6 @@
           <span>Delete user</span>
         </div>
       </div>
-      <div id="detail">
-        <div id="title">Detail</div>
-        <div id="text"></div>
-      </div>
     </div>
-
-<script>
-  $(function(){
-    $(".my-menu1 #items div").on("mouseover", function(){
-      let sDetail = $(this).attr("data-detail");
-      $(".my-menu1 #detail #text").html(sDetail);
-    });
-    $(".my-menu1 #items div").on("mouseout", function(){
-      $(".my-menu1 #detail #text").html("");
-    });
-  });
-</script>
-
   </body>
 </html>
