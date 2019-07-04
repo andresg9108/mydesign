@@ -16,6 +16,8 @@ module.exports = function(grunt) {
         './web/loading/*',
         './web/loginmodels/*',
         './web/loginmodels/loginmodel1/*',
+        './web/menu/*',
+        './web/menu/menu1/*',
         './web/messages/*',
         './web/messages/message1/*',
         './web/modalwindow/*',
@@ -26,6 +28,8 @@ module.exports = function(grunt) {
         './web/selectionmenu/*',
         './web/sidebar/*',
         './web/sidebar/sidebar1/*',
+        './web/table/*',
+        './web/table/table1/*',
         './web/text/*'
     ];
     
@@ -37,8 +41,10 @@ module.exports = function(grunt) {
         './src/sass/components/floatheader/*',
         './src/sass/components/form/*',
         './src/sass/components/loginmodels/*',
+        './src/sass/components/menu/*',
         './src/sass/components/messages/*',
-        './src/sass/components/models/*'
+        './src/sass/components/models/*',
+        './src/sass/components/table/*'
     ];
     
     // Js
