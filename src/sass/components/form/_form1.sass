@@ -40,6 +40,13 @@
 		width: 100%
 		max-width: 300px
 
+.my-my-field-column-x2
+	@include displayFlex
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+	>.my-field-column
+		width: 100%
+
 @media screen and (min-width: $gMediumSizeA)
 	.my-field-column
 		>.my-text
@@ -48,3 +55,13 @@
 			width: calc(100% - 30px)
 		>.my-selectionmenu
 			width: 100%
+
+	.my-my-field-column-x2
+		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+		>.left
+			margin-right: 5px
+		>.right
+			margin-left: 5px
+		>.my-field-column
+			width: calc(50% - 5px)
