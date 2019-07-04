@@ -28,6 +28,8 @@ module.exports = function(grunt) {
         './web/selectionmenu/*',
         './web/sidebar/*',
         './web/sidebar/sidebar1/*',
+        './web/table/*',
+        './web/table/table1/*',
         './web/text/*'
     ];
     
