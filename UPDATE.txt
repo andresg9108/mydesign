@@ -1,0 +1,9 @@
+Manual to move from version v0.4.3 to v0.4.4
+
+1- Delete "node_modules" folder.
+2- Delete "package-lock.json" file.
+3- Execute "npm cache clean --force" in the root of the project.
+3- Execute "npm update" in the root of the project.
+3- Execute "npm i" in the root of the project.
+
+Ok, updated project.
