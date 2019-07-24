@@ -23,7 +23,25 @@
             <option value="4">Option #4</option>
           </select>
           <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
-          <input type="hidden" id="my-itemselection1-selected" />
+          <input type="hidden" class="my-itemselection1-selected" />
+        </div>
+        <div id="my-itemselection1-content">
+        </div>
+      </div>
+    </form>
+
+    <form>
+      <div class="my-simple-container my-itemselection1">
+        <div class="my-field-row">
+          <select id="my-itemselection1-select" class="my-selectionmenu">
+            <option value="0">Select one</option>
+            <option value="1">Option #1</option>
+            <option value="2">Option #2</option>
+            <option value="3">Option #3</option>
+            <option value="4">Option #4</option>
+          </select>
+          <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
+          <input type="hidden" class="my-itemselection1-selected" />
         </div>
         <div id="my-itemselection1-content">
         </div>
@@ -33,32 +51,32 @@
 <script>
 
 $(".my-itemselection1 #my-itemselection1-button").on('click', function(){
-  var value = $(".my-itemselection1 #my-itemselection1-select").val();
-  var selected = $(".my-itemselection1 #my-itemselection1-selected").val();
-  
-  if(value != 0 && selected.indexOf(value) == -1){
-    var text = $(".my-itemselection1 #my-itemselection1-select option:selected").text();
+  var parents = $(this).parents();
 
+  var value = parents.children("#my-itemselection1-select").val();
+  var text = parents.children("#my-itemselection1-select").children('option:selected').text();
+  var selected = parents.children(".my-itemselection1-selected").val();
+
+  if(value != 0 && selected.indexOf(value) == -1){
     selected = (selected == '') ? value : selected+';'+value;
 
-    $(".my-itemselection1 #my-itemselection1-selected").val(selected);
+    parents.children(".my-itemselection1-selected").val(selected);
+    parents.children("#my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
 
-    $(".my-itemselection1 #my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
+    parents.children("#my-itemselection1-content").children("div").on('click', function(){
+        var deletevalue = $(this).attr('data-value');
+        var selectedtext = parents.children(".my-itemselection1-selected").val();
+        var aSelectedtext = selectedtext.split(';');
 
-    $(".my-itemselection1 #my-itemselection1-content div").on('click', function(){
-      var deletevalue = $(this).attr('data-value');
-      var selectedtext = $(".my-itemselection1 #my-itemselection1-selected").val();
-      var aSelectedtext = selectedtext.split(';');
+        selectedtext = '';
+        $.each(aSelectedtext, function(i, v){
+          if(deletevalue != v){
+            selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+          }
+        });
 
-      selectedtext = '';
-      $.each(aSelectedtext, function(i, v){
-        if(deletevalue != v){
-          selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
-        }
-      });
-
-      $(".my-itemselection1 #my-itemselection1-selected").val(selectedtext);
-      $(this).remove();
+       parents.children(".my-itemselection1-selected").val(selectedtext);
+       $(this).remove();
     });
   }
 });
