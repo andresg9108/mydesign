@@ -1,0 +1,18 @@
+.my-itemselection1
+	>#my-itemselection1-content
+		@include displayFlex
+		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+		>div
+			@include displayFlex
+			@include setUpFlex(row, wrap, center, center, center)
+			
+			cursor: pointer
+			margin: 5px
+			padding: 8px
+			border-radius: 10px
+			color: $gColorWhite
+			background-color: $gColor1
+
+			>span
+				margin-left: 5px
