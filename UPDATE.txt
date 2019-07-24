@@ -1,3 +1,0 @@
-Manual to move from version v0.4.4 to v0.5.0
-
-Ok, updated project.
