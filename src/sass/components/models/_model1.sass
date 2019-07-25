@@ -130,6 +130,24 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 	width: 100%
 	margin-left: 0px
 
+	>#my-m1-footer
+		.my-m1-footer-icons-palette
+			padding: 5px
+
+			>span
+				cursor: pointer
+				margin-right: 5px
+		.my-m1-footer-list
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+			padding: 5px
+
+			>span
+				cursor: pointer
+				font-weight: bold
+				margin-bottom: 3px
+
 @media screen and (min-width: $gMediumSizeA)
 	#my-m1-nav-1
 		display: block
