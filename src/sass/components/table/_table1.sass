@@ -2,14 +2,22 @@
 	overflow: auto
 
 	>table
-		border-width: 1px
-		border-style: solid
 		border-color: $gColorBlack
+		border: 1px solid
+		border-color: $gColorBlack
+		margin: 0
+		padding: 0
 
+		tr:hover
+			cursor: pointer
+			background-color: $gColorGray4
 		th, td
 			padding: 10px
-			color: $gColorBlack
+			border: 0.1px solid
+			border-color: $gColorBlack
 		th
-			background-color: $gColorGray3
+			color: $gColorWhite
+			background-color: $gColorBlack
 		td
+			color: $gColorBlack
 			min-width: 100px
