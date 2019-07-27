@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
     
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway' />
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../src/css/main.css" />
     
     <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
@@ -83,8 +84,14 @@
         </div>
 
         <div class="my-keypad">
-          <input type="submit" value="Send" class="my-button my-button-simple" />
-          <input type="button" value="Cancel" class="my-button my-button-simple" />
+          <button class="my-button-icon my-button-simple">
+            <span class="fas fa-file-import fa-1x"></span>
+            Send
+          </button>
+          <button class="my-button-icon my-button-simple">
+            <span class="fas fa-ban fa-1x"></span>
+            Cancel
+          </button>
         </div>
       </div>
     </form>

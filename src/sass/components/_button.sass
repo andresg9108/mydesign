@@ -3,12 +3,26 @@
 	font-width: bold
 	font-size: $gSizeFont
 	padding: 6px 15px
-	border-radius: 5px
+	border-width: 1px
+
+.my-button-icon
+	@include displayFlex
+	@include setUpFlex(row, nowrap, flex-start, flex-start, flex-start)
+
+	cursor: pointer
+	user-select: none
+	font-size: $gSizeFont2
+	padding: 10px
+	border-style: solid
+	border-width: 1px
+
+	>span
+		margin-right: 5px
 
 .my-button-simple
 	color: $gColorBlack
 	background-color: $gColor3
-	border-color: $gColor3
+	border-color: $gColorBlack
 	&:hover
 		background-color: $gColor4
 	&:active
@@ -17,7 +31,7 @@
 .my-button-red
 	color: $gColorWhite
 	background-color: $gColor5
-	border-color: $gColor5
+	border-color: $gColorBlack
 	&:hover
 		background-color: $gColor6
 	&:active
@@ -26,7 +40,7 @@
 .my-button-green
 	color: $gColorWhite
 	background-color: $gColor7
-	border-color: $gColor7
+	border-color: $gColorBlack
 	&:hover
 		background-color: $gColor8
 	&:active
@@ -35,11 +49,21 @@
 .my-button-blue
 	color: $gColorWhite
 	background-color: $gColor9
-	border-color: $gColor9
+	border-color: $gColorBlack
 	&:hover
 		background-color: $gColor10
 	&:active
 		background-color: $gColor10
+
+.my-button-blue-2
+	color: $gColorWhite
+	background-color: $gColor11
+	border-color: $gColorWhite
+
+	&:hover
+		background-color: $gColor12
+	&:active
+		background-color: $gColor11
 
 .my-button-black
 	color: $gColorWhite
@@ -49,24 +73,3 @@
 		background-color: $gColorBlack2
 	&:active
 		background-color: $gColorBlack2
-
-.my-button-icon
-	@include displayFlex
-	@include setUpFlex(row, nowrap, flex-start, flex-start, flex-start)
-
-	cursor: pointer
-	user-select: none
-	font-size: $gSizeFont2
-	color: $gColorWhite
-	background-color: $gColor11
-	padding: 10px
-	border-style: solid
-	border-width: 1px
-	border-color: $gColorWhite
-
-	>span
-		margin-right: 5px
-	&:hover
-		background-color: $gColor12
-	&:active
-		background-color: $gColor11
