@@ -32,7 +32,9 @@ module.exports = function(grunt) {
         './web/sidebar/sidebar1/*',
         './web/table/*',
         './web/table/table1/*',
-        './web/text/*'
+        './web/text/*',
+        './web/view/*',
+        './web/view/view1/*'
     ];
     
     // Sass
@@ -47,7 +49,8 @@ module.exports = function(grunt) {
         './src/sass/components/menu/*',
         './src/sass/components/messages/*',
         './src/sass/components/models/*',
-        './src/sass/components/table/*'
+        './src/sass/components/table/*',
+        './src/sass/components/view/*'
     ];
     
     // Js
