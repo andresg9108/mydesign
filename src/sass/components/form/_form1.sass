@@ -15,7 +15,7 @@
 
 	margin: 30px 0px 10px 0px
 
-	>.my-button, >.my-button-icon
+	>input, >button
 		margin-right: 10px
 		margin-bottom: 5px
 
@@ -32,15 +32,15 @@
 .my-field-row
 	@include setUpFlex(row, wrap, flex-start, center, center)
 
-	>label
-		margin-right: 10px
-	>span
-		margin-left: 5px
 	>.my-text, >.my-textarea, >.my-selectionmenu
 		width: 100%
 		max-width: 300px
-	>.my-button, >.my-button-icon
-		margin-left: 5px
+	>label
+		margin-right: 10px
+		margin-bottom: 5px
+	>input, >span, >button
+		margin-right: 5px
+		margin-bottom: 5px
 
 .my-my-field-column-x2
 	@include displayFlex

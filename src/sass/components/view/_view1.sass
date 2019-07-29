@@ -1,0 +1,39 @@
+.my-view1-column-1x, .my-view1-column-2x, .my-view1-column-4x
+	@include displayFlex
+	@include setUpFlex(columns, wrap, flex-start, flex-start, flex-start)
+
+	>.my-view1-content
+		width: 100%
+
+.my-view1-content
+	@include displayFlex
+	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+	>.my-view1-title, >.my-view1-data
+		width: calc(100% - 40px)
+		margin-left: 15px
+		margin-right: 15px
+		padding-left: 5px
+		padding-right: 5px
+
+	>.my-view1-title
+		font-weight: bold
+		border-bottom-width: 3px
+		border-bottom-style: solid
+		border-bottom-color: $gColorBlack
+		margin-top: 5px
+		padding-bottom: 2px
+
+	>.my-view1-data
+		margin-top: 4px
+		margin-bottom: 5px
+		text-align: justify
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-view1-column-2x
+		>.my-view1-content
+			width: 50%
+
+	.my-view1-column-4x
+		>.my-view1-content
+			width: 25%
