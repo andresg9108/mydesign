@@ -111,14 +111,6 @@ module.exports = function(grunt) {
         }
         
     });
-
-    grunt.registerTask('tPy', function(){
-        grunt.util.spawn({
-            cmd: 'python',
-            args: ['load.py', '-l'],
-            opts: {stdio: 'inherit'},
-        });
-    });
     
     grunt.registerTask('default', ['watch']);
     grunt.loadNpmTasks('grunt-contrib-handlebars');

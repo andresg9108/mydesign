@@ -1,9 +1,10 @@
 {
   "name": "mydesign-ag",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Project focused on the design of components for HTML.",
   "scripts": {
-    "start": "grunt"
+    "start": "grunt",
+    "dist": "grunt copy:css_dist"
   },
   "repository": {
     "type": "git",
