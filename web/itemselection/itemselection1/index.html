@@ -40,9 +40,11 @@
             <option value="4">Option #4</option>
           </select>
           <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
-          <input type="hidden" class="my-itemselection1-selected" />
+          <input type="hidden" value="2;4" class="my-itemselection1-selected" />
         </div>
         <div id="my-itemselection1-content">
+          <div data-value="2">Option #2<span></span><span class="fas fa-times-circle fa-lg"></span></div>
+          <div data-value="4">Option #4<span></span><span class="fas fa-times-circle fa-lg"></span></div>
         </div>
       </div>
     </form>
@@ -78,6 +80,25 @@ $(".my-itemselection1 #my-itemselection1-button").on('click', function(){
        $(this).remove();
     });
   }
+});
+
+$(".my-itemselection1").children("#my-itemselection1-content").children("div").on('click', function(){
+  var parents = $(this).parent();
+  var siblings = parents.siblings();
+
+  var deletevalue = $(this).attr('data-value');
+  var selectedtext = siblings.children(".my-itemselection1-selected").val();
+  var aSelectedtext = selectedtext.split(';');
+
+  selectedtext = '';
+  $.each(aSelectedtext, function(i, v){
+    if(deletevalue != v){
+      selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+    }
+  });
+
+  siblings.children(".my-itemselection1-selected").val(selectedtext);
+  $(this).remove();
 });
 
 </script>
