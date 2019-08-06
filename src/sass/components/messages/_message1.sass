@@ -1,4 +1,4 @@
-.my-message1-successful, .my-message1-warning, .my-message1-error
+.my-message1
 	@include displayFlex
 	@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
 
@@ -9,6 +9,7 @@
 	border-width: 1px
 	border-style: solid
 	border-color: $gColorBlack
+	margin-bottom: 10px
 	font-weight: bold
 
 	>.message
@@ -21,6 +22,7 @@
 .my-message1-warning
 	color: $gColorBlack
 	background-color: $gColor14
+
 .my-message1-error
 	color: $gColorWhite
 	background-color: $gColor5
