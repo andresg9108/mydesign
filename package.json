@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Project focused on the design of components for HTML.",
   "scripts": {
     "start": "grunt",
