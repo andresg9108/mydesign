@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "0.6.6",
+  "version": "0.7.0",
   "description": "Project focused on the design of components for HTML.",
   "scripts": {
     "start": "grunt",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-handlebars": "^2.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "matchdep": "^2.0.0"
