@@ -1,7 +1,7 @@
 {
   "name": "mydesign-ag",
   "version": "0.7.0",
-  "description": "Project focused on the design of components for HTML.",
+  "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
     "dist": "grunt copy:css_dist"
