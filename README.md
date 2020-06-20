@@ -19,10 +19,7 @@ This project aims to supply a set of reusable CSS elements and templates.
 ## Dependencies ##
 
 - Node.js (https://nodejs.org).
-- Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - XAMPP (https://www.apachefriends.org/es/index.html).
-- Execute "gem install sass" on the console of your operating system.
-- Execute "npm i grunt -g" on the console of your operating system.
 
 <span id="Starting"></span>
 ## Starting ##

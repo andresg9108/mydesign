@@ -4,7 +4,8 @@
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
-    "dist": "grunt copy:css_dist"
+    "dist": "grunt copy:css_dist",
+    "sass": "grunt sass:dist"
   },
   "repository": {
     "type": "git",

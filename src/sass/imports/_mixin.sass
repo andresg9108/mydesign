@@ -16,13 +16,9 @@
 	align-content: $alignContent
 
 @mixin inputPlaceholder($color)
-	::-webkit-input-placeholder
+	::placeholder
 		color: $color
-	:-moz-placeholder
-		color: $color
-	::-moz-placeholder
-		color: $color
-	:-ms-input-placeholder
+	::-ms-input-placeholder
 		color: $color
 
 @mixin transformRotate($g)
