@@ -56,7 +56,7 @@ Now we will create the file "../index.html" and add the following HTML tags to i
           <span></span>
         </div>
 
-        <div class="my-my-field-column-x2">
+        <div class="my-field-column-x2">
           <div class="my-field-column left">
             <label for="name">Name:</label>
             <input type="text" class="my-text" id="name" name="name" placeholder="Name" />

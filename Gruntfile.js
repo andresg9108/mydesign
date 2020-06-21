@@ -1,41 +1,54 @@
+var sFileLogs = './manyp.log';
+const fs = require('fs');
+
 module.exports = function(grunt) {
-    // Route
-    var aRoute = [
-        './web/*',
-        './web/autocompleteinput/*',
-        './web/basicpage/*',
-        './web/breadcrumb/*',
-        './web/button/*',
-        './web/checkbox/*',
-        './web/containers/*',
-        './web/example/*',
-        './web/floatheader/*',
-        './web/floatheader/floatheader1/*',
-        './web/form/*',
-        './web/form/form1/*',
-        './web/itemselection/*',
-        './web/itemselection/itemselection1/*',
-        './web/loading/*',
-        './web/loginmodels/*',
-        './web/loginmodels/loginmodel1/*',
-        './web/menu/*',
-        './web/menu/menu1/*',
-        './web/messages/*',
-        './web/messages/message1/*',
-        './web/modalwindow/*',
-        './web/models/*',
-        './web/models/model1/*',
-        './web/pagination/*',
-        './web/radiobutton/*',
-        './web/selectionmenu/*',
-        './web/sidebar/*',
-        './web/sidebar/sidebar1/*',
-        './web/table/*',
-        './web/table/table1/*',
-        './web/text/*',
-        './web/view/*',
-        './web/view/view1/*'
+    // Python
+    var aRoutePy = [
+        './pages/*',
+        './pageTemplates/*',
+        './pages/autocompleteinput/*',
+        './pages/basicpage/*',
+        './pages/breadcrumb/*',
+        './pages/button/*',
+        './pages/checkbox/*',
+        './pages/containers/*',
+        './pages/example/*',
+        './pages/floatheader/*',
+        './pages/floatheader/floatheader1/*',
+        './pages/form/*',
+        './pages/form/form1/*',
+        './pages/itemselection/*',
+        './pages/itemselection/itemselection1/*',
+        './pages/loading/*',
+        './pages/loginmodels/*',
+        './pages/loginmodels/loginmodel1/*',
+        './pages/menu/*',
+        './pages/menu/menu1/*',
+        './pages/messages/*',
+        './pages/messages/message1/*',
+        './pages/modalwindow/*',
+        './pages/models/*',
+        './pages/models/model1/*',
+        './pages/pagination/*',
+        './pages/radiobutton/*',
+        './pages/selectionmenu/*',
+        './pages/sidebar/*',
+        './pages/sidebar/sidebar1/*',
+        './pages/table/*',
+        './pages/table/table1/*',
+        './pages/text/*',
+        './pages/view/*',
+        './pages/view/view1/*'
     ];
+
+    // Log
+    var aLog = ['./manyp.log'];
+
+    // Handlebars
+    var aRouteHbs = ['./src/template/*'];
+    var oRouteHbs = {
+        'src/template/dist/main.js': ['src/template/*.hbs']
+    };
     
     // Sass
     var aRouteSass = [
@@ -52,27 +65,17 @@ module.exports = function(grunt) {
         './src/sass/components/table/*',
         './src/sass/components/view/*'
     ];
-    
+
     // Js
     var aRouteJs = ['./src/js/*'];
+    var oRouteJs = {
+        'src/js/dist/main.min.js': ['src/js/*.js']
+    };
 
-    // CSS
-    var aRouteCSS = ['./src/css/*'];
-
-    // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        copy: {
-            css_dist: {
-                expand: true,
-                cwd: 'src/css/',
-                src: ["main.css"],
-                dest: 'dist/'
-            }
-        },
 
         sass: {
             dist: {
@@ -83,35 +86,73 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd:    "src/sass/",
                     src:    ["*.sass"],
-                    dest: "src/css/",
+                    dest: "src/css/dist/",
                     ext:    ".css"
                 }]
             }
         },
 
+        handlebars: {
+          compile: {
+            options: {
+              namespace: 'Hbs'
+            },
+            files: oRouteHbs
+          }
+        },
+
+        uglify: {
+            dev: {
+                options: {
+                    sourceMap: true
+                },
+                files: oRouteJs
+            }
+        },
+
+        copy: {
+            css_dist: {
+                expand: true,
+                cwd: 'src/css/',
+                src: ["main.css"],
+                dest: 'dist/'
+            }
+        },
+
         watch: {
+            files: ['*.*'],
             options: {
                 nospawn: true,
-                livereload: true
+                livereload: {
+                    host: 'localhost',
+                    port: 35729
+                }
             },
-            load_route: {
-                files: aRoute
+            task_py: {
+                files: aRoutePy,
+                tasks: ['process-html']
             },
-            load_sass: {
+            task_log: {
+                files: aLog
+            },
+            task_sass: {
                 files: aRouteSass,
-                tasks: ['sass']
+                tasks: ['sass', 'copy']
             },
-            load_js: {
-                files: aRouteJs
+            task_handlebars: {
+                files: aRouteHbs,
+                tasks: ['handlebars']
             },
-            load_css_dist: {
-                files: aRouteCSS,
-                tasks: ['copy:css_dist']
+            task_js:{
+                files: aRouteJs,
+                tasks: ['uglify']
             }
         }
         
     });
-    
+
     grunt.registerTask('default', ['watch']);
     grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-processpy');
 };
