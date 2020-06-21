@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="../../../dist/main.css" />
+
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+
+<title>Model #1</title>
+
+<link rel="stylesheet" type="text/css" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  </head>
+  <body>
+<nav id="my-m1-nav-1">
+  <div id="container">
+    <div id="items-icon">
+      <div id="top">
+        <span id="closesidemenu" onclick="myd_m1_sideMenu()" class="fa fa-times-circle fa-2x"></span>
+        <span class="fa fa-info-circle fa-2x"></span>
+        <span class="fa fa-book fa-2x"></span>
+      </div>
+      <div id="bottom">
+        <span class="fa fa-cog fa-2x"></span>
+      </div>
+    </div>
+    <div id="items">
+      <img id="logo" src="../../../src/img/logo.png" />
+      <div>
+        <div>
+          <span class="fa fa-home fa-lg"></span>
+          <span class="text">Home</span>
+        </div>
+        <div>
+          <span class="fa fa-list-ol fa-lg"></span>
+          <span class="text">List</span>
+          <div>
+            <div>
+              <span class="fa fa-money-bill-alt fa-lg"></span>
+              <span class="text">Number one</span>
+            </div>
+            <div>
+              <span class="fa fa-phone fa-lg"></span>
+              <span class="text">Number Two</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="fa fa-question-circle fa-lg"></span>
+          <span class="text">About us</span>
+        </div>
+        <div>
+          <span class="fa fa-search fa-lg"></span>
+          <span class="text">Search</span>
+        </div>
+        <div>
+          <span class="fa fa-briefcase fa-lg"></span>
+          <span class="text">Work with us</span>
+        </div>
+        <div>
+          <span class="fa fa-play-circle fa-lg"></span>
+          <span class="text">Download our app</span>
+        </div>
+        <div>
+          <span class="fab fa-facebook fa-lg"></span>
+          <span class="text">Follow us on Facebook</span>
+        </div>
+        <footer id="items-footer"></footer>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div id="my-m1-container-main">
+
+  <nav id="my-m1-nav-2">
+    <div id="left">
+      <span id="opensidemenu" onclick="myd_m1_sideMenu()" class="fa fa-bars fa-2x"></span>
+    </div>
+    <div id="right">
+      <span class="fa fa-info-circle fa-2x"></span>
+      <span class="fa fa-phone fa-2x"></span>
+    </div>
+  </nav>
+
+  <div id="my-m1-container">
+    <section>
+      <div class="my-simple-container">
+        <h1>Hello World</h1>
+      </div>
+    </section>
+  </div>
+  <footer id="my-m1-footer">
+    <div class="my-simple-container">
+      <div class="my-two-columns">
+        <div id="left">
+          <div class="my-m1-footer-icons-palette">
+            <span class="fab fa-twitter-square fa-3x"></span>
+            <span class="fab fa-facebook-square fa-3x"></span>
+            <span class="fab fa-instagram fa-3x"></span>
+          </div>
+          <div class="my-m1-footer-list">
+            <span>Home</span>
+            <span>Item #1</span>
+            <span>Item #2</span>
+            <span>Item #3</span>
+          </div>
+        </div>
+        <div id="right">
+          <div class="my-m1-footer-list">
+            <span>Home</span>
+            <span>Item #1</span>
+            <span>Item #2</span>
+            <span>Item #3</span>
+          </div>
+          <div class="my-m1-footer-icons-palette">
+            <span class="fab fa-twitter-square fa-3x"></span>
+            <span class="fab fa-facebook-square fa-3x"></span>
+            <span class="fab fa-instagram fa-3x"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+
+$(function(){
+  $("#my-m1-nav-1 #container #items div div").click(function(){
+    if($(this).hasClass('is-open')){
+      $(this).removeClass('is-open');
+    }else{
+      $(this).addClass('is-open');
+    }
+  });
+});
+
+function myd_m1_sideMenu(){
+  let oNav = $("#my-m1-nav-1");
+  let oNavC = $("#my-m1-nav-1 #container");
+  let iTime = 400;
+
+  if(oNav.css('display') != 'block'){
+    oNav.css('display', 'block');
+    oNav.animate({
+      width: '100%'
+    }, iTime, function() {
+      oNavC.addClass('is-active');
+    });
+  }else{
+    oNavC.removeClass('is-active');
+    oNav.animate({
+      width: 0
+    }, iTime, function() {
+      oNav.css('display', 'none');
+    });
+  }
+}
+
+</script>
+  </body>
+</html>
+
