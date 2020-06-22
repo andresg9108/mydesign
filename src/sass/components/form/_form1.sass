@@ -1,4 +1,4 @@
-.my-field-row, .my-field-column
+.my-field
 	@include displayFlex
 
 	margin: 10px 0px
@@ -28,6 +28,23 @@
 		width: calc(100% - 20px)
 	>.my-selectionmenu
 		width: 100%
+	>.my-field-with-buttons-x1, >.my-field-with-buttons-x2, >.my-field-with-buttons-x3
+		@include displayFlex
+		@include setUpFlex(row, wrap, flex-start, center, center)
+		
+		width: 100%
+
+		>button
+			margin-left: 3px
+	>.my-field-with-buttons-x1
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 67px)
+	>.my-field-with-buttons-x2
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 107px)
+	>.my-field-with-buttons-x3
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 142px)
 
 .my-field-row
 	@include setUpFlex(row, wrap, flex-start, center, center)
@@ -42,13 +59,6 @@
 		margin-right: 5px
 		margin-bottom: 5px
 
-.my-my-field-column-x2
-	@include displayFlex
-	@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
-
-	>.my-field-column
-		width: 100%
-
 @media screen and (min-width: $gMediumSizeA)
 	.my-field-column
 		>.my-text
@@ -57,13 +67,12 @@
 			width: calc(100% - 30px)
 		>.my-selectionmenu
 			width: 100%
-
-	.my-my-field-column-x2
-		@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
-
-		>.left
-			margin-right: 5px
-		>.right
-			margin-left: 5px
-		>.my-field-column
-			width: calc(50% - 5px)
+		>.my-field-with-buttons-x1
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 75px)
+		>.my-field-with-buttons-x2
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 115px)
+		>.my-field-with-buttons-x3
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 150px)
