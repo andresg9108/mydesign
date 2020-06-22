@@ -28,6 +28,23 @@
 		width: calc(100% - 20px)
 	>.my-selectionmenu
 		width: 100%
+	>.my-field-with-buttons-x1, >.my-field-with-buttons-x2, >.my-field-with-buttons-x3
+		@include displayFlex
+		@include setUpFlex(row, wrap, flex-start, center, center)
+		
+		width: 100%
+
+		>button
+			margin-left: 3px
+	>.my-field-with-buttons-x1
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 67px)
+	>.my-field-with-buttons-x2
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 107px)
+	>.my-field-with-buttons-x3
+		>.my-text, >.my-selectionmenu
+			width: calc(100% - 142px)
 
 .my-field-row
 	@include setUpFlex(row, wrap, flex-start, center, center)
@@ -50,3 +67,12 @@
 			width: calc(100% - 30px)
 		>.my-selectionmenu
 			width: 100%
+		>.my-field-with-buttons-x1
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 75px)
+		>.my-field-with-buttons-x2
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 115px)
+		>.my-field-with-buttons-x3
+			>.my-text, >.my-selectionmenu
+				width: calc(100% - 150px)

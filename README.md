@@ -24,13 +24,14 @@ This project aims to supply a set of reusable CSS elements and templates.
 <span id="Starting"></span>
 ## Starting ##
 
-In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "example" in the path of the "XAMPP" file, which would be with the following path "../xampp/htdocs/example". With the folder ready, we can now access it using the console of your operating system and execute the following command.
+In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "example" in the path of the "XAMPP" file, which would be with the following path "../xampp/htdocs/example". With the folder ready, we can now access it using the console of your operating system and execute the following commands.
 
 ***npm i mydesign-ag***
+***npm i flexboxgrid***
 
-Now we will create the file "../index.html" and add the following HTML tags to it to do our first test.
+Now we will create the file "./index.html" and add the following HTML tags to it to do our first test.
 
-**File: ../index.html**
+**File: ./index.html**
 
 ~~~
 <!DOCTYPE html>
@@ -40,6 +41,7 @@ Now we will create the file "../index.html" and add the following HTML tags to i
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="./node_modules/mydesign-ag/dist/main.css" />
+    <link rel="stylesheet" type="text/css" href="./node_modules/flexboxgrid/dist/flexboxgrid.min.css">
 
     <title>Hello World!!!</title>
   </head>
@@ -50,33 +52,51 @@ Now we will create the file "../index.html" and add the following HTML tags to i
 
         <h1>My form</h1>
 
-        <div class="my-field-column">
+        <div class="my-field my-field-column">
           <label for="name">Departament:</label>
           <input type="text" class="my-text" id="departament" name="departament" placeholder="Departament" />
-          <span></span>
+          <span>Error message</span>
         </div>
 
-        <div class="my-field-column-x2">
-          <div class="my-field-column left">
-            <label for="name">Name:</label>
-            <input type="text" class="my-text" id="name" name="name" placeholder="Name" />
-            <span></span>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="my-field my-field-column">
+              <label for="firstname">First name:</label>
+              <input type="text" class="my-text" id="firstname" name="firstname" placeholder="First name" />
+              <span>Error message</span>
+            </div>
           </div>
-          <div class="my-field-column right">
-            <label for="name">Last Name:</label>
-            <input type="text" class="my-text" id="last-name" name="last-name" placeholder="Last Name" />
-            <span></span>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="my-field my-field-column">
+              <label for="secondname">Second name:</label>
+              <input type="text" class="my-text" id="secondname" name="secondname" placeholder="Second name" />
+              <span>Error message</span>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="my-field my-field-column">
+              <label for="surname">Surname:</label>
+              <input type="text" class="my-text" id="surname" name="surname" placeholder="Surname" />
+              <span>Error message</span>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="my-field my-field-column">
+              <label for="secondsurname">Second surname:</label>
+              <input type="text" class="my-text" id="secondsurname" name="secondsurname" placeholder="Second surname" />
+              <span>Error message</span>
+            </div>
           </div>
         </div>
 
-        <div class="my-field-column">
+        <div class="my-field my-field-column">
           <label for="description">Description:</label>
           <textarea id="description" name="description" placeholder="Description" class="my-textarea"></textarea>
-          <span></span>
+          <span>Error message</span>
         </div>
 
         <div class="my-keypad">
-           <input type="button" value="Send" class="my-button my-button-simple" />
+          <input type="button" value="Send" class="my-button my-button-simple" />
         </div>
 
       </div>
