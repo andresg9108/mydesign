@@ -114,7 +114,7 @@ module.exports = function(grunt) {
             css_dist: {
                 expand: true,
                 cwd: 'src/css/dist/',
-                src: ["main.css"],
+                src: ["main.css", "main.css.map"],
                 dest: 'dist/'
             }
         },
