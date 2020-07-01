@@ -1,0 +1,21 @@
+.my-centralizedcontainers1
+	@include displayFlex
+	@include setUpFlex(row, wrap, center, flex-start, flex-start)
+
+	width: 100%
+	height: auto
+
+	>#content
+		width: 100%
+		background-color: $gColorGray4
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-centralizedcontainers1
+		>#content
+			width: calc(100% - 200px)
+
+			margin-top: 60px
+			margin-bottom: 60px
+			border-color: $gColorBlack
+			border-style: solid
+			border-width: 1px
