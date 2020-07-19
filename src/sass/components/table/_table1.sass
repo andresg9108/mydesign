@@ -15,6 +15,14 @@
 			border: 0.1px solid
 			border-color: $gColorBlack
 			user-select: none
+
+			>.my-table1-keypad
+				@include displayFlex
+				@include setUpFlex(row, wrap, center, flex-start, flex-start)
+
+				>button
+					margin-right: 5px
+
 		th
 			color: $gColorWhite
 			background-color: $gColorBlack
