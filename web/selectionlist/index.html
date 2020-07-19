@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="../../dist/main.css" />
+
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+<title>Selection list</title>
+
+<link rel="stylesheet" type="text/css" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  </head>
+  <body>
+<div class="my-simple-container">
+  <button onclick="myd_openModalWindow('selectionlist1')" class="my-button my-button-green">
+    Selection list #1
+  </button>
+</div>
+
+<div id="selectionlist1" class="my-modalwindow-2">
+  <div>
+    <span id="icon" onclick="myd_closeModalWindow('selectionlist1')" class="fa fa-times fa-2x"></span>
+    <h1>Selection list #1</h1>
+
+    <h2>¡Hello World!</h2>
+  </div>
+</div>
+
+<script>
+/*
+*/
+function myd_openModalWindow(sSelector){
+  $('#'+sSelector).addClass('is-active');
+}
+/*
+*/
+function myd_closeModalWindow(sSelector){
+  $('#'+sSelector).removeClass('is-active');
+}
+</script>
+  </body>
+</html>
+
