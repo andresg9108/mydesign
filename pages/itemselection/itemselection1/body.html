@@ -1,91 +1,87 @@
-<form>
-  <div class="my-simple-container my-itemselection1">
-    <div class="my-field my-field-row">
-      <select id="my-itemselection1-select" class="my-selectionmenu">
-        <option value="0">Select one</option>
-        <option value="1">Option #1</option>
-        <option value="2">Option #2</option>
-        <option value="3">Option #3</option>
-        <option value="4">Option #4</option>
-      </select>
-      <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
-      <input type="hidden" class="my-itemselection1-selected" />
+<div class="my-simple-container">
+  <form>
+    <div class="my-itemselection1">
+      <div class="my-field my-field-row">
+        <select id="my-itemselection1-select" class="my-selectionmenu">
+          <option value="0">Select one</option>
+          <option value="1">Option #1</option>
+          <option value="2">Option #2</option>
+          <option value="3">Option #3</option>
+          <option value="4">Option #4</option>
+        </select>
+        <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
+        <input type="hidden" class="my-itemselection1-selected" />
+      </div>
+      <div id="my-itemselection1-content">
+      </div>
     </div>
-    <div id="my-itemselection1-content">
-    </div>
-  </div>
-</form>
 
-<form>
-  <div class="my-simple-container my-itemselection1">
-    <div class="my-field my-field-row">
-      <select id="my-itemselection1-select" class="my-selectionmenu">
-        <option value="0">Select one</option>
-        <option value="1">Option #1</option>
-        <option value="2">Option #2</option>
-        <option value="3">Option #3</option>
-        <option value="4">Option #4</option>
-      </select>
-      <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
-      <input type="hidden" value="2;4" class="my-itemselection1-selected" />
+    <div class="my-itemselection1">
+      <div class="my-field my-field-row">
+        <select id="my-itemselection1-select" class="my-selectionmenu">
+          <option value="0">Select one</option>
+          <option value="1">Option #1</option>
+          <option value="2">Option #2</option>
+          <option value="3">Option #3</option>
+          <option value="4">Option #4</option>
+        </select>
+        <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
+        <input type="hidden" value="2;4" class="my-itemselection1-selected" />
+      </div>
+      <div id="my-itemselection1-content">
+        <div data-value="2">Option #2<span></span><span class="fas fa-times-circle fa-lg"></span></div>
+        <div data-value="4">Option #4<span></span><span class="fas fa-times-circle fa-lg"></span></div>
+      </div>
     </div>
-    <div id="my-itemselection1-content">
-      <div data-value="2">Option #2<span></span><span class="fas fa-times-circle fa-lg"></span></div>
-      <div data-value="4">Option #4<span></span><span class="fas fa-times-circle fa-lg"></span></div>
-    </div>
-  </div>
-</form>
+  </form>
+</div>
 
 <script>
 
 $(".my-itemselection1 #my-itemselection1-button").on('click', function(){
-var parents = $(this).parents();
+  var parents = $(this).parents();
+  var value = parents.children("#my-itemselection1-select").val();
+  var text = parents.children("#my-itemselection1-select").children('option:selected').text();
+  var selected = parents.children(".my-itemselection1-selected").val();
 
-var value = parents.children("#my-itemselection1-select").val();
-var text = parents.children("#my-itemselection1-select").children('option:selected').text();
-var selected = parents.children(".my-itemselection1-selected").val();
+  if(value != 0 && selected.indexOf(value) == -1){
+    selected = (selected == '') ? value : selected+';'+value;
+    parents.children(".my-itemselection1-selected").val(selected);
+    parents.children("#my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
+    parents.children("#my-itemselection1-content").children("div").on('click', function(){
+      var deletevalue = $(this).attr('data-value');
+      var selectedtext = parents.children(".my-itemselection1-selected").val();
+      var aSelectedtext = selectedtext.split(';');
 
-if(value != 0 && selected.indexOf(value) == -1){
-selected = (selected == '') ? value : selected+';'+value;
+      selectedtext = '';
+      $.each(aSelectedtext, function(i, v){
+        if(deletevalue != v){
+          selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+        }
+      });
 
-parents.children(".my-itemselection1-selected").val(selected);
-parents.children("#my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
-
-parents.children("#my-itemselection1-content").children("div").on('click', function(){
-    var deletevalue = $(this).attr('data-value');
-    var selectedtext = parents.children(".my-itemselection1-selected").val();
-    var aSelectedtext = selectedtext.split(';');
-
-    selectedtext = '';
-    $.each(aSelectedtext, function(i, v){
-      if(deletevalue != v){
-        selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
-      }
+      parents.children(".my-itemselection1-selected").val(selectedtext);
+      $(this).remove();
     });
-
-   parents.children(".my-itemselection1-selected").val(selectedtext);
-   $(this).remove();
-});
-}
+  }
 });
 
 $(".my-itemselection1").children("#my-itemselection1-content").children("div").on('click', function(){
-var parents = $(this).parent();
-var siblings = parents.siblings();
+  var parents = $(this).parent();
+  var siblings = parents.siblings();
+  var deletevalue = $(this).attr('data-value');
+  var selectedtext = siblings.children(".my-itemselection1-selected").val();
+  var aSelectedtext = selectedtext.split(';');
 
-var deletevalue = $(this).attr('data-value');
-var selectedtext = siblings.children(".my-itemselection1-selected").val();
-var aSelectedtext = selectedtext.split(';');
+  selectedtext = '';
+  $.each(aSelectedtext, function(i, v){
+    if(deletevalue != v){
+      selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+    }
+  });
 
-selectedtext = '';
-$.each(aSelectedtext, function(i, v){
-if(deletevalue != v){
-  selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
-}
-});
-
-siblings.children(".my-itemselection1-selected").val(selectedtext);
-$(this).remove();
+  siblings.children(".my-itemselection1-selected").val(selectedtext);
+  $(this).remove();
 });
 
 </script>
