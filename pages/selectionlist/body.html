@@ -45,6 +45,9 @@
 <div id="selectionlist1" class="my-modalwindow-2">
   <div>
     <span id="icon" onclick="myd_closeModalWindow('selectionlist1')" class="fa fa-times fa-2x"></span>
+
+    <h2>Selection list #1</h2>
+
     <div class="my-field my-field-row">
       <label for="search">Search:</label>
       <input type="text" class="my-text" id="search" name="search" placeholder="Search" />
@@ -95,6 +98,9 @@
 <div id="selectionlist2" class="my-modalwindow-2">
   <div>
     <span id="icon" onclick="myd_closeModalWindow('selectionlist2')" class="fa fa-times fa-2x"></span>
+
+    <h2>Selection list #2</h2>
+
     <div class="my-field my-field-row">
       <label for="search">Search:</label>
       <input type="text" class="my-text" id="search" name="search" placeholder="Search" />
@@ -107,41 +113,58 @@
 
 
 
-    <div class="my-selectionlist-itemselection1">
-      <input type="text" id="my-selectionlist-itemselection1-selected" value="2;3" />
-      <div id="my-selectionlist-itemselection1-content">
-        <div data-value="2">Option #2<span></span><span class="fas fa-times-circle fa-lg"></span></div>
-        <div data-value="3">Option #3<span></span><span class="fas fa-times-circle fa-lg"></span></div>
-      </div>
-
-      <div class="my-table1">
-        <table cellspacing=0>
-          <tr data-value="0">
-            <th>Number</th>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Location</th>
-          </tr>
-          <tr data-value="1">
-            <td>1</td>
-            <td>Pepe</td>
-            <td>Diaz</td>
-            <td>Location #1</td>
-          </tr>
-          <tr data-value="2">
-            <td>2</td>
-            <td>Maria</td>
-            <td>Carvajal</td>
-            <td>Location #2</td>
-          </tr>
-          <tr data-value="3">
-            <td>3</td>
-            <td>Diana</td>
-            <td>Lopez</td>
-            <td>Location #3</td>
-          </tr>
-        </table>
-      </div>
+    <div class="my-table1">
+      <table cellspacing=0>
+        <tr>
+          <th></th>
+          <th>Number</th>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="my-table1-keypad">
+              <label class="my-checkbox">
+                <input type="checkbox">
+                <span class="my-checkbox-checkmark"></span>
+              </label>
+            </div>
+          </td>
+          <td>1</td>
+          <td>Pepe</td>
+          <td>Diaz</td>
+          <td>Location #1</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="my-table1-keypad">
+              <label class="my-checkbox">
+                <input type="checkbox" checked="checked">
+                <span class="my-checkbox-checkmark"></span>
+              </label>
+            </div>
+          </td>
+          <td>2</td>
+          <td>Maria</td>
+          <td>Carvajal</td>
+          <td>Location #2</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="my-table1-keypad">
+              <label class="my-checkbox">
+                <input type="checkbox">
+                <span class="my-checkbox-checkmark"></span>
+              </label>
+            </div>
+          </td>
+          <td>3</td>
+          <td>Diana</td>
+          <td>Lopez</td>
+          <td>Location #3</td>
+        </tr>
+      </table>
     </div>
 
 
@@ -151,8 +174,6 @@
 </div>
 
 <script>
-
-$('#selectionlist2').addClass('is-active');
 
 /*
 */
@@ -165,56 +186,5 @@ function myd_openModalWindow(sSelector){
 function myd_closeModalWindow(sSelector){
   $('#'+sSelector).removeClass('is-active');
 }
-
-/*
-*/
-$(".my-selectionlist-itemselection1 .my-table1 table tr").on('click', function(){
-  var parents = $(this).parents();
-  var value = $(this).attr('data-value');
-  var selected = parents.children(".my-selectionlist-itemselection1 #my-selectionlist-itemselection1-selected").val();
-
-  console.log(value);
-  console.log(selected);
-
-  /*if(value != 0 && selected.indexOf(value) == -1){
-    selected = (selected == '') ? value : selected+';'+value;
-    parents.children(".my-itemselection1-selected").val(selected);
-    parents.children("#my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
-    parents.children("#my-itemselection1-content").children("div").on('click', function(){
-      var deletevalue = $(this).attr('data-value');
-      var selectedtext = parents.children(".my-itemselection1-selected").val();
-      var aSelectedtext = selectedtext.split(';');
-
-      selectedtext = '';
-      $.each(aSelectedtext, function(i, v){
-        if(deletevalue != v){
-          selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
-        }
-      });
-
-      parents.children(".my-itemselection1-selected").val(selectedtext);
-      $(this).remove();
-    });
-  }*/
-});
-
-/*
-*/
-$(".my-selectionlist-itemselection1").children("#my-selectionlist-itemselection1-content").children("div").on('click', function(){
-  var deletevalue = $(this).attr('data-value');
-  var parent = $(this).parent().parent();
-  var selectedtext = parent.children("#my-selectionlist-itemselection1-selected").val();
-  var aSelectedtext = selectedtext.split(';');
-
-  selectedtext = '';
-  $.each(aSelectedtext, function(i, v){
-    if(deletevalue != v){
-      selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
-    }
-  });
-
-  parent.children("#my-selectionlist-itemselection1-selected").val(selectedtext);
-  $(this).remove();
-});
 
 </script>
