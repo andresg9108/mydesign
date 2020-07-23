@@ -33,6 +33,7 @@ module.exports = function(grunt) {
         './pages/models/model1/*',
         './pages/pagination/*',
         './pages/radiobutton/*',
+        './pages/selectionlist/*',
         './pages/selectionmenu/*',
         './pages/sidebar/*',
         './pages/sidebar/sidebar1/*',
