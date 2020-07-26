@@ -1,0 +1,24 @@
+.my-swiper-swiper1
+	>.swiper-wrapper
+		>.swiper-slide
+			@include displayFlex
+			@include setUpFlex(row, wrap, center, center, center)
+			
+			img
+				width: 100%
+				max-width: 300px
+				height: auto
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-swiper-swiper1
+		>.swiper-wrapper
+			>.swiper-slide
+				img
+					max-width: 250px
+
+@media screen and (min-width: $gBigSizeA)
+	.my-swiper-swiper1
+		>.swiper-wrapper
+			>.swiper-slide
+				img
+					max-width: 200px
