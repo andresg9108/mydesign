@@ -37,6 +37,7 @@ module.exports = function(grunt) {
         './pages/selectionmenu/*',
         './pages/sidebar/*',
         './pages/sidebar/sidebar1/*',
+        './pages/swiper/*',
         './pages/table/*',
         './pages/table/table1/*',
         './pages/text/*',
