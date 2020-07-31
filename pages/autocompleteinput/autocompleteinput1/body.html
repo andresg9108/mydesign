@@ -1,0 +1,32 @@
+<div class="my-simple-container">
+  <input type="search" id="myinput" class="my-autocompleteinput" autofocus />
+</div>
+<script>
+  var autocompletedData = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+  $( "#myinput" ).autocomplete({
+    source: autocompletedData
+  });
+</script>
