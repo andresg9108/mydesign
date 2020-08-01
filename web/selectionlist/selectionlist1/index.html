@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="../../../dist/main.css" />
+
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+
+<title>Selection list</title>
+
+<link rel="stylesheet" type="text/css" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="../../../node_modules/flexboxgrid/dist/flexboxgrid.min.css">
+  </head>
+  <body>
+<div class="my-simple-container">
+  <form id="formselectionlist1" onsubmit="">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="my-field my-field-column">
+          <label for="person">Person:</label>
+          <div class="my-field-with-buttons-x1">
+            <input type="text" id="txtperson" name="txtperson" class="my-text" placeholder="Person" readonly/>
+            <input type="hidden" id="person" name="person" />
+            <button type="button" onclick="selectionlist1_openModalWindow('selectperson', '#formselectionlist1 #person', '#formselectionlist1 #txtperson')" class="my-button-only-icon my-button-simple">
+              <span class="fas fa-user-plus fa-1x"></span>
+            </button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="my-field my-field-column">
+          <label for="user">User:</label>
+          <div class="my-field-with-buttons-x1">
+            <input type="text" id="txtuser" name="txtuser" class="my-text" placeholder="User" readonly/>
+            <input type="hidden" id="user" name="user" />
+            <button type="button" onclick="selectionlist1_openModalWindow('selectuser', '#formselectionlist1 #user', '#formselectionlist1 #txtuser')" class="my-button-only-icon my-button-simple">
+              <span class="fas fa-user-plus fa-1x"></span>
+            </button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="selectperson" class="my-modalwindow-2">
+  <div>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('selectperson')" class="fa fa-times fa-2x"></span>
+
+    <h2>Select Person</h2>
+
+    <div class="my-field my-field-row">
+      <label for="searchperson">Search:</label>
+      <input type="text" class="my-text" id="searchperson" name="searchperson" placeholder="Search" />
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-search fa-1x"></span>
+      </button>
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-broom fa-1x"></span>
+      </button>
+      <span></span>
+    </div>
+
+
+
+
+    <div class="my-table1 my-selectionlist1-table">
+      <table cellspacing=0>
+        <tr>
+          <th>Number</th>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Location</th>
+        </tr>
+        <tr data-id="1" data-text="1 | Pepe Diaz">
+          <td>1</td>
+          <td>Pepe</td>
+          <td>Diaz</td>
+          <td>Location #1</td>
+        </tr>
+        <tr data-id="2" data-text="2 | Maria Carvajal">
+          <td>2</td>
+          <td>Maria</td>
+          <td>Carvajal</td>
+          <td>Location #2</td>
+        </tr>
+        <tr data-id="3" data-text="3 | Diana Lopez">
+          <td>3</td>
+          <td>Diana</td>
+          <td>Lopez</td>
+          <td>Location #3</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+    <div class="my-keypad">
+      <button class="my-button-icon my-button-simple">
+        <span class="fas fa-cloud-download-alt fa-1x"></span>
+        Load more
+      </button>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<div id="selectuser" class="my-modalwindow-2">
+  <div>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('selectuser')" class="fa fa-times fa-2x"></span>
+
+    <h2>Select User</h2>
+
+    <div class="my-field my-field-row">
+      <label for="searchuser">Search:</label>
+      <input type="text" class="my-text" id="searchuser" name="searchuser" placeholder="Search" />
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-search fa-1x"></span>
+      </button>
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-broom fa-1x"></span>
+      </button>
+      <span></span>
+    </div>
+
+
+
+
+    <div class="my-table1 my-selectionlist1-table">
+      <table cellspacing=0>
+        <tr>
+          <th>Number</th>
+          <th>User</th>
+          <th>Location</th>
+        </tr>
+        <tr data-id="1" data-text="1 | andres123">
+          <td>1</td>
+          <td>andres123</td>
+          <td>Location #1</td>
+        </tr>
+        <tr data-id="2" data-text="2 | Pepe135">
+          <td>2</td>
+          <td>Pepe135</td>
+          <td>Location #2</td>
+        </tr>
+        <tr data-id="3" data-text="3 | carlos_55">
+          <td>3</td>
+          <td>carlos_55</td>
+          <td>Location #3</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+    <div class="my-keypad">
+      <button class="my-button-icon my-button-simple">
+        <span class="fas fa-cloud-download-alt fa-1x"></span>
+        Load more
+      </button>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<script>
+
+/*
+*/
+function selectionlist1_openModalWindow(sSelector, sTagInput, sTagInputText){
+  $('#'+sSelector).addClass('is-active');
+  $('#'+sSelector).attr('data-input', sTagInput);
+  $('#'+sSelector).attr('data-input-text', sTagInputText);
+}
+
+/*
+*/
+function selectionlist1_closeModalWindow(sSelector){
+  $('#'+sSelector).removeClass('is-active');
+}
+
+/*
+*/
+$(".my-selectionlist1-table table tr").on('click', function(){
+  var sId = $(this).attr("data-id");
+
+  if(typeof sId !== 'undefined'){
+    var iId = parseInt(sId);
+    var sText = $(this).attr("data-text");
+
+    var oParent = $(this).parent().parent().parent().parent().parent();
+    var sTagInput = oParent.attr('data-input');
+    var sTagInputText = oParent.attr('data-input-text');
+
+    $(sTagInput).val(iId);
+    $(sTagInputText).val(sText);
+
+    $(oParent).removeClass('is-active');
+  }
+});
+
+</script>
+  </body>
+</html>
+
