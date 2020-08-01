@@ -14,17 +14,17 @@
 <link rel="stylesheet" type="text/css" href="../../../node_modules/flexboxgrid/dist/flexboxgrid.min.css">
   </head>
   <body>
-<form onsubmit="">
-  <div class="my-simple-container">
+<div class="my-simple-container">
+  <form id="formselectionlist1" onsubmit="">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="my-field my-field-column">
-          <label for="selection1">Selection list #1:</label>
+          <label for="person">Person:</label>
           <div class="my-field-with-buttons-x1">
-            <input type="text" class="my-text" placeholder="Selection list #1" readonly/>
-            <input type="hidden" id="selection1" name="selection1" />
-            <button type="button" onclick="myd_openModalWindow('selectionlist1')" class="my-button-only-icon my-button-simple">
-              <span class="fas fa-plus fa-1x"></span>
+            <input type="text" id="txtperson" name="txtperson" class="my-text" placeholder="Person" readonly/>
+            <input type="hidden" id="person" name="person" />
+            <button type="button" onclick="selectionlist1_openModalWindow('selectperson', '#formselectionlist1 #person', '#formselectionlist1 #txtperson')" class="my-button-only-icon my-button-simple">
+              <span class="fas fa-user-plus fa-1x"></span>
             </button>
           </div>
           <span></span>
@@ -32,43 +32,35 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="my-field my-field-column">
-          <label for="selection2">Selection list #2:</label>
+          <label for="user">User:</label>
           <div class="my-field-with-buttons-x1">
-            <input type="text" class="my-text" placeholder="Selection list #2" readonly/>
-            <input type="hidden" id="selection2" name="selection2" />
-            <button type="button" onclick="myd_openModalWindow('selectionlist2')" class="my-button-only-icon my-button-simple">
-              <span class="fas fa-plus fa-1x"></span>
+            <input type="text" id="txtuser" name="txtuser" class="my-text" placeholder="User" readonly/>
+            <input type="hidden" id="user" name="user" />
+            <button type="button" onclick="selectionlist1_openModalWindow('selectuser', '#formselectionlist1 #user', '#formselectionlist1 #txtuser')" class="my-button-only-icon my-button-simple">
+              <span class="fas fa-user-plus fa-1x"></span>
             </button>
           </div>
           <span></span>
         </div>
       </div>
     </div>
+  </form>
+</div>
 
-    <div class="my-keypad">
-      <button type="submit" class="my-button-icon my-button-simple">
-        <span class="fas fa-file-import fa-1x"></span>
-        Send
-      </button>
-      <button type="button" class="my-button-icon my-button-simple">
-        <span class="fas fa-ban fa-1x"></span>
-        Cancel
-      </button>
-    </div>
-  </div>
-</form>
-
-<div id="selectionlist1" class="my-modalwindow-2">
+<div id="selectperson" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="myd_closeModalWindow('selectionlist1')" class="fa fa-times fa-2x"></span>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('selectperson')" class="fa fa-times fa-2x"></span>
 
-    <h2>Selection list #1</h2>
+    <h2>Select Person</h2>
 
     <div class="my-field my-field-row">
-      <label for="search">Search:</label>
-      <input type="text" class="my-text" id="search" name="search" placeholder="Search" />
+      <label for="searchperson">Search:</label>
+      <input type="text" class="my-text" id="searchperson" name="searchperson" placeholder="Search" />
       <button class="my-button-only-icon my-button-simple">
         <span class="fas fa-search fa-1x"></span>
+      </button>
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-broom fa-1x"></span>
       </button>
       <span></span>
     </div>
@@ -76,7 +68,7 @@
 
 
 
-    <div class="my-table1">
+    <div class="my-table1 my-selectionlist1-table">
       <table cellspacing=0>
         <tr>
           <th>Number</th>
@@ -84,25 +76,35 @@
           <th>Last Name</th>
           <th>Location</th>
         </tr>
-        <tr>
+        <tr data-id="1" data-text="1 | Pepe Diaz">
           <td>1</td>
           <td>Pepe</td>
           <td>Diaz</td>
           <td>Location #1</td>
         </tr>
-        <tr>
+        <tr data-id="2" data-text="2 | Maria Carvajal">
           <td>2</td>
           <td>Maria</td>
           <td>Carvajal</td>
           <td>Location #2</td>
         </tr>
-        <tr>
+        <tr data-id="3" data-text="3 | Diana Lopez">
           <td>3</td>
           <td>Diana</td>
           <td>Lopez</td>
           <td>Location #3</td>
         </tr>
       </table>
+    </div>
+
+
+
+
+    <div class="my-keypad">
+      <button class="my-button-icon my-button-simple">
+        <span class="fas fa-cloud-download-alt fa-1x"></span>
+        Load more
+      </button>
     </div>
 
 
@@ -111,17 +113,20 @@
   </div>
 </div>
 
-<div id="selectionlist2" class="my-modalwindow-2">
+<div id="selectuser" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="myd_closeModalWindow('selectionlist2')" class="fa fa-times fa-2x"></span>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('selectuser')" class="fa fa-times fa-2x"></span>
 
-    <h2>Selection list #2</h2>
+    <h2>Select User</h2>
 
     <div class="my-field my-field-row">
-      <label for="search">Search:</label>
-      <input type="text" class="my-text" id="search" name="search" placeholder="Search" />
+      <label for="searchuser">Search:</label>
+      <input type="text" class="my-text" id="searchuser" name="searchuser" placeholder="Search" />
       <button class="my-button-only-icon my-button-simple">
         <span class="fas fa-search fa-1x"></span>
+      </button>
+      <button class="my-button-only-icon my-button-simple">
+        <span class="fas fa-broom fa-1x"></span>
       </button>
       <span></span>
     </div>
@@ -129,58 +134,39 @@
 
 
 
-    <div class="my-table1">
+    <div class="my-table1 my-selectionlist1-table">
       <table cellspacing=0>
         <tr>
-          <th></th>
           <th>Number</th>
-          <th>Name</th>
-          <th>Last Name</th>
+          <th>User</th>
           <th>Location</th>
         </tr>
-        <tr>
-          <td>
-            <div class="my-table1-keypad">
-              <label class="my-checkbox">
-                <input type="checkbox">
-                <span class="my-checkbox-checkmark"></span>
-              </label>
-            </div>
-          </td>
+        <tr data-id="1" data-text="1 | andres123">
           <td>1</td>
-          <td>Pepe</td>
-          <td>Diaz</td>
+          <td>andres123</td>
           <td>Location #1</td>
         </tr>
-        <tr>
-          <td>
-            <div class="my-table1-keypad">
-              <label class="my-checkbox">
-                <input type="checkbox" checked="checked">
-                <span class="my-checkbox-checkmark"></span>
-              </label>
-            </div>
-          </td>
+        <tr data-id="2" data-text="2 | Pepe135">
           <td>2</td>
-          <td>Maria</td>
-          <td>Carvajal</td>
+          <td>Pepe135</td>
           <td>Location #2</td>
         </tr>
-        <tr>
-          <td>
-            <div class="my-table1-keypad">
-              <label class="my-checkbox">
-                <input type="checkbox">
-                <span class="my-checkbox-checkmark"></span>
-              </label>
-            </div>
-          </td>
+        <tr data-id="3" data-text="3 | carlos_55">
           <td>3</td>
-          <td>Diana</td>
-          <td>Lopez</td>
+          <td>carlos_55</td>
           <td>Location #3</td>
         </tr>
       </table>
+    </div>
+
+
+
+
+    <div class="my-keypad">
+      <button class="my-button-icon my-button-simple">
+        <span class="fas fa-cloud-download-alt fa-1x"></span>
+        Load more
+      </button>
     </div>
 
 
@@ -193,15 +179,37 @@
 
 /*
 */
-function myd_openModalWindow(sSelector){
+function selectionlist1_openModalWindow(sSelector, sTagInput, sTagInputText){
   $('#'+sSelector).addClass('is-active');
+  $('#'+sSelector).attr('data-input', sTagInput);
+  $('#'+sSelector).attr('data-input-text', sTagInputText);
 }
 
 /*
 */
-function myd_closeModalWindow(sSelector){
+function selectionlist1_closeModalWindow(sSelector){
   $('#'+sSelector).removeClass('is-active');
 }
+
+/*
+*/
+$(".my-selectionlist1-table table tr").on('click', function(){
+  var sId = $(this).attr("data-id");
+
+  if(typeof sId !== 'undefined'){
+    var iId = parseInt(sId);
+    var sText = $(this).attr("data-text");
+
+    var oParent = $(this).parent().parent().parent().parent().parent();
+    var sTagInput = oParent.attr('data-input');
+    var sTagInputText = oParent.attr('data-input-text');
+
+    $(sTagInput).val(iId);
+    $(sTagInputText).val(sText);
+
+    $(oParent).removeClass('is-active');
+  }
+});
 
 </script>
   </body>
