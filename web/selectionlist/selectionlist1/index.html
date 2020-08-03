@@ -200,7 +200,7 @@ $(".my-selectionlist1-table table tr").on('click', function(){
     var iId = parseInt(sId);
     var sText = $(this).attr("data-text");
 
-    var oParent = $(this).parent().parent().parent().parent().parent();
+    var oParent = $(this).parents('.my-modalwindow-2');
     var sTagInput = oParent.attr('data-input');
     var sTagInputText = oParent.attr('data-input-text');
 
