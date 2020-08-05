@@ -7,7 +7,7 @@
           <div class="my-field-with-buttons-x1">
             <input type="text" id="txtperson" name="txtperson" class="my-text" placeholder="Person" readonly/>
             <input type="hidden" id="person" name="person" />
-            <button type="button" onclick="selectionlist1_openModalWindow('selectperson', '#formselectionlist1 #person', '#formselectionlist1 #txtperson')" class="my-button-only-icon my-button-simple">
+            <button type="button" onclick="selectionlist1_openModalWindow('#selectperson', '#formselectionlist1 #person', '#formselectionlist1 #txtperson')" class="my-button-only-icon my-button-simple">
               <span class="fas fa-user-plus fa-1x"></span>
             </button>
           </div>
@@ -20,7 +20,7 @@
           <div class="my-field-with-buttons-x1">
             <input type="text" id="txtuser" name="txtuser" class="my-text" placeholder="User" readonly/>
             <input type="hidden" id="user" name="user" />
-            <button type="button" onclick="selectionlist1_openModalWindow('selectuser', '#formselectionlist1 #user', '#formselectionlist1 #txtuser')" class="my-button-only-icon my-button-simple">
+            <button type="button" onclick="selectionlist1_openModalWindow('#selectuser', '#formselectionlist1 #user', '#formselectionlist1 #txtuser')" class="my-button-only-icon my-button-simple">
               <span class="fas fa-user-plus fa-1x"></span>
             </button>
           </div>
@@ -33,7 +33,7 @@
 
 <div id="selectperson" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="selectionlist1_closeModalWindow('selectperson')" class="fa fa-times fa-2x"></span>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('#selectperson')" class="fa fa-times fa-2x"></span>
 
     <h2>Select Person</h2>
 
@@ -99,7 +99,7 @@
 
 <div id="selectuser" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="selectionlist1_closeModalWindow('selectuser')" class="fa fa-times fa-2x"></span>
+    <span id="icon" onclick="selectionlist1_closeModalWindow('#selectuser')" class="fa fa-times fa-2x"></span>
 
     <h2>Select User</h2>
 
@@ -164,15 +164,15 @@
 /*
 */
 function selectionlist1_openModalWindow(sSelector, sTagInput, sTagInputText){
-  $('#'+sSelector).addClass('is-active');
-  $('#'+sSelector).attr('data-input', sTagInput);
-  $('#'+sSelector).attr('data-input-text', sTagInputText);
+  $(sSelector).addClass('is-active');
+  $(sSelector).attr('data-input', sTagInput);
+  $(sSelector).attr('data-input-text', sTagInputText);
 }
 
 /*
 */
 function selectionlist1_closeModalWindow(sSelector){
-  $('#'+sSelector).removeClass('is-active');
+  $(sSelector).removeClass('is-active');
 }
 
 /*
