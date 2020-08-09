@@ -60,7 +60,7 @@ module.exports = function(grunt) {
     ];
 
     // Log
-    var aLog = ['./manyp.log'];
+    var aLog = ['./processpy.log'];
 
     // Handlebars
     var aRouteHbs = ['./src/template/*'];

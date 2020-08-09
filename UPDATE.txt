@@ -1,27 +1,39 @@
-Manual to move from version v0.3.4 to v0.4.0
+Manual to move from version v0.4.0 to v1.0.0
 
-1. Update all packages.
+1. run the following command at the root of the project.
 
-2. Gruntfile.js, add "processpy":
-processpy: {
-    rts: [{
-        folder: './pageTemplates',
-        search: '<<ROOT-DIR>>',
-        replace: '<<DIR>>'
-    },{
-        folder: './pages',
-        search: '<<ROOT-DIR>>',
-        replace: '<<DIR>>'
-    }]
-},
+npm install npm-run-all --save-dev
+npm install shelljs --save-dev
 
-3. package.json, update:
-"scripts": {
-	"start": "grunt",
-	"html": "grunt process-html",
-	"rts": "grunt process-rts"
-},
+2. Add the following "scripts" in the package.json.
 
-4. package.json, Remove processpy from the list of devDependencies.
+- "uglify": "grunt uglify"
+- "sass": "grunt sass"
+- "hbs": "grunt handlebars"
+- "prepare": "npm-run-all html sass hbs uglify"
+- "prepare-dist": "npm-run-all rts html sass hbs uglify"
+
+3. Modify the "aLog" array in the Gruntfile.js file as follows.
+
+var aLog = ['./processpy.log'];
+
+4. Modify the ".gitignore" file with the following lines.
+
+/node_modules
+/web
+/src/css/dist
+/src/js/dist
+/src/template/dist
+
+5. If you are using a repository like GitHub, you can delete the following paths, it is no longer necessary to save these files since they will be generated automatically by executing the new commands, which can be seen in the new documentation.
+
+- /web
+- /src/css/dist
+- /src/js/dist
+- /src/template/dist
+
+6. The README.md file has changed.
+
+7. Add new shell.js file.
 
 Ok, updated project.

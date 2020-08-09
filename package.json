@@ -1,13 +1,18 @@
 {
   "name": "mydesign-ag",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
     "html": "grunt process-html",
     "rts": "grunt process-rts",
     "dist": "grunt copy:css_dist",
-    "sass": "grunt sass:dist"
+    "sass-dist": "grunt sass:dist",
+    "uglify": "grunt uglify",
+    "sass": "grunt sass",
+    "hbs": "grunt handlebars",
+    "prepare": "npm-run-all html sass hbs uglify",
+    "prepare-dist": "npm-run-all rts html sass hbs uglify"
   },
   "repository": {
     "type": "git",
@@ -24,7 +29,9 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "matchdep": "^2.0.0"
+    "matchdep": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "shelljs": "^0.8.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
