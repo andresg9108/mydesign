@@ -1,13 +1,13 @@
 <div class="my-simple-container">
-  <input type="button" value="Window #1" onclick="myd_openModalWindow('window1')" class="my-button my-button-green" />
-  <input type="button" value="Window #2" onclick="myd_openModalWindow('window2')" class="my-button my-button-green" />
+  <input type="button" value="Window #1" onclick="myd_openModalWindow('#window1')" class="my-button my-button-green" />
+  <input type="button" value="Window #2" onclick="myd_openModalWindow('#window2')" class="my-button my-button-green" />
 </div>
 
 <!--Modal window #1-->
 <div id="window1" class="my-modalwindow">
   <div>
     <div id="title">
-      <span id="icon" onclick="myd_closeModalWindow('window1')" class="fa fa-times fa-2x"></span>
+      <span id="icon" onclick="myd_closeModalWindow('#window1')" class="fa fa-times fa-2x"></span>
       <span id="text" >My Title</span>
     </div>
     <div id="body">
@@ -28,7 +28,7 @@
 <!--Modal window #2-->
 <div id="window2" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="myd_closeModalWindow('window2')" class="fa fa-times fa-2x"></span>
+    <span id="icon" onclick="myd_closeModalWindow('#window2')" class="fa fa-times fa-2x"></span>
     <h1>My modal window</h1>
 
     <p class="my-p my-justify">Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.</p>
@@ -45,11 +45,11 @@
 /*
 */
 function myd_openModalWindow(sSelector){
-$('#'+sSelector).addClass('is-active');
+  $(sSelector).addClass('is-active');
 }
 /*
 */
 function myd_closeModalWindow(sSelector){
-$('#'+sSelector).removeClass('is-active');
+  $(sSelector).removeClass('is-active');
 }
 </script>
