@@ -1,0 +1,39 @@
+.my-smarttable1
+	overflow: auto
+
+	table
+		border-color: $gColorBlack
+		border: 1px solid
+		border-color: $gColorBlack
+		margin: 0
+		padding: 0
+
+		th, td
+			padding: 3px
+			border: 0.1px solid
+			border-color: $gColorBlack
+			user-select: none
+
+			>.my-table1-keypad
+				@include displayFlex
+				@include setUpFlex(row, wrap, center, flex-start, flex-start)
+
+				>button
+					margin-right: 5px
+				>label
+					margin-bottom: 25px
+
+		th
+			color: $gColorWhite
+			background-color: $gColorBlack
+
+		td
+			color: $gColorBlack
+			width: 150px
+			min-width: 150px
+
+			>input
+				width: calc(100% - 25px)
+
+			>select
+				width: 100%
