@@ -1,0 +1,98 @@
+<table id="smarttable1" class="my-smarttable1" border="5">
+	<tr>
+		<th colspan="5">Example #1</th>
+	</tr>
+	<tr data-type="title">
+		<th></th>
+		<th data-id="type">Type</th>
+		<th data-id="name">Name</th>
+		<th data-id="lastname">Last Name</th>
+		<th data-id="phone">Phone</th>
+	</tr>
+	<tr data-type="data">
+		<td data-ignorefield="true">
+			<button id="delete" class="my-button-only-icon my-button-simple">
+		      <span class="fas fa-print fa-1x"></span>
+		    </button>
+		</td>
+		<td data-input="select">
+			<select>
+				<option value="0">Select a type</option>
+				<option value="1">1</option>
+				<option value="2" selected>2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</td>
+		<td data-input="text"><input type="text" placeholder="Name" value="Pepe" /></td>
+		<td data-input="text"><input type="text" placeholder="Last name" value="Diaz" /></td>
+		<td data-input="text"><input type="text" placeholder="Phone" value="123" /></td>
+	</tr>
+	<tr data-type="data">
+		<td data-ignorefield="true">
+			<button id="delete" class="my-button-only-icon my-button-simple">
+		      <span class="fas fa-print fa-1x"></span>
+		    </button>
+		</td>
+		<td data-input="select">
+			<select>
+				<option value="0">Select a type</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5" selected>5</option>
+			</select>
+		</td>
+		<td data-input="text"><input type="text" placeholder="Name" value="Felipe" /></td>
+		<td data-input="text"><input type="text" placeholder="Last name" value="Carvajal" /></td>
+		<td data-input="text"><input type="text" placeholder="Phone" value="582" /></td>
+	</tr>
+	<tr id="tableinputs">
+		<td colspan="5">
+			<table>
+				<tr>
+					<th colspan="2">Insert</th>
+				</tr>
+				<tr style="display: none;">
+					<td data-input="ignorefield">
+						<button id="delete" class="my-button-only-icon my-button-simple">
+							<span class="fas fa-print fa-1x"></span>
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td data-input="select">
+						<select>
+							<option value="0">Select a type</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</td>
+					<td data-input="text"><input type="text" placeholder="Name" /></td>
+				</tr>
+				<tr>
+					<td data-input="text"><input type="text" placeholder="Last name" /></td>
+					<td data-input="text"><input type="text" placeholder="Phone" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button onclick="oSmartTableAg.add('#smarttable1')">
+							Save
+						</button>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script>
+
+oSmartTableAg.setEventsFromTable('#smarttable1');
+
+</script>
