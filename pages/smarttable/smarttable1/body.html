@@ -1,7 +1,7 @@
 <div class="my-smarttable1">
 	<table id="smarttable1" cellspacing=0>
 		<tr>
-			<th colspan="5">Smart Table #1</th>
+			<th colspan="7">Smart Table #1</th>
 		</tr>
 		<tr data-type="title">
 			<th></th>
@@ -9,6 +9,8 @@
 			<th data-id="name">Name</th>
 			<th data-id="lastname">Last Name</th>
 			<th data-id="phone">Phone</th>
+			<th data-id="myradio">My Radio</th>
+			<th data-id="mycheck">My Check</th>
 		</tr>
 		<tr data-type="data">
 			<td data-ignorefield="true">
@@ -31,6 +33,22 @@
 			<td data-input="text"><input type="text" placeholder="Name" value="Pepe" class="my-text" /></td>
 			<td data-input="text"><input type="text" placeholder="Last name" value="Diaz" class="my-text" /></td>
 			<td data-input="text"><input type="text" placeholder="Phone" value="123" class="my-text" /></td>
+			<td data-input="radio">
+				<div class="my-table1-keypad">
+					<label class="my-radiobutton">
+						<input type="radio" id="myradio" name="myradio">
+						<span class="my-radiobutton-checkmark"></span>
+					</label>
+				</div>
+			</td>
+			<td data-input="checkbox">
+				<div class="my-table1-keypad">
+					<label class="my-checkbox">
+						<input type="checkbox">
+						<span class="my-checkbox-checkmark"></span>
+					</label>
+				</div>
+			</td>
 		</tr>
 		<tr data-type="data">
 			<td data-ignorefield="true">
@@ -53,6 +71,22 @@
 			<td data-input="text"><input type="text" placeholder="Name" value="Felipe" class="my-text" /></td>
 			<td data-input="text"><input type="text" placeholder="Last name" value="Carvajal" class="my-text" /></td>
 			<td data-input="text"><input type="text" placeholder="Phone" value="582" class="my-text" /></td>
+			<td data-input="radio">
+				<div class="my-table1-keypad">
+					<label class="my-radiobutton">
+						<input type="radio" id="myradio" name="myradio" checked>
+						<span class="my-radiobutton-checkmark"></span>
+					</label>
+				</div>
+			</td>
+			<td data-input="checkbox">
+				<div class="my-table1-keypad">
+					<label class="my-checkbox">
+						<input type="checkbox">
+						<span class="my-checkbox-checkmark"></span>
+					</label>
+				</div>
+			</td>
 		</tr>
 		<tr id="tableinputs">
 			<td colspan="5">
@@ -85,6 +119,24 @@
 					<tr>
 						<td data-input="text"><input type="text" placeholder="Last name" class="my-text" data-class="my-text" /></td>
 						<td data-input="text"><input type="text" placeholder="Phone" class="my-text" data-class="my-text" /></td>
+					</tr>
+					<tr style="display: none;">
+						<td data-input="radio">
+							<div class="my-table1-keypad">
+								<label class="my-radiobutton">
+									<input type="radio" id="myradio" name="myradio">
+									<span class="my-radiobutton-checkmark"></span>
+								</label>
+							</div>
+						</td>
+						<td data-input="checkbox">
+							<div class="my-table1-keypad">
+								<label class="my-checkbox">
+									<input type="checkbox">
+									<span class="my-checkbox-checkmark"></span>
+								</label>
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
