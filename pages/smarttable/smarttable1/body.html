@@ -1,7 +1,14 @@
 <div class="my-smarttable1">
 	<table id="smarttable1" cellspacing=0>
-		<tr>
-			<th colspan="7">Smart Table #1</th>
+		<tr class="my-smarttable1-title">
+			<th colspan="7">
+				<div>
+					<button onclick="oSmartTableAg.add('#smarttable1')" class="my-button-only-icon my-button-simple">
+						<span class="fas fa-plus fa-1x"></span>
+					</button>
+					<span>Smart Table #1</span>
+				</div>
+			</th>
 		</tr>
 		<tr data-type="title">
 			<th></th>
@@ -30,7 +37,9 @@
 					<option value="5">5</option>
 				</select>
 			</td>
-			<td data-input="text"><input type="text" placeholder="Name" value="Pepe" class="my-text" /></td>
+			<td data-input="text">
+				<input type="text" placeholder="Name" value="Pepe" class="my-text" />
+			</td>
 			<td data-input="text"><input type="text" placeholder="Last name" value="Diaz" class="my-text" /></td>
 			<td data-input="text"><input type="text" placeholder="Phone" value="123" class="my-text" /></td>
 			<td data-input="radio">
@@ -50,51 +59,10 @@
 				</div>
 			</td>
 		</tr>
-		<tr data-type="data">
-			<td data-ignorefield="true">
-				<div class="my-table1-keypad">
-					<button id="delete" class="my-button-only-icon my-button-simple">
-				      <span class="fas fa-trash-alt fa-1x"></span>
-				    </button>
-				</div>
-			</td>
-			<td data-input="select">
-				<select class="my-selectionmenu">
-					<option value="0">Select a type</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5" selected>5</option>
-				</select>
-			</td>
-			<td data-input="text"><input type="text" placeholder="Name" value="Felipe" class="my-text" /></td>
-			<td data-input="text"><input type="text" placeholder="Last name" value="Carvajal" class="my-text" /></td>
-			<td data-input="text"><input type="text" placeholder="Phone" value="582" class="my-text" /></td>
-			<td data-input="radio">
-				<div class="my-table1-keypad">
-					<label class="my-radiobutton">
-						<input type="radio" id="myradio" name="myradio" checked>
-						<span class="my-radiobutton-checkmark"></span>
-					</label>
-				</div>
-			</td>
-			<td data-input="checkbox">
-				<div class="my-table1-keypad">
-					<label class="my-checkbox">
-						<input type="checkbox">
-						<span class="my-checkbox-checkmark"></span>
-					</label>
-				</div>
-			</td>
-		</tr>
-		<tr id="tableinputs">
+		<tr id="tableinputs" style="display: none;">
 			<td colspan="5">
 				<table cellspacing=0>
 					<tr>
-						<th colspan="2">Insert</th>
-					</tr>
-					<tr style="display: none;">
 						<td data-input="ignorefield">
 							<div class="my-table1-keypad">
 								<button id="delete" class="my-button-only-icon my-button-simple">
@@ -102,10 +70,8 @@
 							    </button>
 							</div>
 						</td>
-					</tr>
-					<tr>
 						<td data-input="select">
-							<select class="my-selectionmenu" data-class="my-selectionmenu">
+							<select class="my-selectionmenu">
 								<option value="0">Select a type</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -114,13 +80,9 @@
 								<option value="5">5</option>
 							</select>
 						</td>
-						<td data-input="text"><input type="text" placeholder="Name" class="my-text" data-class="my-text" /></td>
-					</tr>
-					<tr>
-						<td data-input="text"><input type="text" placeholder="Last name" class="my-text" data-class="my-text" /></td>
-						<td data-input="text"><input type="text" placeholder="Phone" class="my-text" data-class="my-text" /></td>
-					</tr>
-					<tr style="display: none;">
+						<td data-input="text"><input type="text" placeholder="Name" class="my-text" /></td>
+						<td data-input="text"><input type="text" placeholder="Last name" class="my-text" /></td>
+						<td data-input="text"><input type="text" placeholder="Phone" class="my-text" /></td>
 						<td data-input="radio">
 							<div class="my-table1-keypad">
 								<label class="my-radiobutton">
@@ -138,13 +100,6 @@
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="2">
-							<button onclick="oSmartTableAg.add('#smarttable1')" class="my-button my-button-simple">
-								Save
-							</button>
-						</td>
-					</tr>
 				</table>
 			</td>
 		</tr>
@@ -154,5 +109,6 @@
 <script>
 
 oSmartTableAg.setEventsFromTable('#smarttable1');
+// console.log(oSmartTableAg.getArrayFromTable('#smarttable1'));
 
 </script>
