@@ -19,7 +19,7 @@
 			<th data-id="myradio">My Radio</th>
 			<th data-id="mycheck">My Check</th>
 		</tr>
-		<tr data-type="data">
+		<tr data-id="1" data-type="data">
 			<td data-ignorefield="true">
 				<div class="my-table1-keypad">
 					<button id="delete" class="my-button-only-icon my-button-simple">
@@ -38,14 +38,54 @@
 				</select>
 			</td>
 			<td data-input="text">
-				<input type="text" placeholder="Name" value="Pepe" class="my-text" />
+				<input type="text" placeholder="Name" value="Pepe" class="my-text" autocomplete="off" />
 			</td>
-			<td data-input="text"><input type="text" placeholder="Last name" value="Diaz" class="my-text" /></td>
-			<td data-input="text"><input type="text" placeholder="Phone" value="123" class="my-text" /></td>
+			<td data-input="text"><input type="text" placeholder="Last name" value="Diaz" class="my-text" autocomplete="off" /></td>
+			<td data-input="text"><input type="text" placeholder="Phone" value="123" class="my-text" autocomplete="off" /></td>
 			<td data-input="radio">
 				<div class="my-table1-keypad">
 					<label class="my-radiobutton">
 						<input type="radio" id="myradio" name="myradio">
+						<span class="my-radiobutton-checkmark"></span>
+					</label>
+				</div>
+			</td>
+			<td data-input="checkbox">
+				<div class="my-table1-keypad">
+					<label class="my-checkbox">
+						<input type="checkbox">
+						<span class="my-checkbox-checkmark"></span>
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr data-id="2" data-type="data">
+			<td data-ignorefield="true">
+				<div class="my-table1-keypad">
+					<button id="delete" class="my-button-only-icon my-button-simple">
+				      <span class="fas fa-trash-alt fa-1x"></span>
+				    </button>
+				</div>
+			</td>
+			<td data-input="select">
+				<select class="my-selectionmenu">
+					<option value="0">Select a type</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5" selected>5</option>
+				</select>
+			</td>
+			<td data-input="text">
+				<input type="text" placeholder="Name" value="Carlos" class="my-text" autocomplete="off" />
+			</td>
+			<td data-input="text"><input type="text" placeholder="Last name" value="Torres" class="my-text" autocomplete="off" /></td>
+			<td data-input="text"><input type="text" placeholder="Phone" value="456" class="my-text" autocomplete="off" /></td>
+			<td data-input="radio">
+				<div class="my-table1-keypad">
+					<label class="my-radiobutton">
+						<input type="radio" id="myradio" name="myradio" checked>
 						<span class="my-radiobutton-checkmark"></span>
 					</label>
 				</div>
@@ -80,9 +120,9 @@
 								<option value="5">5</option>
 							</select>
 						</td>
-						<td data-input="text"><input type="text" placeholder="Name" class="my-text" /></td>
-						<td data-input="text"><input type="text" placeholder="Last name" class="my-text" /></td>
-						<td data-input="text"><input type="text" placeholder="Phone" class="my-text" /></td>
+						<td data-input="text"><input type="text" placeholder="Name" class="my-text" autocomplete="off" /></td>
+						<td data-input="text"><input type="text" placeholder="Last name" class="my-text" autocomplete="off" /></td>
+						<td data-input="text"><input type="text" placeholder="Phone" class="my-text" autocomplete="off" /></td>
 						<td data-input="radio">
 							<div class="my-table1-keypad">
 								<label class="my-radiobutton">
