@@ -34,12 +34,12 @@
     "shelljs": "^0.8.4"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "flexboxgrid": "^6.3.1",
     "handlebars": "^4.1.2",
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
-    "smarttable-ag": "^1.0.0",
-    "swiper": "^6.2.0"
+    "smarttable-ag": "^2.0.0",
+    "swiper": "^6.4.5"
   }
 }
