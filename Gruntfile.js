@@ -53,6 +53,7 @@ module.exports = function(grunt) {
         './pages/smarttable/smarttable1/*',
         './pages/swiper/*',
         './pages/swiper/swiper1/*',
+        './pages/swiper/swiper2/*',
         './pages/table/*',
         './pages/table/table1/*',
         './pages/text/*',
