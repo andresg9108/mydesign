@@ -1,0 +1,60 @@
+.my-floatheader2
+	@include displayFlex
+	@include setUpFlex(row, nowrap, flex-start, center, center)
+	@include inputPlaceholder($gColorBlack)
+
+	position: fixed
+	top: 0px
+	left: 0px
+	width: calc(100% - 30px)
+	padding: 5px 15px
+	color: $gColorBlack
+	background-color: $gColorGray3
+	z-index: $gZIndex6
+
+	>#logo
+		width: auto
+		height: 50px
+		cursor: pointer
+		user-select: none
+	>span
+		cursor: pointer
+		user-select: none
+
+	>#menu
+		@include displayFlex
+		@include setUpFlex(row, wrap, flex-start, center, center)
+		
+		width: 100%
+
+		>#buttons, >#iconos
+			@include setUpFlex(row, wrap, flex-start, center, center)
+
+			width: 100%
+			padding-top: 10px
+			padding-bottom: 10px
+			padding-left: 15px
+			padding-right: 15px
+
+			>span
+				margin-right: 10px
+				cursor: pointer
+				user-select: none
+
+		>#buttons
+			display: none
+
+		>#iconos
+			@include displayFlex
+			@include setUpFlex(row-reverse, wrap, flex-start, center, center)
+			
+@media screen and (min-width: $gMediumSizeA)
+	.my-floatheader2
+		>#menu
+			>#buttons
+				@include displayFlex
+
+				width: calc(70% - 30px)
+
+			>#iconos
+				width: calc(30% - 30px)

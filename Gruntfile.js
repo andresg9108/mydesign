@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         './pages/example/*',
         './pages/floatheader/*',
         './pages/floatheader/floatheader1/*',
+        './pages/floatheader/floatheader2/*',
         './pages/form/*',
         './pages/form/form1/*',
         './pages/itemselection/*',
