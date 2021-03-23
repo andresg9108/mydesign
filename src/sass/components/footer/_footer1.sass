@@ -1,0 +1,29 @@
+.my-footer1
+	color: $gColorWhite
+	background-color: $gColorBlack
+
+	.my-footer1-container
+		margin-top: 5px
+		margin-bottom: 5px
+
+		>.my-footer1-list, >.my-footer1-link-list
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+			>span
+				margin-top: 4px
+				margin-bottom: 4px
+
+		>.my-footer1-link-list
+			>span
+				cursor: pointer
+				user-select: none
+
+		>.my-footer1-networks
+			@include displayFlex
+			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+			>span
+				margin-right: 10px
+				cursor: pointer
+				user-select: none
