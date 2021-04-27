@@ -62,7 +62,8 @@ module.exports = function(grunt) {
         './pages/text/*',
         './pages/text/text1/*',
         './pages/view/*',
-        './pages/view/view1/*'
+        './pages/view/view1/*',
+        './pages/view/view2/*'
     ];
 
     // Log
