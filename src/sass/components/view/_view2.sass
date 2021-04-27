@@ -1,0 +1,26 @@
+.my-view2
+	>.items
+		@include displayFlex
+		@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+		width: calc(100% - 10px)
+		padding: 5px
+
+		>.item
+			@include displayFlex
+			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+			width: calc(100% - 18px)
+			padding: 5px
+			margin: 3px
+			cursor: pointer
+			border-style: solid
+			border-width: 1px
+			border-color: $gColorBlack
+
+			>div
+				@include displayFlex
+				@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+				>span
+					margin-right: 5px
