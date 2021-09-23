@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
@@ -22,10 +22,10 @@
   "license": "MIT",
   "homepage": "https://github.com/andresg9108/mydesign",
   "devDependencies": {
-    "grunt": "^1.4.0",
+    "grunt": "^1.4.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-handlebars": "^2.0.0",
-    "grunt-contrib-processpy": "^0.3.1",
+    "grunt-contrib-processpy": "^0.3.2",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
@@ -34,12 +34,12 @@
     "shelljs": "^0.8.4"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "flexboxgrid": "^6.3.1",
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
     "smarttable-ag": "^2.0.4",
-    "swiper": "^6.6.1"
+    "swiper": "^6.8.4"
   }
 }
