@@ -1,39 +1,15 @@
-Manual to move from version v0.4.0 to v1.0.0
+Manual to move from version v1.0.0 to v1.1.0
 
-1. run the following command at the root of the project.
+1. Run "npm update".
+2. Update the README.md file.
+3. Update the Gruntfile.js file.
 
-npm install npm-run-all --save-dev
-npm install shelljs --save-dev
+- Removing the following lines.
 
-2. Add the following "scripts" in the package.json.
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-processpy');
 
-- "uglify": "grunt uglify"
-- "sass": "grunt sass"
-- "hbs": "grunt handlebars"
-- "prepare": "npm-run-all html sass hbs uglify"
-- "prepare-dist": "npm-run-all rts html sass hbs uglify"
-
-3. Modify the "aLog" array in the Gruntfile.js file as follows.
-
-var aLog = ['./processpy.log'];
-
-4. Modify the ".gitignore" file with the following lines.
-
-/node_modules
-/web
-/src/css/dist
-/src/js/dist
-/src/template/dist
-
-5. If you are using a repository like GitHub, you can delete the following paths, it is no longer necessary to save these files since they will be generated automatically by executing the new commands, which can be seen in the new documentation.
-
-- /web
-- /src/css/dist
-- /src/js/dist
-- /src/template/dist
-
-6. The README.md file has changed.
-
-7. Add new shell.js file.
+- Delete variable sFileLogs
 
 Ok, updated project.

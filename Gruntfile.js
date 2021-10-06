@@ -1,4 +1,3 @@
-var sFileLogs = './manyp.log';
 const fs = require('fs');
 
 module.exports = function(grunt) {
@@ -206,7 +205,4 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.loadNpmTasks('grunt-contrib-handlebars');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-processpy');
 };
