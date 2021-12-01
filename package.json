@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/andresg9108/mydesign"
   },
-  "author": "Andres Gonzalez",
+  "author": "Andrés González",
   "license": "MIT",
   "homepage": "https://github.com/andresg9108/mydesign",
   "devDependencies": {
@@ -36,13 +36,10 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "flexboxgrid": "^6.3.1",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
     "smarttable-ag": "^2.0.4",
-    "swiper": "^6.8.4"
-  },
-  "url": "",
-  "email": "",
-  "keywords": []
+    "swiper": "^7.3.1"
+  }
 }
