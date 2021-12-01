@@ -1,15 +1,13 @@
-Manual to move from version v1.0.0 to v1.1.0
+Manual to move from version v1.1.0 to v2.0.0
 
 1. Run "npm update".
-2. Update the README.md file.
-3. Update the Gruntfile.js file.
-
-- Removing the following lines.
-
-	grunt.loadNpmTasks('grunt-contrib-handlebars');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-processpy');
-
-- Delete variable sFileLogs
+2. Package.json file: Check for changes to the entire file, version, and dependencies that need manual update.
+3. Delete shell.js file.
+4. Update the version.json file.
+5. Update the LICENSE.txt file.
+6. Update the README.md file.
+7. Update the .gitignore file and .npmignore file.
+8. New structure in Gruntfile.js file.
+9. Now the changes will not be made in the Gruntfile.js file but in the grunt folder.
 
 Ok, updated project.
