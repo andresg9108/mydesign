@@ -31,6 +31,7 @@ exports.a=[
 './pages/loginmodels/loginmodel1/*',
 './pages/menu/*',
 './pages/menu/menu1/*',
+'./pages/menu/menu2/*',
 './pages/messages/*',
 './pages/messages/message1/*',
 './pages/modalwindow/*',

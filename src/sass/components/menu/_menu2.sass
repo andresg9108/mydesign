@@ -1,0 +1,44 @@
+.my-menu2
+	>#items
+		@include displayFlex
+		@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
+
+		width: calc(100% - 10px)
+		padding: 5px
+
+		>div
+			@include displayFlex
+			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+			
+			width: calc(100% - 38px)
+			padding: 10px 15px
+			margin: 3px
+			cursor: pointer
+			border-style: solid
+			border-width: 1px
+			border-color: $gColorBlack
+			font-weight: bold
+
+			>span
+				margin-left: 5px
+
+		>div:hover
+			background-color: $gColorGray3
+
+@media screen and (min-width: $gMediumSizeA)
+	.my-menu2
+		>#items
+			@include setUpFlex(row, wrap, flex-start, flex-start, flex-start)
+
+			>div
+				@include setUpFlex(column, wrap, center, center, center)
+
+				width: auto
+				min-width: 100px
+				padding: 10px
+
+				>span
+					margin-top: 0px
+					margin-bottom: 5px
+					margin-right: 0px
+					margin-left: 0px

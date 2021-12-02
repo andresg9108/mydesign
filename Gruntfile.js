@@ -60,6 +60,15 @@ module.exports = function(grunt) {
             }]
         },
 
+        copy: {
+            css_dist: {
+                expand: true,
+                cwd: 'src/css/dist/',
+                src: ["main.min.css", "main.min.css.map"],
+                dest: 'dist/'
+            }
+        },
+
         watch: {
             files: ['*.*'],
             options: {
@@ -78,7 +87,7 @@ module.exports = function(grunt) {
             },
             task_sass: {
                 files: oSassRoutes.a,
-                tasks: ['sass']
+                tasks: ['sass', 'copy']
             },
             task_handlebars: {
                 files: oHbsRoutes.a,
