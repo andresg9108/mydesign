@@ -1,0 +1,5 @@
+/node_modules
+/web
+/src/css/dist
+/src/js/dist
+/src/template/dist
