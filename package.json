@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
