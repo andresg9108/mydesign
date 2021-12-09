@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "grunt",
@@ -40,6 +40,6 @@
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
     "smarttable-ag": "^2.0.4",
-    "swiper": "^7.3.1"
+    "swiper": "^6.8.4"
   }
 }
