@@ -22,13 +22,12 @@ This project aims to provide an alternative to creating websites.
 - Node.js (https://nodejs.org).
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - Python (https://www.python.org): Download Python and add it to the path of your operating system.
-- XAMPP (https://www.apachefriends.org/es/index.html).
 - Execute "gem install sass" on the console of your operating system.
 - Execute "npm i manyp-cli -g" on the console of your operating system.
 
 ## Getting started <span name="GettingStarted"></span> ##
 
-We will start by opening the "XAMPP Control Panel" and starting the "Apache" service. Now we can create a folder called "myproject" in the path of the "XAMPP" file and which is normally in the path "../xampp/htdocs/" if it has not been changed. With the folder ready, we can now access it using the console of your operating system and execute the following command that brings up all the files from the "manyp" project.
+Using the console of our operating system we will access the directory that we want for our project, then we will execute the following command that will load all the files of the "manyp" project.
 
 ~~~
 manyp-cli install
@@ -42,7 +41,7 @@ manyp-cli start
 
 In the development phase, the project must always be attentive to changes and to exit you just have to use Ctrl + C. With this we can enter the following URL and see our project for the first time.
 
-**http://localhost/myproject/web/**
+**http://localhost:8082/web**
 
 It is also recommended to add the extension "Livereload" for "Google Chrome" or "Mozilla Firefox". This will tell these browsers to refresh the page the moment they detect a change, but always remember to run the "manyp-cli start" command, prevent the browser from caching, and enable "Livereload" on it.
 
@@ -143,7 +142,7 @@ See how the first line of the "head.html" file shows "&lt;!&#45;&#45;Route: temp
 
 If all is well we should see our new page at the following URL.
 
-**http://localhost/myproject/web/page2**
+**http://localhost:8082/web/page2**
 
 ## Using JavaScript <span name="UsingJavaScript"></span> ##
 
@@ -200,7 +199,7 @@ If all goes well, you can check the path "./src/js/dist/pages/" that should cont
 
 ## Using Widgets <span name="UsingWidgets"></span> ##
 
-We will start to implement the widget found in "http://localhost/myproject/web/" which will load a list of test users, we will do it on the page "page2" previously created which uses the template "./pageTemplates/temp2.html" which should have the JQuery and Handlebars dependencies as follows.
+We will start to implement the widget found in "http://localhost:8082/web/" which will load a list of test users, we will do it on the page "page2" previously created which uses the template "./pageTemplates/temp2.html" which should have the JQuery and Handlebars dependencies as follows.
 
 **File: ./pageTemplates/temp2.html**
 

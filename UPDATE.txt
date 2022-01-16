@@ -1,13 +1,18 @@
-Manual to move from version v1.1.0 to v2.0.0
+Manual to move from version v2.0.0 to v3.0.0
 
 1. Run "npm update".
-2. Package.json file: Check for changes to the entire file, version, and dependencies that need manual update.
-3. Delete shell.js file.
-4. Update the version.json file.
-5. Update the LICENSE.txt file.
-6. Update the README.md file.
-7. Update the .gitignore file and .npmignore file.
-8. New structure in Gruntfile.js file.
-9. Now the changes will not be made in the Gruntfile.js file but in the grunt folder.
+2. Update the version.json file.
+3. Update file "README.md".
+4. New file "main.js".
+5. New file "server.js".
+6. New folder "sys-express".
+7. File: package.json
+
+	* The following "script" items are added or modified.
+		"start": "node main.js",
+		"grunt": "grunt",
+		"server": "node server.js",
+	* New packages: 
+		- npm i express --save-dev
 
 Ok, updated project.
