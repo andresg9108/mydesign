@@ -1,8 +1,8 @@
 {
   "name": "manyp-ag",
-  "version": "3.0.0",
-  "ignore": "processpy.log;README.md",
-  "ignoreOverwrite": "",
+  "version": "3.0.2",
+  "ignore": "",
+  "ignoreOverwrite": "processpy.log;LICENSE.txt;README.md",
   "ignorePath": "grunt;pages;pageTemplates;src",
   "checkVersion": true
 }
