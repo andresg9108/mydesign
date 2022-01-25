@@ -1,4 +1,7 @@
 const fs = require('fs');
+
+var oCopyRoutes = require('./grunt/copy/routes.js');
+var oCopyFiles = require('./grunt/copy/files.js');
 var oHtmlRoutes = require('./grunt/html/routes.js');
 var oHbsRoutes = require('./grunt/hbs/routes.js');
 var oHbsFiles = require('./grunt/hbs/files.js');
@@ -14,21 +17,6 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed', noCache: true
-                },
-                files: [{
-                    expand: true,
-                    cwd:    "src/sass/",
-                    src:    ["*.sass"],
-                    dest: "src/css/dist/",
-                    ext:    ".min.css"
-                }]
-            }
-        },
 
         handlebars: {
           compile: {
@@ -60,14 +48,7 @@ module.exports = function(grunt) {
             }]
         },
 
-        copy: {
-            css_dist: {
-                expand: true,
-                cwd: 'src/css/dist/',
-                src: ["main.min.css", "main.min.css.map"],
-                dest: 'dist/'
-            }
-        },
+        copy: oCopyFiles.o,
 
         watch: {
             files: ['*.*'],
@@ -86,8 +67,11 @@ module.exports = function(grunt) {
                 tasks: ['process-html']
             },
             task_sass: {
-                files: oSassRoutes.a,
-                tasks: ['sass', 'copy']
+                files: oSassRoutes.a
+            },
+            task_copy: {
+                files: oCopyRoutes.a,
+                tasks: ['copy']
             },
             task_handlebars: {
                 files: oHbsRoutes.a,

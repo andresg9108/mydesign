@@ -11,7 +11,8 @@
 5. [Using JavaScript](#UsingJavaScript "Using JavaScript")
 6. [Using Widgets.](#UsingWidgets "Using Widgets")
 7. [Using SASS.](#UsingSASS "Using SASS")
-8. [Production](#Production "Production")
+8. [Files copy.](#FilesCopy "Files copy")
+9. [Production](#Production "Production")
 
 ## Introduction <span name="Introduction"></span> ##
 
@@ -19,11 +20,22 @@ This project aims to provide an alternative to creating websites.
 
 ## Dependencies <span name="Dependencies"></span> ##
 
-- Node.js (https://nodejs.org).
-- Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
-- Python (https://www.python.org): Download Python and add it to the path of your operating system.
-- Execute "gem install sass" on the console of your operating system.
-- Execute "npm i manyp-cli -g" on the console of your operating system.
+* Node.js (https://nodejs.org).
+  - Run "node -v" in your OS console to see if it is already installed.
+* Npm CLI (https://docs.npmjs.com/cli).
+  - On Windows it comes with the Node.js installer, on Linux based OSs you will need to install it.
+  - Run "npm -v" in your OS console to see if it is already installed.
+* Python (https://www.python.org).
+  - On Windows you have to install it and add it to the OS path.
+  - On linux based OSs you should run the command "sudo apt-get install python-is-python3".
+  - Run "python --version" in your OS console to see if it is already installed.
+* Sass (https://sass-lang.com).
+  - Run "npm i sass -g" in your OS console to install it.
+  - Run "sass --version" in your OS console to see if it is already installed.
+* ManyP CLI.
+  - Run "npm i manyp-cli -g".
+  - On Linux based OSs, include "--unsafe-perm", then the command would be "npm i manyp-cli -g --unsafe-perm".
+  - Run "manyp-cli -v" in your OS console to see if it is already installed.
 
 ## Getting started <span name="GettingStarted"></span> ##
 
@@ -483,6 +495,35 @@ Now we will add the new class by doing the following modification.
 ```
 
 If everything goes well you will see the changes in the browser.
+
+## Files copy <span name="FilesCopy"></span> ##
+
+This functionality will allow us to create a copy of one or more files. To understand how it works we are going to modify the following files.
+
+**File: ./grunt/copy/routes.js**
+
+```js
+exports.a=[
+'./src/css/dist/*'
+];
+```
+
+The paths we load into this array will tell Grunt to update when it finds a modification to them. With the following modification we will indicate that the files are going to be copied and where they are going to be copied.
+
+**File: ./grunt/copy/files.js**
+
+```js
+exports.o={
+  cssdist: {
+    expand: true,
+    cwd: 'src/css/dist/',
+    src: ["*.css", "*.css.map"],
+    dest: 'dist/'
+  }
+};
+```
+
+In "cwd" we must add the path where the file or files we want to copy are, in "src" we will add the files to be copied and in "dest" we will add the destination of the files.
 
 ## Production <span name="Production"></span> ##
 

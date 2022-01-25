@@ -9,9 +9,8 @@
     "html": "grunt process-html",
     "rts": "grunt process-rts",
     "dist": "grunt copy:css_dist",
-    "sass-dist": "grunt sass:dist",
     "uglify": "grunt uglify",
-    "sass": "grunt sass",
+    "sass": "node sass-css.js",
     "hbs": "grunt handlebars",
     "prepare": "npm-run-all html sass hbs uglify",
     "prepare-dist": "npm-run-all rts html sass hbs uglify"
@@ -28,7 +27,6 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-handlebars": "^3.0.0",
     "grunt-contrib-processpy": "^1.0.0",
-    "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "matchdep": "^2.0.0",
