@@ -7,7 +7,6 @@
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Getting started.](#GettingStarted "Getting started")
-9. [Production](#Production "Production")
 
 ## Introduction <span name="Introduction"></span> ##
 
@@ -23,7 +22,12 @@ This project aims to supply a set of reusable CSS elements and templates.
 
 ## Getting started <span name="GettingStarted"></span> ##
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
+To install My Design in our project we must execute the following command.
 
-## Production <span name="Production"></span> ##
+~~~
+npm i mydesign-ag
+~~~
 
+We can now include the following file in our project and start using everything My Design has in store for us.
+
+**File: ./node_modules/mydesign-ag/dist/main.min.css**

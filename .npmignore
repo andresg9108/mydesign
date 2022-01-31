@@ -1,5 +1,14 @@
+/grunt
 /node_modules
+/pages
+/pageTemplates
+/src
+/sys-express
 /web
-/src/css/dist
-/src/js/dist
-/src/template/dist
+Gruntfile.js
+install-here.json
+processpy.log
+UPDATE.txt
+sass-css.js
+server.js
+main.js
