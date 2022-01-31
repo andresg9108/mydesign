@@ -8,7 +8,7 @@
     "server": "node server.js",
     "html": "grunt process-html",
     "rts": "grunt process-rts",
-    "dist": "grunt copy:css_dist",
+    "css-dist": "grunt copy:cssdist",
     "uglify": "grunt uglify",
     "sass": "node sass-css.js",
     "hbs": "grunt handlebars",
