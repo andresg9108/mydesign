@@ -28,6 +28,23 @@ To install My Design in our project we must execute the following command.
 npm i mydesign-ag
 ~~~
 
-We can now include the following file in our project and start using everything My Design has in store for us.
+To know everything that My Design has prepared for us, we have to clone its repository apart from our project and look at its files.
 
-**File: ./node_modules/mydesign-ag/dist/main.min.css**
+
+[My Design Repository.](https://github.com/andresg9108/mydesign "My Design Repository.")
+
+My Design uses ManyP, so we should be familiar with this way of working.
+
+[ManyP Repository.](https://github.com/andresg9108/manyp "ManyP Repository.")
+
+Running the following command will create a test server. Now we can see some examples of My Design that we can add to our project.
+
+~~~
+manyp-cli server
+~~~
+
+When we decide which example we want to add to our project, we will access the “pages” folder and within it we will be able to find a folder with the name of the example we have selected. When we find the folder of our example, we will open the file "body.html" that is inside it. In this file is all the information to implement this example in our project. The implementation of the example in our project depends on the following.
+
+- DESCRIPTION.
+- DEPENDENCIES.
+- CODE.
