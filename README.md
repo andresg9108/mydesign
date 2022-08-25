@@ -48,3 +48,11 @@ When we decide which example we want to add to our project, we will access the �
 - DESCRIPTION.
 - DEPENDENCIES.
 - CODE.
+
+You will see the CSS class called “my-simple-container” in many of the cases as shown below. This class tells the "div" that contains it that it behaves like a small container, in many cases and if you want, this container is not needed to add the example in our project.
+
+```html
+<div class="my-simple-container">
+  ...
+</div>
+```
