@@ -1,12 +1,6 @@
-Update version v3.1.1
+Update version v3.2.0
 
-1. File: "package.json":
-	- Update "sass", it is found inside "scripts".
-		"sass": "node sass-css.js",
-	- Delete "grunt-contrib-sass", It is located inside "devDependencies".
-
-2. Run "manyp-cli i".
-3. Run "manyp-cli u".
-4. New folder: "grunt/copy".
+1. Run "manyp-cli i".
+2. Run "manyp-cli u".
 
 Ok.
