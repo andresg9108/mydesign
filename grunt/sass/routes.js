@@ -2,7 +2,6 @@ exports.a=[
 './src/sass/*',
 './src/sass/imports/*',
 './src/sass/components/*',
-'./src/sass/components/autocompleteinput/*',
 './src/sass/components/basicpage/*',
 './src/sass/components/breadcrumb/*',
 './src/sass/components/button/*',
