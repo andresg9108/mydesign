@@ -57,7 +57,7 @@ It allows us to create a Swiper.
 var oWidget = {};
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  oWidget.load();
+  oWidget.loadEvents();
 });
 
 /*
@@ -98,7 +98,7 @@ oWidget.swiperResize = (swiper, pc, tablet, mobile) => {
 
 /*
 */
-oWidget.load = () => {
+oWidget.loadEvents = () => {
   let oSwiper2 = oWidget.swiperConfig('#swiper2', 4, 0, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
 
   window.onresize = () => {
