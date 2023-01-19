@@ -12,7 +12,7 @@
 	background-color: $gColor11
 	z-index: $gZIndex6
 
-	>#logo
+	>.logo
 		width: auto
 		height: 50px
 		cursor: pointer
@@ -20,11 +20,11 @@
 	>span
 		cursor: pointer
 		user-select: none
-	>#menu
+	>.menu
 		width: 100%
 		margin: 0px 10px
 
-		>#menusmall
+		>.menusmall
 			@include displayFlex
 			@include setUpFlex(row, nowrap, flex-start, center, center)
 
@@ -35,13 +35,13 @@
 				margin: 0px 10px
 				cursor: pointer
 				user-select: none
-		>#menubig
+		>.menubig
 			display: none
 
-			>#izq, >#der
+			>.izq, >.der
 				@include displayFlex
 				@include setUpFlex(row, nowrap, flex-start, center, center)
-			>#der
+			>.der
 				width: 100%
 				max-width: 500px
 				margin-left: 5px
@@ -50,11 +50,11 @@
 					margin-right: 10px
 					cursor: pointer
 					user-select: none
-			>#izq
+			>.izq
 				width: 100%
 				margin: 0px 5px
 
-				>#search
+				>.search
 					@include displayFlex
 					@include setUpFlex(row, wrap, flex-start, center, center)
 
@@ -105,7 +105,7 @@
 	&.is-active
 		@include displayFlex
 
-	>#search
+	>.search
 		@include displayFlex
 		@include setUpFlex(row, wrap, flex-start, center, center)
 
@@ -171,7 +171,7 @@
 
 		width: calc(100% - 20px)
 
-		>#nav
+		>.nav
 			@include displayFlex
 			@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
 
@@ -182,7 +182,7 @@
 				margin-left: 20px
 				cursor: pointer
 				user-select: none
-		>#body
+		>.body
 			width: calc(100% - 20px)
 			height: auto
 			max-height: 30vh
@@ -192,14 +192,14 @@
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader
-		>#menu
-			>#menusmall
+		>.menu
+			>.menusmall
 				display: none
-			>#menubig
+			>.menubig
 				@include displayFlex
 	.my-floatheader-menu-1
 		>div
-			>#body
+			>.body
 				width: calc(100% - 100px)
 				padding: 5px 50px
 
@@ -207,15 +207,15 @@
 @media screen and (min-height: $gSmallSizeHeightA)
 	.my-floatheader-menu-1
 		>div
-			>#body
+			>.body
 				max-height: 40vh
 @media screen and (min-height: $gSmallSizeHeightB)
 	.my-floatheader-menu-1
 		>div
-			>#body
+			>.body
 				max-height: 50vh
 @media screen and (min-height: $gSmallSizeHeightC)
 	.my-floatheader-menu-1
 		>div
-			>#body
+			>.body
 				max-height: 60vh

@@ -1,4 +1,4 @@
-F<!-- DESCRIPTION -->
+<!-- DESCRIPTION -->
 <!--
 It allows us to create a float header.
 -->
@@ -11,26 +11,26 @@ It allows us to create a float header.
 
 <!-- CODE -->
 <header class="my-floatheader">
-  <img id="logo" src="<<ROOT-DIR>>src/img/logo.svg" />
-  <div id="menu">
-    <div id="menusmall">
+  <img class="logo" src="<<ROOT-DIR>>src/img/logo.svg" />
+  <div class="menu">
+    <div class="menusmall">
       <span onclick="oWidget.myd_openFloatHeaderSearch()" class="fa fa-search fa-lg"></span>
       <button class="my-button-icon">
           <span class="fa fa-camera fa-1x"></span>
           Publicar
       </button>
     </div>
-    <div id="menubig">
-      <div id="izq">
-        <div id="search">
+    <div class="menubig">
+      <div class="izq">
+        <div class="search">
           <form method="post" onsubmit="return false;">
-              <input type="search" id="myinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+              <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
               <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-lg"></span>
               <button class="fa fa-search fa-lg"></button>
           </form>
         </div>
       </div>
-      <div id="der">
+      <div class="der">
         <button class="my-button-icon my-button-blue-2">
             <span class="fa fa-camera fa-1x"></span>
             Publicar
@@ -45,9 +45,9 @@ It allows us to create a float header.
 </header>
 <div class="my-floatheader-search">
   <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-2x"></span>
-  <div id="search">
+  <div class="search">
       <form method="post" onsubmit="return false;">
-          <input type="search" id="myinputm" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+          <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
           <button class="fa fa-search fa-lg"></button>
       </form>
   </div>
@@ -55,15 +55,15 @@ It allows us to create a float header.
 </div>
 <div class="my-floatheader-menu-1">
   <div>
-    <div id="nav">
+    <div class="nav">
       <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-times fa-2x"></span>
       <span class="fa fa-info-circle fa-2x"></span>
     </div>
-    <div id="body">
+    <div class="body">
       <h3>Advanced search</h3>
 
       <div class="my-two-columns">
-        <div id="left">
+        <div class="left">
           <div class="my-field my-field-column">
             <label for="search">Select one:</label>
             <select class="my-selectionmenu">
@@ -88,7 +88,7 @@ It allows us to create a float header.
             <span></span>
           </div>
         </div>
-        <div id="right">
+        <div class="right">
           <div class="my-field my-field-column">
             <label for="search">Select three:</label>
             <select class="my-selectionmenu">
