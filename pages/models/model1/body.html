@@ -7,7 +7,6 @@ It allows us to create a Model.
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 -->
 
@@ -16,7 +15,7 @@ It allows us to create a Model.
   <div id="container">
     <div id="items-icon">
       <div id="top">
-        <span id="closesidemenu" onclick="myd_m1_sideMenu()" class="fa fa-times-circle fa-2x"></span>
+        <span id="closesidemenu" onclick="oWidget.myd_m1_sideMenu()" class="fa fa-times-circle fa-2x"></span>
         <span class="fa fa-info-circle fa-2x"></span>
         <span class="fa fa-book fa-2x"></span>
       </div>
@@ -76,7 +75,7 @@ It allows us to create a Model.
 
   <nav id="my-m1-nav-2">
     <div id="left">
-      <span id="opensidemenu" onclick="myd_m1_sideMenu()" class="fa fa-bars fa-2x"></span>
+      <span id="opensidemenu" onclick="oWidget.myd_m1_sideMenu()" class="fa fa-bars fa-2x"></span>
     </div>
     <div id="right">
       <span class="fa fa-info-circle fa-2x"></span>
@@ -127,22 +126,46 @@ It allows us to create a Model.
 
 <script>
 
-$(function(){
-  $("#my-m1-nav-1 #container #items div div").click(function(){
+var oWidget = {};
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  oWidget.loadEvents();
+});
+
+/*
+*/
+oWidget.loadEvents = () => {
+  /*$("#my-m1-nav-1 #container #items div div").click(function(){
     if($(this).hasClass('is-open')){
       $(this).removeClass('is-open');
     }else{
       $(this).addClass('is-open');
     }
-  });
-});
+  });*/
+}
 
-function myd_m1_sideMenu(){
-  let oNav = $("#my-m1-nav-1");
-  let oNavC = $("#my-m1-nav-1 #container");
+/*
+*/
+oWidget.myd_m1_sideMenu = () => {
+  let oNav = document.querySelector('#my-m1-nav-1');
+  let oNavC = document.querySelector('#my-m1-nav-1 #container');
+  let sClass = oNavC.getAttribute('class');
   let iTime = 400;
 
-  if(oNav.css('display') != 'block'){
+  sClass = (sClass === null) ? '' : sClass;
+
+  if(oNav.style.display != 'block'){
+    sClass = `${sClass} is-active`;
+    oNav.style.display = 'block';
+    oNav.style.width = '100%'
+    oNavC.setAttribute('class', sClass.trim());
+  }else{
+    oNavC.setAttribute('class', sClass.replace('is-active', '').trim());
+    oNav.style.width = '0px'
+    oNav.style.display = 'none';
+  }
+
+  /*if(oNav.css('display') != 'block'){
     oNav.css('display', 'block');
     oNav.animate({
       width: '100%'
@@ -156,7 +179,7 @@ function myd_m1_sideMenu(){
     }, iTime, function() {
       oNav.css('display', 'none');
     });
-  }
+  }*/
 }
 
 </script>
