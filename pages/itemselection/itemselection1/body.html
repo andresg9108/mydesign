@@ -12,7 +12,7 @@ It allows us to create a Item selection.
 <!-- CODE -->
 <div class="my-simple-container">
   <form onsubmit="return false;">
-    <div class="my-itemselection1">
+    <div id="item-selection-test-1" class="my-itemselection1">
       <div class="my-field my-field-row">
         <select class="my-itemselection1-select my-selectionmenu">
           <option value="0">Select one</option>
@@ -28,7 +28,7 @@ It allows us to create a Item selection.
       </div>
     </div>
 
-    <div class="my-itemselection1">
+    <div id="item-selection-test-2" class="my-itemselection1">
       <div class="my-field my-field-row">
         <select class="my-itemselection1-select my-selectionmenu">
           <option value="0">Select one</option>
@@ -58,21 +58,23 @@ It allows us to create a Item selection.
 var oWidget = {};
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  oWidget.loadEvents();
+  oWidget.loadEvents({
+    itemselection: ['#item-selection-test-1', '#item-selection-test-2']
+  });
 });
 
 /*
 */
-oWidget.loadEvents = () => {
-  let oElement = document.querySelector('.my-itemselection1');
-  
-  do{
-    let sClass = oElement.getAttribute('class');
+oWidget.loadEvents = (oData) => {
+  let aItemSelection = oData.itemselection;
 
-    if(sClass !== null && sClass.indexOf('my-itemselection1') === 0){
-      let oButton = oElement.querySelector('.my-itemselection1-button');
+  for(let i=0; i<aItemSelection.length; i++){
+    let sItemSelection = aItemSelection[i];
+    let oElement = document.querySelector(sItemSelection);
 
-      oButton.addEventListener('click', () => {
+    let oButton = oElement.querySelector('.my-itemselection1-button');
+
+    oButton.addEventListener('click', () => {
         let oParentMain = oButton.parentElement.parentElement;
         let oSelect = oParentMain.querySelector(".my-itemselection1-select");
         let oSelected = oParentMain.querySelector(".my-itemselection1-selected");
@@ -89,56 +91,51 @@ oWidget.loadEvents = () => {
 
           oContent.innerHTML = `${oContent.innerHTML}<div data-value="${sValue}"><span>${sText}</span><span class="fas fa-times-circle fa-lg"></span></div>`;
 
-          oWidget.loadContainerEvents();
+          oWidget.loadContainerEvents({
+            itemselection: [sItemSelection]
+          });
         }
       });
-    }
+  }
 
-    oElement = oElement.nextElementSibling;
-  }while(oElement !== null);
-
-  oWidget.loadContainerEvents();
+  oWidget.loadContainerEvents(oData);
 }
 
 /*
 */
-oWidget.loadContainerEvents = () => {
-  let oElement = document.querySelector('.my-itemselection1');
-  
-  do{
-    let sClass = oElement.getAttribute('class');
+oWidget.loadContainerEvents = (oData) => {
+  let aItemSelection = oData.itemselection;
 
-    if(sClass !== null && sClass.indexOf('my-itemselection1') === 0){
-      let oContent = oElement.querySelector('.my-itemselection1-content');
+  for(let i=0; i<aItemSelection.length; i++){
+    let sItemSelection = aItemSelection[i];
+    let oElement = document.querySelector(sItemSelection);
 
-      let oDiv = oContent.querySelector('div');
+    let oContent = oElement.querySelector('.my-itemselection1-content');
+    let oDiv = oContent.querySelector('div');
 
-      while(oDiv !== null){
-        let oEventDiv = oDiv;
+    while(oDiv !== null){
+      let oEventDiv = oDiv;
 
-        oEventDiv.addEventListener('click', () => {
-          if(oEventDiv.parentElement !== null){
-            let oParentMain = oEventDiv.parentElement.parentElement;
-            let oSelected = oParentMain.querySelector(".my-itemselection1-selected");
+      oEventDiv.addEventListener('click', () => {
+        if(oEventDiv.parentElement !== null){
+          let oParentMain = oEventDiv.parentElement.parentElement;
+          let oSelected = oParentMain.querySelector(".my-itemselection1-selected");
 
-            let sValue = oEventDiv.getAttribute('data-value');
-            let sSelected = oSelected.value;
-            let aSelected = sSelected.split(',');
+          let sValue = oEventDiv.getAttribute('data-value');
+          let sSelected = oSelected.value;
+          let aSelected = sSelected.split(',');
 
-            aSelected = aSelected.filter(item => item != sValue);
-            sSelected = aSelected.toString();
+          aSelected = aSelected.filter(item => item != sValue);
+          sSelected = aSelected.toString();
 
-            oSelected.value = sSelected;
-            oContent.removeChild(oEventDiv);
-          }
-        });
+          oSelected.value = sSelected;
+          oContent.removeChild(oEventDiv);
+        }
+      });
 
-        oDiv = oDiv.nextElementSibling;
-      }
+      oDiv = oDiv.nextElementSibling;
     }
-
-    oElement = oElement.nextElementSibling;
-  }while(oElement !== null);
+  }
 }
 
 </script>
