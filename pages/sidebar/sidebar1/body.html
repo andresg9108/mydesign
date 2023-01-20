@@ -6,21 +6,19 @@ It allows us to create a Sidebar.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 -->
 
 <!-- CODE -->
 <div class="my-simple-container">
-  <span onclick="myd_sideMenu()" class="fa fa-bars fa-2x"></span>
+  <span onclick="oWidget.myd_sideMenu()" class="fa fa-bars fa-2x"></span>
 </div>
 
 <div class="my-sidebar">
-  <div id="background" onclick="myd_sideMenu()"></div>
-  <div id="menu">
-    <div id="menucontent" class="is-active">
-      <div id="menuheader" class="is-active">
+  <div class="background" onclick="oWidget.myd_sideMenu()"></div>
+  <div class="menu">
+    <div class="menucontent is-active">
+      <div class="menuheader is-active">
       </div>
       <div>
         <div class="menuitems">
@@ -71,28 +69,38 @@ It allows us to create a Sidebar.
 </div>
 
 <script>
+
+var oWidget = {};
+
 /*
 */
-function myd_sideMenu(){
-  let oBackground = $(".my-sidebar #background");
-  let oMenu = $(".my-sidebar #menu");
-    let iTime = 400;
+oWidget.myd_sideMenu = () => {
+  let oBackground = document.querySelector(".my-sidebar .background");
+  let oMenu = document.querySelector(".my-sidebar .menu");
+  let sClass = oMenu.getAttribute('class');
 
-    if(oBackground.css('display') != 'block'){
-      oBackground.css('display','block');
+  sClass = (sClass !== null) ? sClass : '';
 
-      oMenu.animate({
-        width: '100%'
-      }, iTime, function() {
-        oMenu.addClass('is-active');
-      });
-    }else{
-      oMenu.removeClass('is-active');
-      oMenu.animate({
-        width: 0
-      }, iTime, function() {
-        oBackground.css('display','none');
-      });
-    }
+  if(oBackground.style.display != 'block'){
+    oBackground.style.display = 'block';
+
+    let iIndex = 0;
+    let iIndexdTimer = setInterval(() => {
+      iIndex++;
+
+      oMenu.style.width = `${iIndex}0%`;
+
+      if(iIndex == 10){
+        clearInterval(iIndexdTimer);
+        sClass = (sClass !== '') ? `${sClass} is-active` : 'is-active';
+        oMenu.setAttribute('class', sClass);
+      }
+    }, 30);
+  }else{
+    oMenu.setAttribute('class', sClass.replace('is-active').trim());
+    oMenu.style.width = '0px';
+    oBackground.style.display = 'none';
+  }
 }
+
 </script>

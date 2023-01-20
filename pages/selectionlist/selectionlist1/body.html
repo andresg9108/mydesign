@@ -46,13 +46,13 @@ It allows us to create a Selection list.
 
 <div id="selectperson" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="oWidget.selectionlist1_closeModalWindow('#selectperson')" class="fa fa-times fa-2x"></span>
+    <span onclick="oWidget.selectionlist1_closeModalWindow('#selectperson')" class="fa fa-times fa-2x icon"></span>
 
     <h2>Select Person</h2>
 
     <div class="my-field my-field-row">
-      <label for="searchperson">Search:</label>
-      <input type="text" class="my-text" id="searchperson" name="searchperson" placeholder="Search" />
+      <label>Search:</label>
+      <input type="text" class="my-text" placeholder="Search" />
       <button class="my-button-only-icon my-button-simple">
         <span class="fas fa-search fa-1x"></span>
       </button>
@@ -61,9 +61,6 @@ It allows us to create a Selection list.
       </button>
       <span></span>
     </div>
-
-
-
 
     <div class="my-table1 my-selectionlist1-table">
       <table cellspacing=0>
@@ -94,31 +91,24 @@ It allows us to create a Selection list.
       </table>
     </div>
 
-
-
-
     <div class="my-keypad">
       <button class="my-button-icon my-button-simple">
         <span class="fas fa-cloud-download-alt fa-1x"></span>
         Load more
       </button>
     </div>
-
-
-
-
   </div>
 </div>
 
 <div id="selectuser" class="my-modalwindow-2">
   <div>
-    <span id="icon" onclick="oWidget.selectionlist1_closeModalWindow('#selectuser')" class="fa fa-times fa-2x"></span>
+    <span onclick="oWidget.selectionlist1_closeModalWindow('#selectuser')" class="fa fa-times fa-2x icon"></span>
 
     <h2>Select User</h2>
 
     <div class="my-field my-field-row">
-      <label for="searchuser">Search:</label>
-      <input type="text" class="my-text" id="searchuser" name="searchuser" placeholder="Search" />
+      <label>Search:</label>
+      <input type="text" class="my-text" placeholder="Search" />
       <button class="my-button-only-icon my-button-simple">
         <span class="fas fa-search fa-1x"></span>
       </button>
@@ -127,9 +117,6 @@ It allows us to create a Selection list.
       </button>
       <span></span>
     </div>
-
-
-
 
     <div class="my-table1 my-selectionlist1-table">
       <table cellspacing=0>
@@ -156,19 +143,12 @@ It allows us to create a Selection list.
       </table>
     </div>
 
-
-
-
     <div class="my-keypad">
       <button class="my-button-icon my-button-simple">
         <span class="fas fa-cloud-download-alt fa-1x"></span>
         Load more
       </button>
     </div>
-
-
-
-
   </div>
 </div>
 
@@ -177,8 +157,46 @@ It allows us to create a Selection list.
 var oWidget = {};
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  oWidget.loadEvents();
+  oWidget.loadEvents({
+    selectionlist: ['#selectperson', '#selectuser']
+  });
 });
+
+/*
+*/
+oWidget.loadEvents = (oData) => {
+  let aSelectionList = oData.selectionlist;
+
+  for(let i=0; i<aSelectionList.length; i++){
+    let sSelectionList = aSelectionList[i];
+    let oElement = document.querySelector(sSelectionList);
+
+    let oTr = oElement.querySelector('.my-selectionlist1-table table tr');
+
+    do{
+      let oTrEvent = oTr;
+      oTrEvent.addEventListener('click', () => {
+        let sId = oTrEvent.getAttribute('data-id');
+
+        if(typeof sId !== 'undefined'){
+          let iId = parseInt(sId);
+          let sText = oTrEvent.getAttribute("data-text");
+
+          let sTagInput = oElement.getAttribute('data-input');
+          let sTagInputText = oElement.getAttribute('data-input-text');
+          let sClass = oElement.getAttribute('class');
+
+          document.querySelector(sTagInput).value = iId;
+          document.querySelector(sTagInputText).value = sText;
+
+          oElement.setAttribute('class', sClass.replace('is-active', '').trim());
+        }
+      });
+
+      oTr = oTr.nextElementSibling;
+    }while(oTr !== null);
+  }
+}
 
 /*
 */
@@ -199,53 +217,6 @@ oWidget.selectionlist1_closeModalWindow = (sSelector) => {
   let sClass = oSelector.getAttribute('class');
 
   oSelector.setAttribute('class', sClass.replace('is-active', '').trim());
-}
-
-/*
-*/
-oWidget.loadEvents = () => {
-  console.log('Load events.');
-
-  /*let oElement = document.querySelector('.my-modalwindow-2');
-
-  do{
-    let sClass = oElement.getAttribute('class');
-
-    if(sClass !== null && sClass.indexOf('my-modalwindow-2') === 0){
-      let oTr = oElement.querySelector('.my-selectionlist1-table table tr');
-
-      do{
-        let oTrEvent = oTr;
-        oTrEvent.addEventListener('click', () => {
-          let iId = oTrEvent.getAttribute('data-id');
-
-          console.log(iId);
-        });
-
-        oTr = oTr.nextElementSibling;
-      }while(oTr !== null);
-    }
-
-    oElement = oElement.nextElementSibling;
-  }while(oElement !== null);*/
-
-  /*$(".my-selectionlist1-table table tr").on('click', function(){
-    var sId = $(this).attr("data-id");
-
-    if(typeof sId !== 'undefined'){
-      var iId = parseInt(sId);
-      var sText = $(this).attr("data-text");
-
-      var oParent = $(this).parents('.my-modalwindow-2');
-      var sTagInput = oParent.attr('data-input');
-      var sTagInputText = oParent.attr('data-input-text');
-
-      $(sTagInput).val(iId);
-      $(sTagInputText).val(sText);
-
-      $(oParent).removeClass('is-active');
-    }
-  });*/
 }
 
 </script>
