@@ -1,7 +1,7 @@
 $maxWidthMyM1Nav1: 300px
 $maxWidthMyM1Nav1100P: calc(100% - 300px)
 
-#my-m1-nav-1
+.my-m1-nav-1
 	display: none
 	position: fixed
 	width: 0px
@@ -9,15 +9,15 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 	height: 100vh
 	background-color: $gColorGray4
 	z-index: $gZIndex9
-
-	>#container
+	
+	>.container
 		display: none
 
 		&.is-active
 			@include displayFlexImportant
 			@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
 
-		>#items-icon
+		>.items-icon
 			@include displayFlex
 			@include setUpFlex(column, wrap, flex-start, center, center)
 			
@@ -25,29 +25,29 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 			height: 100vh
 			background-color: $gColorGray3
 
-			>#top, >#bottom
+			>.top, >.bottom
 				>span
 					margin: 5px
 					user-select: none
 					cursor: pointer
 
-			>#top
+			>.top
 				@include displayFlex
 				@include setUpFlex(column, wrap, flex-start, center, center)
 				
 				height: 80vh
 
-				>#closesidemenu
+				>.closesidemenu
 					display: block
-			>#bottom
+			>.bottom
 				@include displayFlex
 				@include setUpFlex(column-reverse, wrap, flex-start, center, center)
 				
 				height: 20vh
-		>#items
+		>.items
 			width: calc(100% - 50px)
 
-			>#logo
+			>.logo
 				width: 100%
 
 			>div
@@ -85,10 +85,10 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 								background-color: $gColorGray2
 
 
-				>#items-footer
+				>.items-footer
 					padding: 10px 15px 150px 15px
 
-#my-m1-nav-2
+.my-m1-nav-2
 	@include displayFlex
 	@include setUpFlex(row, wrap, flex-start, center, center)
 
@@ -97,7 +97,7 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 	background-color: $gColorGray4
 	z-index: $gZIndex9
 
-	#left, #right
+	.left, .right
 		@include displayFlex
 
 		>span
@@ -108,7 +108,7 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 			user-select: none
 			cursor: pointer
 
-	#left
+	.left
 		@include setUpFlex(row, wrap, flex-start, center, center)
 
 		width: calc(20% - 5px)
@@ -117,9 +117,9 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 		>span
 			margin-right: 10px
 
-		>#opensidemenu
+		>.opensidemenu
 			@include displayFlex
-	#right
+	.right
 		@include setUpFlex(row-reverse, wrap, flex-start, center, center)
 
 		width: calc(80% - 5px)
@@ -128,11 +128,11 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 		>span
 			margin-left: 10px
 
-#my-m1-container-main
+.my-m1-container-main
 	width: 100%
 	margin-left: 0px
 
-	>#my-m1-footer
+	>.my-m1-footer
 		.my-m1-footer-icons-palette
 			padding: 5px
 
@@ -151,25 +151,25 @@ $maxWidthMyM1Nav1100P: calc(100% - 300px)
 				margin-bottom: 3px
 
 @media screen and (min-width: $gMediumSizeA)
-	#my-m1-nav-1
+	.my-m1-nav-1
 		display: block
 		width: 100%
 
-		>#container
+		>.container
 			@include displayFlexImportant
 			@include setUpFlex(row-reverse, wrap, flex-start, flex-start, flex-start)
 
-			>#items-icon
+			>.items-icon
 
-				>#top
-					>#closesidemenu
+				>.top
+					>.closesidemenu
 						display: none
-	#my-m1-nav-2
-		#left
-			>#opensidemenu
+	.my-m1-nav-2
+		.left
+			>.opensidemenu
 				display: none
 
-	#my-m1-container-main
+	.my-m1-container-main
 		width: $maxWidthMyM1Nav1100P
 		margin-left: $maxWidthMyM1Nav1
 

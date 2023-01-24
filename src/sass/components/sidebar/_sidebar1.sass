@@ -1,7 +1,7 @@
 .my-sidebar
 	z-index: $gZIndex8
 
-	>#background
+	>.background
 		display: none
 		top: 0px
 		left: 0px
@@ -14,10 +14,10 @@
 	>.is-active
 		width: 100% !important
 
-		>#menucontent
+		>.menucontent
 			@include displayFlexImportant
 
-	>#menu
+	>.menu
 		position: fixed
 		top: 0px
 		right: 0px
@@ -27,11 +27,11 @@
 		background-color: $gColorWhite
 		z-index: $gZIndex9
 
-		>#menucontent
+		>.menucontent
 			display: none
 			@include setUpFlex(column, wrap, flex-start, flex-start, flex-start)
 
-			>#menuheader
+			>.menuheader
 				color: $gColorWhite
 				background-color: $gColor11
 

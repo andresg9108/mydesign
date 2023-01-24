@@ -6,8 +6,6 @@ It allows us to create a Swiper.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/swiper/swiper-bundle.min.css" />
 <script src="node_modules/swiper/swiper-bundle.min.js"></script>
 -->
@@ -30,13 +28,13 @@ It allows us to create a Swiper.
           <img src="<<ROOT-DIR>>src/img/technologies/html-css-js.png" />
         </div>
         <div class="swiper-slide">
-          <img src="<<ROOT-DIR>>src/img/technologies/jquery.png" />
-        </div>
-        <div class="swiper-slide">
           <img src="<<ROOT-DIR>>src/img/technologies/grunt.png" />
         </div>
         <div class="swiper-slide">
           <img src="<<ROOT-DIR>>src/img/technologies/sass.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="<<ROOT-DIR>>src/img/technologies/handlebars.png" />
         </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -44,8 +42,8 @@ It allows us to create a Swiper.
     <div class="swiper-button-prev"></div>
   </div>
 
-  <br /><br />
-
+  <br>
+  
   <div id="versionmanager" class="swiper my-swiper-swiper1">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -70,27 +68,24 @@ It allows us to create a Swiper.
 
 <script>
 
-// #technologies
-var sSelector = '#technologies';
-var iImagesCount = 7;
-var oSwiperTechnologies = configSwiperSlider(sSelector, iImagesCount, 10, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
-resizeSlider(oSwiperTechnologies, 4, 3, 1);
+var oWidget = {};
 
-// #versionmanager
-var sSelector = '#versionmanager';
-var iImagesCount = 4;
-var oSwiperVersionmanager = configSwiperSlider(sSelector, iImagesCount, 10, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
-resizeSlider(oSwiperVersionmanager, 4, 3, 1);
+document.addEventListener('DOMContentLoaded', (e) => {
+  let swiperTechnologies = oWidget.swiperConfig('#technologies', 7, 10, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
+  let swiperVersionmanager = oWidget.swiperConfig('#versionmanager', 4, 10, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
 
-$(window).resize(function(){
-  resizeSlider(oSwiperTechnologies, 4, 3, 1);
-  resizeSlider(oSwiperVersionmanager, 4, 3, 1);
+  window.onresize = () => {
+    oWidget.swiperResize(swiperTechnologies, 4, 3, 1);
+    oWidget.swiperResize(swiperVersionmanager, 4, 3, 1);
+  }
+
+  window.onresize();
 });
 
 /*
 */
-function configSwiperSlider(selector, views, space, pag, btnNext, btnPrev){
-  var swiper = new Swiper(selector, {
+oWidget.swiperConfig = (selector, views, space, pag, btnNext, btnPrev) => {
+  let swiper = new Swiper(selector, {
     slidesPerView: views,
     spaceBetween: space,
     loop: true,
@@ -109,8 +104,9 @@ function configSwiperSlider(selector, views, space, pag, btnNext, btnPrev){
 
 /*
 */
-function resizeSlider(swiper, pc, tablet, mobile){
-  var windowWidth = window.innerWidth;
+oWidget.swiperResize = (swiper, pc, tablet, mobile) => {
+  let  windowWidth = window.innerWidth;
+  
   if(windowWidth >= 1024){
     swiper.params.slidesPerView = pc;
   }else if(windowWidth >= 768){

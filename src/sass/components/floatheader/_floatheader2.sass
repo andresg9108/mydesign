@@ -12,7 +12,7 @@
 	background-color: $gColorGray3
 	z-index: $gZIndex6
 
-	>#logo
+	>.logo
 		width: auto
 		height: 50px
 		cursor: pointer
@@ -21,13 +21,13 @@
 		cursor: pointer
 		user-select: none
 
-	>#menu
+	>.menu
 		@include displayFlex
 		@include setUpFlex(row, wrap, flex-start, center, center)
 		
 		width: 100%
 
-		>#buttons, >#iconos
+		>.buttons, >.iconos
 			@include setUpFlex(row, wrap, flex-start, center, center)
 
 			width: 100%
@@ -41,20 +41,20 @@
 				cursor: pointer
 				user-select: none
 
-		>#buttons
+		>.buttons
 			display: none
 
-		>#iconos
+		>.iconos
 			@include displayFlex
 			@include setUpFlex(row-reverse, wrap, flex-start, center, center)
 			
 @media screen and (min-width: $gMediumSizeA)
 	.my-floatheader2
-		>#menu
-			>#buttons
+		>.menu
+			>.buttons
 				@include displayFlex
 
 				width: calc(70% - 30px)
 
-			>#iconos
+			>.iconos
 				width: calc(30% - 30px)

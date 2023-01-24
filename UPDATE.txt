@@ -1,6 +1,8 @@
-Update version v3.2.0
+Update version v4.0.1
 
 1. Run "manyp-cli i".
 2. Run "manyp-cli u".
+
+Warning: JQuery will be deprecated in this framework starting with this version.
 
 Ok.

@@ -1,8 +1,6 @@
 exports.a=[
 './pages/*',
 './pageTemplates/*',
-'./pages/autocompleteinput/*',
-'./pages/autocompleteinput/autocompleteinput1/*',
 './pages/basicpage/*',
 './pages/basicpage/basicpage1/*',
 './pages/breadcrumb/*',

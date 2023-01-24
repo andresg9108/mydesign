@@ -6,8 +6,6 @@ It allows us to create a Smart table.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 <script src="node_modules/smarttable-ag/dist/main.min.js"></script>
 -->
@@ -160,7 +158,10 @@ It allows us to create a Smart table.
 
 <script>
 
-oSmartTableAg.setEventsFromTable('#smarttable1');
-// console.log(oSmartTableAg.getArrayFromTable('#smarttable1'));
+oSmartTableAg.loadTableEvents({
+  smarttable: ['#smarttable1']
+});
+
+// oSmartTableAg.getArrayFromTable('#smarttable1');
 
 </script>

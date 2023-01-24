@@ -6,8 +6,6 @@ It allows us to create a Swiper.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/swiper/swiper-bundle.min.css" />
 <script src="node_modules/swiper/swiper-bundle.min.js"></script>
 -->
@@ -55,20 +53,23 @@ It allows us to create a Swiper.
 
 <script>
 
-// #swiper2
-var sSelector = '#swiper2';
-var iImagesCount = 4;
-var oSwiper2 = configSwiperSlider(sSelector, iImagesCount, 0, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
-resizeSlider(oSwiper2, 1, 1, 1);
 
-$(window).resize(function(){
-  resizeSlider(oSwiper2, 1, 1, 1);
+var oWidget = {};
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  let oSwiper2 = oWidget.swiperConfig('#swiper2', 4, 0, '.swiper-pagination', '.swiper-button-next', '.swiper-button-prev');
+
+  window.onresize = () => {
+    oWidget.swiperResize(oSwiper2, 1, 1, 1);
+  }
+
+  window.onresize();
 });
 
 /*
 */
-function configSwiperSlider(selector, views, space, pag, btnNext, btnPrev){
-  var swiper = new Swiper(selector, {
+oWidget.swiperConfig = (selector, views, space, pag, btnNext, btnPrev) => {
+  let swiper = new Swiper(selector, {
     slidesPerView: views,
     spaceBetween: space,
     loop: true,
@@ -87,8 +88,9 @@ function configSwiperSlider(selector, views, space, pag, btnNext, btnPrev){
 
 /*
 */
-function resizeSlider(swiper, pc, tablet, mobile){
-  var windowWidth = window.innerWidth;
+oWidget.swiperResize = (swiper, pc, tablet, mobile) => {
+  let  windowWidth = window.innerWidth;
+  
   if(windowWidth >= 1024){
     swiper.params.slidesPerView = pc;
   }else if(windowWidth >= 768){

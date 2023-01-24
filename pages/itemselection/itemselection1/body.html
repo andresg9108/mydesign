@@ -6,47 +6,45 @@ It allows us to create a Item selection.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 -->
 
 <!-- CODE -->
 <div class="my-simple-container">
-  <form>
-    <div class="my-itemselection1">
+  <form onsubmit="return false;">
+    <div id="item-selection-test-1" class="my-itemselection1">
       <div class="my-field my-field-row">
-        <select id="my-itemselection1-select" class="my-selectionmenu">
+        <select class="my-itemselection1-select my-selectionmenu">
           <option value="0">Select one</option>
           <option value="1">Option #1</option>
           <option value="2">Option #2</option>
           <option value="3">Option #3</option>
           <option value="4">Option #4</option>
         </select>
-        <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
+        <input type="button" value="Add" class="my-itemselection1-button my-button my-button-simple" />
         <input type="hidden" class="my-itemselection1-selected" />
       </div>
-      <div id="my-itemselection1-content">
+      <div class="my-itemselection1-content">
       </div>
     </div>
 
-    <div class="my-itemselection1">
+    <div id="item-selection-test-2" class="my-itemselection1">
       <div class="my-field my-field-row">
-        <select id="my-itemselection1-select" class="my-selectionmenu">
+        <select class="my-itemselection1-select my-selectionmenu">
           <option value="0">Select one</option>
           <option value="1">Option #1</option>
           <option value="2">Option #2</option>
           <option value="3">Option #3</option>
           <option value="4">Option #4</option>
           <option value="11">Option #11</option>
-          <option value="11">Option #22</option>
+          <option value="22">Option #22</option>
           <option value="25">Option #25</option>
           <option value="322">Option #322</option>
         </select>
-        <input id="my-itemselection1-button" type="button" value="Add" class="my-button my-button-simple" />
-        <input type="hidden" value="11;22;4" class="my-itemselection1-selected" />
+        <input type="button" value="Add" class="my-itemselection1-button my-button my-button-simple" />
+        <input type="hidden" value="11,22,4" class="my-itemselection1-selected" />
       </div>
-      <div id="my-itemselection1-content">
+      <div class="my-itemselection1-content">
         <div data-value="11"><span>Option #11</span><span class="fas fa-times-circle fa-lg"></span></div>
         <div data-value="22"><span>Option #22</span><span class="fas fa-times-circle fa-lg"></span></div>
         <div data-value="4"><span>Option #4</span><span class="fas fa-times-circle fa-lg"></span></div>
@@ -57,52 +55,87 @@ It allows us to create a Item selection.
 
 <script>
 
-$(".my-itemselection1 #my-itemselection1-button").on('click', function(){
-  var parents = $(this).parents();
-  var value = parents.children("#my-itemselection1-select").val();
-  var text = parents.children("#my-itemselection1-select").children('option:selected').text();
-  var selected = parents.children(".my-itemselection1-selected").val();
-  var aSelected = selected.split(';');
+var oWidget = {};
 
+document.addEventListener('DOMContentLoaded', (e) => {
+  oWidget.loadEvents({
+    itemselection: ['#item-selection-test-1', '#item-selection-test-2']
+  });
+});
 
-  if(value != 0 && aSelected.indexOf(value) == -1){
-    selected = (selected == '') ? value : selected+';'+value;
-    parents.children(".my-itemselection1-selected").val(selected);
-    parents.children("#my-itemselection1-content").append('<div data-value="'+value+'"><span>'+text+'</span><span class="fas fa-times-circle fa-lg"></span></div>');
-    parents.children("#my-itemselection1-content").children("div").on('click', function(){
-      var deletevalue = $(this).attr('data-value');
-      var selectedtext = parents.children(".my-itemselection1-selected").val();
-      var aSelectedtext = selectedtext.split(';');
+/*
+*/
+oWidget.loadEvents = (oData) => {
+  let aItemSelection = oData.itemselection;
 
-      selectedtext = '';
-      $.each(aSelectedtext, function(i, v){
-        if(deletevalue != v){
-          selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+  for(let i=0; i<aItemSelection.length; i++){
+    let sItemSelection = aItemSelection[i];
+    let oElement = document.querySelector(sItemSelection);
+
+    let oButton = oElement.querySelector('.my-itemselection1-button');
+
+    oButton.addEventListener('click', () => {
+        let oParentMain = oButton.parentElement.parentElement;
+        let oSelect = oParentMain.querySelector(".my-itemselection1-select");
+        let oSelected = oParentMain.querySelector(".my-itemselection1-selected");
+        let oContent = oParentMain.querySelector('.my-itemselection1-content');
+
+        let sValue = oSelect.value;
+        let sText = oSelect.options[oSelect.selectedIndex].text;
+        let sSelected = oSelected.value;
+        let aSelected = sSelected.split(',');
+
+        if(sValue != 0 && aSelected.indexOf(sValue) == -1){
+          sSelected = (sSelected == '') ? sValue : `${sSelected},${sValue}`;
+          oSelected.value = sSelected;
+
+          oContent.innerHTML = `${oContent.innerHTML}<div data-value="${sValue}"><span>${sText}</span><span class="fas fa-times-circle fa-lg"></span></div>`;
+
+          oWidget.loadContainerEvents({
+            itemselection: [sItemSelection]
+          });
+        }
+      });
+  }
+
+  oWidget.loadContainerEvents(oData);
+}
+
+/*
+*/
+oWidget.loadContainerEvents = (oData) => {
+  let aItemSelection = oData.itemselection;
+
+  for(let i=0; i<aItemSelection.length; i++){
+    let sItemSelection = aItemSelection[i];
+    let oElement = document.querySelector(sItemSelection);
+
+    let oContent = oElement.querySelector('.my-itemselection1-content');
+    let oDiv = oContent.querySelector('div');
+
+    while(oDiv !== null){
+      let oEventDiv = oDiv;
+
+      oEventDiv.addEventListener('click', () => {
+        if(oEventDiv.parentElement !== null){
+          let oParentMain = oEventDiv.parentElement.parentElement;
+          let oSelected = oParentMain.querySelector(".my-itemselection1-selected");
+
+          let sValue = oEventDiv.getAttribute('data-value');
+          let sSelected = oSelected.value;
+          let aSelected = sSelected.split(',');
+
+          aSelected = aSelected.filter(item => item != sValue);
+          sSelected = aSelected.toString();
+
+          oSelected.value = sSelected;
+          oContent.removeChild(oEventDiv);
         }
       });
 
-      parents.children(".my-itemselection1-selected").val(selectedtext);
-      $(this).remove();
-    });
-  }
-});
-
-$(".my-itemselection1").children("#my-itemselection1-content").children("div").on('click', function(){
-  var parents = $(this).parent();
-  var siblings = parents.siblings();
-  var deletevalue = $(this).attr('data-value');
-  var selectedtext = siblings.children(".my-itemselection1-selected").val();
-  var aSelectedtext = selectedtext.split(';');
-
-  selectedtext = '';
-  $.each(aSelectedtext, function(i, v){
-    if(deletevalue != v){
-      selectedtext = (selectedtext == '') ? v : selectedtext+';'+v;
+      oDiv = oDiv.nextElementSibling;
     }
-  });
-
-  siblings.children(".my-itemselection1-selected").val(selectedtext);
-  $(this).remove();
-});
+  }
+}
 
 </script>

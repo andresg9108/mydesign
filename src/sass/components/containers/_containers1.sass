@@ -7,20 +7,24 @@
 
 	width: 100%
 
-	>#left, >#right
+	>.left, >.right
 		width: 100%
 .my-justify
 	text-align: justify
 .my-p
 	margin-bottom: 10px
+.my-list
+	li
+		padding-top: 2px
+		padding-bottom: 2px
 
 @media screen and (min-width: $gMediumSizeA)
 	.my-simple-container
 		padding: 20px 50px
 	.my-two-columns
-		>#left, >#right
+		>.left, >.right
 			width: calc(50% - 10px)
-		>#left
+		>.left
 			margin-right: 10px
-		>#right
+		>.right
 			margin-left: 10px

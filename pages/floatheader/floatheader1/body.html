@@ -6,35 +6,31 @@ It allows us to create a float header.
 <!-- DEPENDENCIES -->
 <!--
 <link rel="stylesheet" type="text/css" href="node_modules/mydesign-ag/dist/main.min.css" />
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-<link rel="stylesheet" type="text/css" href="node_modules/jquery-ui-dist/jquery-ui.min.css" />
-<script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
 -->
 
 <!-- CODE -->
 <header class="my-floatheader">
-  <img id="logo" src="<<ROOT-DIR>>src/img/logo.svg" />
-  <div id="menu">
-    <div id="menusmall">
-      <span onclick="myd_openFloatHeaderSearch()" class="fa fa-search fa-lg"></span>
+  <img class="logo" src="<<ROOT-DIR>>src/img/logo.svg" />
+  <div class="menu">
+    <div class="menusmall">
+      <span onclick="oWidget.myd_openFloatHeaderSearch()" class="fa fa-search fa-lg"></span>
       <button class="my-button-icon">
           <span class="fa fa-camera fa-1x"></span>
           Publicar
       </button>
     </div>
-    <div id="menubig">
-      <div id="izq">
-        <div id="search">
-          <form method="post">
-              <input type="search" id="myinput" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
-              <span onclick="myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-lg"></span>
+    <div class="menubig">
+      <div class="izq">
+        <div class="search">
+          <form method="post" onsubmit="return false;">
+              <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+              <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-lg"></span>
               <button class="fa fa-search fa-lg"></button>
           </form>
         </div>
       </div>
-      <div id="der">
+      <div class="der">
         <button class="my-button-icon my-button-blue-2">
             <span class="fa fa-camera fa-1x"></span>
             Publicar
@@ -48,28 +44,28 @@ It allows us to create a float header.
   <span class="fa fa-bars fa-2x"></span>
 </header>
 <div class="my-floatheader-search">
-  <span onclick="myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-2x"></span>
-  <div id="search">
-      <form method="post">
-          <input type="search" id="myinputm" class="my-autocompleteinput" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
+  <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-chevron-circle-down fa-2x"></span>
+  <div class="search">
+      <form method="post" onsubmit="return false;">
+          <input type="search" placeholder="¿Qu&eacute; est&aacute;s buscando?" />
           <button class="fa fa-search fa-lg"></button>
       </form>
   </div>
-  <span onclick="myd_closeFloatHeaderSearch()" class="fa fa-times fa-2x"></span>
+  <span onclick="oWidget.myd_closeFloatHeaderSearch()" class="fa fa-times fa-2x"></span>
 </div>
 <div class="my-floatheader-menu-1">
   <div>
-    <div id="nav">
-      <span onclick="myd_floatHeaderMenu1()" class="fa fa-times fa-2x"></span>
+    <div class="nav">
+      <span onclick="oWidget.myd_floatHeaderMenu1()" class="fa fa-times fa-2x"></span>
       <span class="fa fa-info-circle fa-2x"></span>
     </div>
-    <div id="body">
+    <div class="body">
       <h3>Advanced search</h3>
 
       <div class="my-two-columns">
-        <div id="left">
+        <div class="left">
           <div class="my-field my-field-column">
-            <label for="search">Select:</label>
+            <label for="search">Select one:</label>
             <select class="my-selectionmenu">
               <option value="0">Select one</option>
               <option value="1">Option #1</option>
@@ -81,9 +77,9 @@ It allows us to create a float header.
           </div>
 
           <div class="my-field my-field-column">
-            <label for="search">Select:</label>
+            <label for="search">Select two:</label>
             <select class="my-selectionmenu">
-              <option value="0">Select one</option>
+              <option value="0">Select two</option>
               <option value="1">Option #1</option>
               <option value="2">Option #2</option>
               <option value="3">Option #3</option>
@@ -92,11 +88,11 @@ It allows us to create a float header.
             <span></span>
           </div>
         </div>
-        <div id="right">
+        <div class="right">
           <div class="my-field my-field-column">
-            <label for="search">Select:</label>
+            <label for="search">Select three:</label>
             <select class="my-selectionmenu">
-              <option value="0">Select one</option>
+              <option value="0">Select three</option>
               <option value="1">Option #1</option>
               <option value="2">Option #2</option>
               <option value="3">Option #3</option>
@@ -106,9 +102,9 @@ It allows us to create a float header.
           </div>
 
           <div class="my-field my-field-column">
-            <label for="search">Select:</label>
+            <label for="search">Select four:</label>
             <select class="my-selectionmenu">
-              <option value="0">Select one</option>
+              <option value="0">Select four</option>
               <option value="1">Option #1</option>
               <option value="2">Option #2</option>
               <option value="3">Option #3</option>
@@ -135,62 +131,42 @@ It allows us to create a float header.
 </div>
 
 <script>
+
+var oWidget = {};
+
 /*
 */
-function myd_openFloatHeaderSearch(){
-$('.my-floatheader-search').addClass('is-active');
-$('.my-floatheader-search #search input').focus();
+oWidget.myd_openFloatHeaderSearch = () => {
+  let oElement = document.querySelector('.my-floatheader-search');
+  let sClass = oElement.getAttribute('class').trim();
+
+  sClass = `${sClass} is-active`;
+
+  oElement.setAttribute('class', sClass);
+  document.querySelector('.my-floatheader-search #search input').focus();
 }
 
 /*
 */
-function myd_closeFloatHeaderSearch(){
-$('.my-floatheader-search').removeClass('is-active');
+oWidget.myd_closeFloatHeaderSearch = () => {
+  let oElement = document.querySelector('.my-floatheader-search');
+  let sClass = oElement.getAttribute('class').trim();
+
+  sClass = sClass.replace('is-active', '').trim();
+
+  oElement.setAttribute('class', sClass);
 }
 
 /*
 */
-function myd_floatHeaderMenu1(){
-let oMenu = $(".my-floatheader-menu-1");
-let iTime = 400;
+oWidget.myd_floatHeaderMenu1 = () => {
+  let oElement = document.querySelector('.my-floatheader-menu-1');
+  let sClass = oElement.getAttribute('class').trim();
 
-if(oMenu.css('display') != 'none'){
-    oMenu.removeClass('is-active');
-}else{
-    oMenu.addClass('is-active');
-}
+  sClass = (sClass.indexOf('is-active') === -1) ? `${sClass} is-active` : sClass.replace('is-active', '');
+  sClass = sClass.trim();
+
+  oElement.setAttribute('class', sClass);
 }
 
-/*
-*/
-var autocompletedData = [
-"ActionScript",
-"AppleScript",
-"Asp",
-"BASIC",
-"C",
-"C++",
-"Clojure",
-"COBOL",
-"ColdFusion",
-"Erlang",
-"Fortran",
-"Groovy",
-"Haskell",
-"Java",
-"JavaScript",
-"Lisp",
-"Perl",
-"PHP",
-"Python",
-"Ruby",
-"Scala",
-"Scheme"
-];
-$( "#myinput" ).autocomplete({
-source: autocompletedData
-});
-$( "#myinputm" ).autocomplete({
-source: autocompletedData
-});
 </script>
