@@ -158,7 +158,10 @@ It allows us to create a Smart table.
 
 <script>
 
-oSmartTableAg.setEventsFromTable('#smarttable1');
-// console.log(oSmartTableAg.getArrayFromTable('#smarttable1'));
+oSmartTableAg.loadTableEvents({
+  smarttable: ['#smarttable1']
+});
+
+// oSmartTableAg.getArrayFromTable('#smarttable1');
 
 </script>

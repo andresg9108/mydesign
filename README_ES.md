@@ -1,53 +1,52 @@
 # My Design #
 
-## Content ##
+## Contenido ##
 
-1. [Introduction.](#Introduction "Introduction")
-2. [Dependencies.](#Dependencies "Dependencies")
-3. [Getting started.](#GettingStarted "Getting started")
+1. Introducción.
+2. Dependencias.
+3. Empezando.
 
-## Introduction <span name="Introduction"></span> ##
+## Introducción ##
 
-This project aims to supply a set of reusable CSS elements and templates.
+Este proyecto tiene como objetivo proporcionar un conjunto de elementos y plantillas CSS reutilizables.
 
-## Dependencies <span name="Dependencies"></span> ##
+## Dependencias ##
 
 * Node.js (https://nodejs.org).
-  - Run "node -v" in your OS console to see if it is already installed.
-* Npm CLI (https://docs.npmjs.com/cli).
-  - On Windows it comes with the Node.js installer, on Linux based OSs you will need to install it.
-  - Run "npm -v" in your OS console to see if it is already installed.
+  - Ejecuta "node --version" en la consola de su sistema operativo para ver si ya está instalado.
+* CLI de Npm (https://docs.npmjs.com/cli).
+  - En Windows viene con el instalador de Node.js, en los sistemas operativos basados en Linux deberá instalarlo.
+  - Ejecuta "npm --version" en la consola de su sistema operativo para ver si ya está instalado.
 
-## Getting started <span name="GettingStarted"></span> ##
+## Empezando ##
 
-To install My Design in our project we must execute the following command.
+Para instalar My Design en nuestro proyecto debemos ejecutar el siguiente comando.
 
 ~~~
 npm i mydesign-ag
 ~~~
 
-To know everything that My Design has prepared for us, we have to clone its repository apart from our project and look at its files.
-
+Para saber todo lo que tiene preparado My Design para nosotros, tenemos que clonar su repositorio aparte de nuestro proyecto y mirar sus archivos.
 
 [My Design Repository.](https://github.com/andresg9108/mydesign "My Design Repository.")
 
-My Design uses ManyP, so we should be familiar with this way of working.
+My Design usa ManyP, por lo que deberíamos estar familiarizados con esta forma de trabajar.
 
 [ManyP Repository.](https://github.com/andresg9108/manyp "ManyP Repository.")
 
-Running the following command will create a test server. Now we can see some examples of My Design that we can add to our project.
+Ejecutar el siguiente comando creará un servidor de prueba. Ahora podemos ver algunos ejemplos de My Design que podemos agregar a nuestro proyecto.
 
 ~~~
 manyp-cli server
 ~~~
 
-When we decide which example we want to add to our project, we will access the “pages” folder and within it we will be able to find a folder with the name of the example we have selected. When we find the folder of our example, we will open the file "body.html" that is inside it. In this file is all the information to implement this example in our project. The implementation of the example in our project depends on the following.
+Cuando decidamos qué ejemplo queremos añadir a nuestro proyecto, accederemos a la carpeta “pages” y dentro de ella podremos encontrar una carpeta con el nombre del ejemplo que hemos seleccionado. Cuando encontremos la carpeta de nuestro ejemplo, abriremos el archivo "body.html" que se encuentra dentro de ella. En este archivo está toda la información para implementar este ejemplo en nuestro proyecto. La implementación del ejemplo en nuestro proyecto depende de lo siguiente.
 
 - DESCRIPTION.
 - DEPENDENCIES.
 - CODE.
 
-You will see the CSS class called “my-simple-container” in many of the cases as shown below. This class tells the "div" that contains it that it behaves like a small container, in many cases and if you want, this container is not needed to add the example in our project.
+Verá la clase CSS llamada "my-simple-container" en muchos de los casos, como se muestra a continuación. Esta clase le dice al elemento que la contiene que se comporta como un pequeño contenedor, en muchos casos y si quieres, este contenedor no es necesario para agregar el ejemplo en nuestro proyecto.
 
 ```html
 <div class="my-simple-container">
