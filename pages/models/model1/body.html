@@ -11,7 +11,7 @@ It allows us to create a Model.
 
 <!-- CODE -->
 <nav class="my-m1-nav-1">
-  <div class="container">
+  <div class="my-m1-nav-1-container">
     <div class="items-icon">
       <div class="top">
         <span onclick="oWidget.myd_m1_sideMenu()" class="fa fa-times-circle fa-2x closesidemenu"></span>
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 /*
 */
 oWidget.loadEvents = () => {
-  let oElement = document.querySelector('.my-m1-nav-1 .container .items div div');
+  let oElement = document.querySelector('.my-m1-nav-1 .my-m1-nav-1-container .items div div');
 
   do{
     if(oElement.localName == 'div'){
@@ -160,7 +160,7 @@ oWidget.loadEvents = () => {
 */
 oWidget.myd_m1_sideMenu = () => {
   let oNav = document.querySelector('.my-m1-nav-1');
-  let oNavC = document.querySelector('.my-m1-nav-1 .container');
+  let oNavC = document.querySelector('.my-m1-nav-1 .my-m1-nav-1-container');
   let sClass = oNavC.getAttribute('class');
   
   sClass = (sClass === null) ? '' : sClass;
