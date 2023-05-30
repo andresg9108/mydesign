@@ -1,13 +1,18 @@
 require('shelljs/global');
 
-const sSassFile = './src/sass/main.sass';
-const sCssFile = './src/css/dist/main.min.css';
 const sOptions = '--style compressed';
 
-exec(`sass ${sSassFile} ${sCssFile} ${sOptions}`);
+var oSassFiles = require('./grunt/sass/files.js');
+var sSass = '';
+
+for(var i in oSassFiles.o){
+	sSass += `${oSassFiles.o[i]}:${i} `;
+}
+
+exec(`sass ${sSass} ${sOptions}`);
 
 process.on('message', (msg) => {
 	if(typeof msg.watch != 'undefined' && msg.watch){
-		exec(`sass --watch ${sSassFile} ${sCssFile} ${sOptions}`);
+		exec(`sass --watch ${sSass} ${sOptions}`);
 	}
 });

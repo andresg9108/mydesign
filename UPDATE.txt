@@ -1,8 +1,13 @@
-Update version v4.0.1
+Update version 4.3.0
 
 1. Run "manyp-cli i".
 2. Run "manyp-cli u".
 
-Warning: JQuery will be deprecated in this framework starting with this version.
+3. New file "grunt/sass/files.js" with the following example lines.
+exports.o={
+'./src/css/dist/main.min.css': './src/sass/main.sass'
+};
+
+Warning: JQuery will be deprecated in this framework as of version 4.0.0.
 
 Ok.

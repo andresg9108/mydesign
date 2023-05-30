@@ -1,6 +1,6 @@
 {
   "name": "mydesign-ag",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "This project aims to supply a set of reusable CSS elements and templates.",
   "scripts": {
     "start": "node main.js",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "homepage": "https://github.com/andresg9108/mydesign",
   "devDependencies": {
-    "grunt": "^1.5.3",
+    "grunt": "^1.6.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-handlebars": "^3.0.0",
     "grunt-contrib-processpy": "^1.0.0",
